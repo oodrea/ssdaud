@@ -1,0 +1,70 @@
+<annotation>
+    <folder>coco2VOC</folder>
+    <filename>stereo20190405_133623_p2_snap_060.jpg</filename>
+    <path>C:\Users\audrea\Desktop\sk00L\CIVI\ssd\CV10tomatOD\data\converter\coco2VOC\stereo20190405_133623_p2_snap_060.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>2000</width>
+        <height>2000</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>semi-ripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1019</xmin>
+            <ymin>1280</ymin>
+            <xmax>1111</xmax>
+            <ymax>1372</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>semi-ripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1418</xmin>
+            <ymin>1669</ymin>
+            <xmax>1570</xmax>
+            <ymax>1821</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1098</xmin>
+            <ymin>1319</ymin>
+            <xmax>1180</xmax>
+            <ymax>1401</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1257</xmin>
+            <ymin>1875</ymin>
+            <xmax>1375</xmax>
+            <ymax>1993</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1346</xmin>
+            <ymin>1769</ymin>
+            <xmax>1464</xmax>
+            <ymax>1887</ymax>
+        </bndbox>
+    </object>
+</annotation>

@@ -1,0 +1,81 @@
+<annotation>
+    <folder>coco2VOC</folder>
+    <filename>stereo20190405_133623_p2_snap_127.jpg</filename>
+    <path>C:\Users\audrea\Desktop\sk00L\CIVI\ssd\CV10tomatOD\data\converter\coco2VOC\stereo20190405_133623_p2_snap_127.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>2000</width>
+        <height>2000</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>828</xmin>
+            <ymin>1751</ymin>
+            <xmax>888</xmax>
+            <ymax>1811</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>941</xmin>
+            <ymin>1523</ymin>
+            <xmax>1001</xmax>
+            <ymax>1583</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>457</xmin>
+            <ymin>1425</ymin>
+            <xmax>539</xmax>
+            <ymax>1507</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1197</xmin>
+            <ymin>1211</ymin>
+            <xmax>1307</xmax>
+            <ymax>1321</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>994</xmin>
+            <ymin>648</ymin>
+            <xmax>1076</xmax>
+            <ymax>730</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1707</xmin>
+            <ymin>1852</ymin>
+            <xmax>1807</xmax>
+            <ymax>1952</ymax>
+        </bndbox>
+    </object>
+</annotation>

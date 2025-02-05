@@ -1,0 +1,70 @@
+<annotation>
+    <folder>coco2VOC</folder>
+    <filename>stereo20190405_133623_p3_snap_033.jpg</filename>
+    <path>C:\Users\audrea\Desktop\sk00L\CIVI\ssd\CV10tomatOD\data\converter\coco2VOC\stereo20190405_133623_p3_snap_033.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>2000</width>
+        <height>2000</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1881</xmin>
+            <ymin>739</ymin>
+            <xmax>1969</xmax>
+            <ymax>827</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1877</xmin>
+            <ymin>905</ymin>
+            <xmax>1981</xmax>
+            <ymax>1009</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1420</xmin>
+            <ymin>1064</ymin>
+            <xmax>1556</xmax>
+            <ymax>1200</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>761</xmin>
+            <ymin>756</ymin>
+            <xmax>881</xmax>
+            <ymax>876</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>775</xmin>
+            <ymin>1583</ymin>
+            <xmax>895</xmax>
+            <ymax>1703</ymax>
+        </bndbox>
+    </object>
+</annotation>

@@ -1,0 +1,59 @@
+<annotation>
+    <folder>coco2VOC</folder>
+    <filename>stereo20190406_054921_p0_snap_186.jpg</filename>
+    <path>C:\Users\audrea\Desktop\sk00L\CIVI\ssd\CV10tomatOD\data\converter\coco2VOC\stereo20190406_054921_p0_snap_186.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>2000</width>
+        <height>2000</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>fully-ripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1068</xmin>
+            <ymin>1162</ymin>
+            <xmax>1172</xmax>
+            <ymax>1266</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>865</xmin>
+            <ymin>1378</ymin>
+            <xmax>953</xmax>
+            <ymax>1466</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>fully-ripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1085</xmin>
+            <ymin>1554</ymin>
+            <xmax>1189</xmax>
+            <ymax>1658</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>unripe</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1004</xmin>
+            <ymin>1568</ymin>
+            <xmax>1108</xmax>
+            <ymax>1672</ymax>
+        </bndbox>
+    </object>
+</annotation>

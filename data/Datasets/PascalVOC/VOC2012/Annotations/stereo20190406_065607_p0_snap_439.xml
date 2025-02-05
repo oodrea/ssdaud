@@ -1,0 +1,37 @@
+<annotation>
+    <folder>coco2VOC</folder>
+    <filename>stereo20190406_065607_p0_snap_439.jpg</filename>
+    <path>C:\Users\audrea\Desktop\sk00L\CIVI\ssd\CV10tomatOD\data\converter\coco2VOC\stereo20190406_065607_p0_snap_439.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>2000</width>
+        <height>2000</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>706</xmin>
+            <ymin>1335</ymin>
+            <xmax>784</xmax>
+            <ymax>1413</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1471</xmin>
+            <ymin>654</ymin>
+            <xmax>1703</xmax>
+            <ymax>886</ymax>
+        </bndbox>
+    </object>
+</annotation>

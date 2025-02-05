@@ -1,0 +1,70 @@
+<annotation>
+    <folder>coco2VOC</folder>
+    <filename>stereo20190406_054921_p0_snap_352.jpg</filename>
+    <path>C:\Users\audrea\Desktop\sk00L\CIVI\ssd\CV10tomatOD\data\converter\coco2VOC\stereo20190406_054921_p0_snap_352.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>2000</width>
+        <height>2000</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>47</xmin>
+            <ymin>1873</ymin>
+            <xmax>151</xmax>
+            <ymax>1977</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1631</xmin>
+            <ymin>1750</ymin>
+            <xmax>1751</xmax>
+            <ymax>1870</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1600</xmin>
+            <ymin>1671</ymin>
+            <xmax>1704</xmax>
+            <ymax>1775</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1746</xmin>
+            <ymin>1478</ymin>
+            <xmax>1866</xmax>
+            <ymax>1598</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>['unripe', 'semi-ripe', 'fully-ripe']</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>726</xmin>
+            <ymin>1688</ymin>
+            <xmax>862</xmax>
+            <ymax>1824</ymax>
+        </bndbox>
+    </object>
+</annotation>
