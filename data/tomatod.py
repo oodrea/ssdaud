@@ -7,6 +7,7 @@ import os.path as osp
 from torch.utils.data import Dataset
 from utils.genutils import write_print
 import pickle
+from pycocotools.coco import COCO as PYCOCO
 
 
 
@@ -43,13 +44,15 @@ class TomatodAnnotationTransform(object):
         labels = []
 
         for target in targets:
-            x_min = float(target[0]) / width
-            y_min = float(target[1]) / height
-            x_max = (float(target[0]) + float(target[2])) / width
-            y_max = (float(target[1]) + float(target[3])) / height
-            category = int(target[4])
-            labels.append([x_min, y_min, x_max, y_max, category])
+            bbox = [(float(target[0])) / width,
+                    (float(target[1])) / height,
+                    (float(target[2])) / width,
+                    (float(target[3])) / height,
+                    int(target[4])]
+            labels += [bbox]
+
         return labels
+
 
 
 class TOMATOD(Dataset):
@@ -79,6 +82,9 @@ class TOMATOD(Dataset):
                                    'images',
                                    self.mode)
 
+        if self.mode in ['val', 'test']:
+            self.pycoco = PYCOCO(self.annotation_path)
+
         # Load annotation file
         with open(self.annotation_path) as file:
             self.data = json.load(file)
@@ -93,19 +99,18 @@ class TOMATOD(Dataset):
         self.dict_targets = {img_id: [] for img_id in self.ids}
         for instance in self.data['annotations']:
             image_id = str(instance['image_id'])
+            if image_id not in self.dict_targets:
+                    self.dict_targets[image_id] = []
+            
+
             x_min = instance['bbox'][0]
             y_min = instance['bbox'][1]
             x_max = instance['bbox'][0] + instance['bbox'][2]
             y_max = instance['bbox'][1] + instance['bbox'][3]
             mapped_class = class_to_index[instance['category_id']]
             bbox = [x_min, y_min, x_max, y_max, mapped_class]
+            self.dict_targets[image_id] += [bbox]
             
-            # Initialize list if key does not exist
-            if image_id not in self.dict_targets:
-                self.dict_targets[image_id] = []
-
-            if mapped_class != -1:  # Ensure class is valid
-                self.dict_targets[image_id].append(bbox)
 
 
     def __len__(self):
@@ -235,7 +240,7 @@ class TOMATOD(Dataset):
 
 def save_results(all_boxes, dataset, results_path, output_txt):
     """
-    Saves detection results in a format suitable for evaluating the TomatoD dataset.
+    Saves detection results in COCO-style JSON format.
 
     Arguments:
     - all_boxes: List of detections for each class.
@@ -247,59 +252,47 @@ def save_results(all_boxes, dataset, results_path, output_txt):
     - detection_file: Path to the saved detections.json file.
     """
 
-    detection_file = osp.join(results_path, "detections.json")  
-
     detections_list = []
 
-    # Iterate through each class in TomatoD dataset
+    # Iterate through each class
     for class_i in range(len(TOMATOD_CLASSES_I)):
-
-        text = f'Writing results for Class {class_i + 1}'
+        class_id = TOMATOD_CLASSES_I[class_i]  # Get numerical class ID
+        text = f'Writing results for Class {class_id}'
         write_print(output_txt, text)
 
-        filename = osp.join(results_path, f"class_{class_i + 1}.txt")
+        # Iterate over images in dataset
+        for image_i, image_id in enumerate(dataset.ids):
+            detections = all_boxes[class_i + 1][image_i]
 
-        with open(filename, 'wt') as f:
+            # Check if there are detections for this class in the image
+            if len(detections) != 0:
+                for k in range(detections.shape[0]):
+                    # Extract bounding box coordinates
+                    x1 = float(detections[k, 0])
+                    y1 = float(detections[k, 1])
+                    width = float(detections[k, 2]) - x1
+                    height = float(detections[k, 3]) - y1
+                    score = float(detections[k, -1])  # Confidence score
 
-            # Iterate over images in dataset
-            for image_i, image_id in enumerate(dataset.ids):
-                detections = all_boxes[class_i + 1][image_i]
+                    # Append detection in COCO JSON format
+                    detections_list.append({
+                        "image_id": int(image_id),
+                        "category_id": int(class_id),  # Use numerical class ID
+                        "bbox": [x1, y1, width, height],  # Convert to COCO format
+                        "score": score,
+                        "iscrowd": 0  # Optional but recommended
+                    })
 
-                # Check if there are detections for this class in the image
-                if len(detections) != 0:
-                    for k in range(detections.shape[0]):
-                        output = '{:s} {:.3f} {:.1f} {:.1f} {:.1f} {:.1f}\n'
-
-                        output = output.format(
-                            image_id,                    # Image ID
-                            detections[k, -1],           # Confidence score
-                            detections[k, 0],            # xmin
-                            detections[k, 1],            # ymin
-                            detections[k, 2],            # xmax
-                            detections[k, 3]             # ymax
-                        )
-
-                        f.write(output)
-
-                        # Convert to width-height format for COCO-style evaluation
-                        x1, y1 = float(detections[k, 0]), float(detections[k, 1])
-                        width, height = float(detections[k, 2]) - x1, float(detections[k, 3]) - y1
-
-                        detections_list.append({
-                            "image_id": int(image_id),
-                            "category_id": class_i + 1,  # COCO categories start at 1
-                            "bbox": [x1, y1, width, height],
-                            "score": float(detections[k, -1]),
-                            "iscrowd": 0 
-                        })
-
-    # Save as JSON for COCO evaluation
+    
+    detection_file = osp.join(results_path, "detections.json")
     with open(detection_file, "w") as f:
-        json.dump(detections_list, f)
+        json.dump(detections_list, f, indent=4)
 
-    write_print(output_txt, f"\nDetection results saved in {detection_file}")
+    
+    print("Sample Detections (COCO format):", detections_list[:5])
+    write_print(output_txt, f"Detection results saved in {detection_file}")
 
-    return detection_file  
+    return detection_file  # Return the path to the saved JSON file
     
 def iou(boxA, boxB):
     """Computes IoU (Intersection over Union) between two bounding boxes."""
@@ -430,4 +423,3 @@ def evaluate_tomatod(results_path, dataset, output_txt, iou_threshold=0.5):
         pickle.dump(metrics, f)
 
     return metrics
-

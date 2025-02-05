@@ -497,36 +497,47 @@ class Solver(object):
             write_print(self.output_txt, '{:.4f}'.format(np.mean(aps)))
 
         if self.dataset == 'tomatod': # TOMATOD
-            # Save detections in TomatoD format
-            detection_file = tomatod_save(all_boxes=all_boxes,
-                                        dataset=dataset,
-                                        results_path=results_path,
-                                        output_txt=self.output_txt)
+            detection_list_path = tomatod_save(all_boxes=all_boxes,
+                                       dataset=dataset,
+                                       results_path=results_path,
+                                       output_txt=self.output_txt)
 
-            # Run evaluation using the predefined function
-            metrics = do_tomatod_eval(results_path=results_path,
-                                    dataset=dataset,
-                                    output_txt=self.output_txt,
-                                    iou_threshold=self.iou_threshold)
+            cocoGt = dataset.pycoco
+            cocoDt = cocoGt.loadRes(detection_list_path)
 
-            if metrics:
-                # Log and print evaluation metrics
-                write_print(self.output_txt, "\nTomatoD Evaluation Results:")
-                for metric, value in metrics.items():
-                    write_print(self.output_txt, f"{metric}: {value:.4f}")
+            tomatod_eval = do_coco_eval(cocoGt, cocoDt, "bbox")
 
-                # Save evaluation results
-                with open(osp.join(results_path, "eval_results.pkl"), "wb") as f:
-                    pickle.dump(metrics, f)
+            tomatod_eval.evaluate()
+            tomatod_eval.accumulate()
+            tomatod_eval.summarize()
 
-            # Compute FPS statistics
-            detect_times = np.asarray(detect_times)
-            nms_times = np.asarray(nms_times)
-            total_times = np.add(detect_times, nms_times)
+            stats = ['AP--IoU=0.50:0.95--all--100',
+                     'AP--IoU=0.50--all--100',
+                     'AP--IoU=0.75--all-100',
+                     'AP--IoU=0.50:0.95--small--100',
+                     'AP--IoU=0.50:0.95--medium--100',
+                     'AP--IoU=0.50:0.95--large--100',
+                     'AR--IoU=0.50:0.95--all--1',
+                     'AR--IoU=0.50:0.95--all--10',
+                     'AR--IoU=0.50:0.95--all--100',
+                     'AR--IoU=0.50:0.95--small--100',
+                     'AR--IoU=0.50:0.95--medium--100',
+                     'AR--IoU=0.50:0.95--large--100']
 
-            write_print(self.output_txt, f"FPS (Detection): {1 / np.mean(detect_times[1:]):.3f}")
-            write_print(self.output_txt, f"FPS (NMS): {1 / np.mean(nms_times[1:]):.3f}")
-            write_print(self.output_txt, f"FPS (Total): {1 / np.mean(total_times[1:]):.3f}")
+            for stat, val in zip(stats, tomatod_eval.stats):
+                str_out = '{:s}: {:.3f}'.format(stat, val)
+                write_print(self.output_txt, str_out)
+
+            write_print(self.output_txt, '\nResults:')
+            for val in tomatod_eval.stats:
+                write_print(self.output_txt, '{:.3f}'.format(val))
+
+        detect_times = np.asarray(detect_times)
+        nms_times = np.asarray(nms_times)
+        total_times = np.add(detect_times, nms_times)
+        write_print(self.output_txt, str(1 / np.mean(detect_times[1:])))
+        write_print(self.output_txt, str(1 / np.mean(nms_times[1:])))
+        write_print(self.output_txt, str(1 / np.mean(total_times[1:])))
 
 
         if self.dataset == 'coco':
