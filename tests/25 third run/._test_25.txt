@@ -1,6 +1,6 @@
 ------------ Options -------------
 input_channels: 3
-class_count: 21
+class_count: 4
 dataset: tomatod
 new_size: 300
 means: (104, 117, 123)
@@ -22,7 +22,7 @@ basenet: vgg16_reducedfc.pth
 resnet_model: 18
 densenet_model: 121
 resnext_model: 50_32x4d
-pretrained_model: ./5
+pretrained_model: ./25
 coco_weights: None
 loss_config: multibox
 pos_neg_ratio: 3
@@ -37,7 +37,7 @@ voc_data_path: ../../Datasets/PascalVOC/
 use_07_metric: True
 coco_year: 2017
 coco_data_path: ../../Datasets/Coco/
-tomatod_data_path: ./data/Datasets/Tomatod2/
+tomatod_data_path: ./data/Datasets/Tomatod/
 model_save_path: ./weights
 model_test_path: ./tests
 model_eval_path: ./eval
@@ -94,11 +94,11 @@ SSD(
     (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
   )
   (class_head): ModuleList(
-    (0): Conv2d(512, 84, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): Conv2d(1024, 126, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (2): Conv2d(512, 126, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (3): Conv2d(256, 126, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (4-5): 2 x Conv2d(256, 84, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
   )
   (loc_head): ModuleList(
     (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
@@ -109,98 +109,95 @@ SSD(
   )
   (softmax): Softmax(dim=-1)
 )
-The number of parameters: 26285486
-loaded trained model ./5
-detection: 1/55 0.5198s 0.0236s
-detection: 2/55 0.0091s 0.0186s
-detection: 3/55 0.0080s 0.0181s
-detection: 4/55 0.0075s 0.0171s
-detection: 5/55 0.0080s 0.0201s
-detection: 6/55 0.0075s 0.0161s
-detection: 7/55 0.0080s 0.0161s
-detection: 8/55 0.0085s 0.0156s
-detection: 9/55 0.0086s 0.0165s
-detection: 10/55 0.0075s 0.0191s
-detection: 11/55 0.0082s 0.0193s
-detection: 12/55 0.0079s 0.0181s
-detection: 13/55 0.0072s 0.0172s
-detection: 14/55 0.0080s 0.0195s
-detection: 15/55 0.0076s 0.0171s
-detection: 16/55 0.0091s 0.0186s
-detection: 17/55 0.0081s 0.0161s
-detection: 18/55 0.0091s 0.0172s
-detection: 19/55 0.0095s 0.0207s
-detection: 20/55 0.0095s 0.0155s
-detection: 21/55 0.0076s 0.0199s
-detection: 22/55 0.0081s 0.0206s
-detection: 23/55 0.0072s 0.0201s
-detection: 24/55 0.0075s 0.0186s
-detection: 25/55 0.0080s 0.0165s
-detection: 26/55 0.0075s 0.0183s
-detection: 27/55 0.0080s 0.0166s
-detection: 28/55 0.0080s 0.0156s
-detection: 29/55 0.0085s 0.0171s
-detection: 30/55 0.0080s 0.0181s
-detection: 31/55 0.0086s 0.0190s
-detection: 32/55 0.0080s 0.0149s
-detection: 33/55 0.0085s 0.0161s
-detection: 34/55 0.0080s 0.0176s
-detection: 35/55 0.0085s 0.0191s
-detection: 36/55 0.0093s 0.0186s
-detection: 37/55 0.0106s 0.0155s
-detection: 38/55 0.0106s 0.0169s
-detection: 39/55 0.0106s 0.0192s
-detection: 40/55 0.0097s 0.0189s
-detection: 41/55 0.0088s 0.0183s
-detection: 42/55 0.0085s 0.0166s
-detection: 43/55 0.0088s 0.0195s
-detection: 44/55 0.0085s 0.0185s
-detection: 45/55 0.0091s 0.0190s
-detection: 46/55 0.0080s 0.0191s
-detection: 47/55 0.0100s 0.0187s
-detection: 48/55 0.0105s 0.0197s
-detection: 49/55 0.0081s 0.0201s
-detection: 50/55 0.0085s 0.0166s
-detection: 51/55 0.0096s 0.0161s
-detection: 52/55 0.0095s 0.0199s
-detection: 53/55 0.0090s 0.0156s
-detection: 54/55 0.0086s 0.0191s
-detection: 55/55 0.0089s 0.0192s
+The number of parameters: 24013232
+loaded trained model ./25
+detection: 1/55 0.4550s 0.1549s
+detection: 2/55 0.0095s 0.1523s
+detection: 3/55 0.0090s 0.1625s
+detection: 4/55 0.0080s 0.1459s
+detection: 5/55 0.0080s 0.1489s
+detection: 6/55 0.0080s 0.1275s
+detection: 7/55 0.0078s 0.1415s
+detection: 8/55 0.0085s 0.1487s
+detection: 9/55 0.0080s 0.1474s
+detection: 10/55 0.0080s 0.1629s
+detection: 11/55 0.0086s 0.1435s
+detection: 12/55 0.0080s 0.1677s
+detection: 13/55 0.0090s 0.1377s
+detection: 14/55 0.0084s 0.1280s
+detection: 15/55 0.0085s 0.1407s
+detection: 16/55 0.0085s 0.1440s
+detection: 17/55 0.0090s 0.1499s
+detection: 18/55 0.0093s 0.1538s
+detection: 19/55 0.0087s 0.1674s
+detection: 20/55 0.0096s 0.1384s
+detection: 21/55 0.0087s 0.1524s
+detection: 22/55 0.0087s 0.1543s
+detection: 23/55 0.0090s 0.1390s
+detection: 24/55 0.0084s 0.1640s
+detection: 25/55 0.0095s 0.1390s
+detection: 26/55 0.0085s 0.1444s
+detection: 27/55 0.0090s 0.1316s
+detection: 28/55 0.0090s 0.1334s
+detection: 29/55 0.0088s 0.1238s
+detection: 30/55 0.0091s 0.1333s
+detection: 31/55 0.0077s 0.1332s
+detection: 32/55 0.0094s 0.1426s
+detection: 33/55 0.0096s 0.1513s
+detection: 34/55 0.0088s 0.1519s
+detection: 35/55 0.0085s 0.1447s
+detection: 36/55 0.0085s 0.1394s
+detection: 37/55 0.0534s 0.1583s
+detection: 38/55 0.0531s 0.1457s
+detection: 39/55 0.0545s 0.1591s
+detection: 40/55 0.0556s 0.1416s
+detection: 41/55 0.0570s 0.1371s
+detection: 42/55 0.0578s 0.1421s
+detection: 43/55 0.0554s 0.1555s
+detection: 44/55 0.0542s 0.1460s
+detection: 45/55 0.0603s 0.1331s
+detection: 46/55 0.0582s 0.1499s
+detection: 47/55 0.0589s 0.1419s
+detection: 48/55 0.0599s 0.1490s
+detection: 49/55 0.0579s 0.0933s
+detection: 50/55 0.0571s 0.1350s
+detection: 51/55 0.0582s 0.1278s
+detection: 52/55 0.0593s 0.1430s
+detection: 53/55 0.0605s 0.1593s
+detection: 54/55 0.0596s 0.1628s
+detection: 55/55 0.0597s 0.1470s
 
 Evaluating detections
-Writing results for Class 1
-Writing results for Class 2
-Writing results for Class 3
-Detection results saved in ./tests\./5\detections.json
-AP--IoU=0.50:0.95--all--100: 0.000
-AP--IoU=0.50--all--100: 0.000
-AP--IoU=0.75--all-100: 0.000
+Writing results for ripe (Class 1)
+Writing results for unripe (Class 2)
+Writing results for semi-ripe (Class 3)
+Detection results saved in ./tests\./25\detections.json
+AP--IoU=0.50:0.95--all--100: 0.053
+AP--IoU=0.50--all--100: 0.123
+AP--IoU=0.75--all-100: 0.046
 AP--IoU=0.50:0.95--small--100: 0.000
-AP--IoU=0.50:0.95--medium--100: 0.000
-AP--IoU=0.50:0.95--large--100: 0.000
-AR--IoU=0.50:0.95--all--1: 0.000
-AR--IoU=0.50:0.95--all--10: 0.000
-AR--IoU=0.50:0.95--all--100: 0.000
+AP--IoU=0.50:0.95--medium--100: 0.002
+AP--IoU=0.50:0.95--large--100: 0.101
+AR--IoU=0.50:0.95--all--1: 0.027
+AR--IoU=0.50:0.95--all--10: 0.114
+AR--IoU=0.50:0.95--all--100: 0.162
 AR--IoU=0.50:0.95--small--100: 0.000
-AR--IoU=0.50:0.95--medium--100: 0.000
-AR--IoU=0.50:0.95--large--100: 0.000
+AR--IoU=0.50:0.95--medium--100: 0.049
+AR--IoU=0.50:0.95--large--100: 0.261
 
 Results:
+0.053
+0.123
+0.046
 0.000
+0.002
+0.101
+0.027
+0.114
+0.162
 0.000
-0.000
-0.000
-0.000
-0.000
-0.000
-0.000
-0.000
-0.000
-0.000
-0.000
-116.81134877013903
-55.688087095642395
-37.710271523046494
-116.81134877013903
-55.688087095642395
-37.710271523046494
+0.049
+0.261
+38.72346366566016
+6.910403150248605
+5.863950700983051

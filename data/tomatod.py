@@ -240,7 +240,7 @@ class TOMATOD(Dataset):
 
 def save_results(all_boxes, dataset, results_path, output_txt):
     """
-    Saves detection results in COCO-style JSON format.
+    Saves detection results in COCO-style JSON format and per-class text files.
 
     Arguments:
     - all_boxes: List of detections for each class.
@@ -255,44 +255,54 @@ def save_results(all_boxes, dataset, results_path, output_txt):
     detections_list = []
 
     # Iterate through each class
-    for class_i in range(len(TOMATOD_CLASSES_I)):
+    for class_i, class_name in enumerate(TOMATOD_CLASSES):
         class_id = TOMATOD_CLASSES_I[class_i]  # Get numerical class ID
-        text = f'Writing results for Class {class_id}'
+        text = f'Writing results for {class_name} (Class {class_id})'
         write_print(output_txt, text)
 
-        # Iterate over images in dataset
-        for image_i, image_id in enumerate(dataset.ids):
-            detections = all_boxes[class_i + 1][image_i]
+        # Create a per-class results file
+        filename = osp.join(results_path, f"{class_name}.txt")
+        with open(filename, 'wt') as f:
 
-            # Check if there are detections for this class in the image
-            if len(detections) != 0:
-                for k in range(detections.shape[0]):
-                    # Extract bounding box coordinates
-                    x1 = float(detections[k, 0])
-                    y1 = float(detections[k, 1])
-                    width = float(detections[k, 2]) - x1
-                    height = float(detections[k, 3]) - y1
-                    score = float(detections[k, -1])  # Confidence score
+            # Iterate over images in dataset
+            for image_i, image_id in enumerate(dataset.ids):
+                detections = all_boxes[class_i + 1][image_i]
 
-                    # Append detection in COCO JSON format
-                    detections_list.append({
-                        "image_id": int(image_id),
-                        "category_id": int(class_id),  # Use numerical class ID
-                        "bbox": [x1, y1, width, height],  # Convert to COCO format
-                        "score": score,
-                        "iscrowd": 0  # Optional but recommended
-                    })
+                # Check if there are detections for this class in the image
+                if len(detections) != 0:
+                    for k in range(detections.shape[0]):
+                        # Extract bounding box coordinates
+                        x_min = float(detections[k, 0])
+                        y_min = float(detections[k, 1])
+                        x_max = float(detections[k, 2])
+                        y_max = float(detections[k, 3])
 
-    
+                        width = x_max - x_min
+                        height = y_max - y_min
+                        score = float(detections[k, -1])  # Confidence score
+
+                        # Save in text file (image_id, confidence, x_min, y_min, x_max, y_max)
+                        output = f"{image_id} {score:.3f} {x_min:.1f} {y_min:.1f} {x_max:.1f} {y_max:.1f}\n"
+                        f.write(output)
+
+                        # Save in COCO-style JSON format
+                        detections_list.append({
+                            "image_id": int(image_id),
+                            "category_id": int(class_id),
+                            "bbox": [x_min, y_min, width, height],
+                            "score": score
+                        })
+
+    # Save all detections in a single JSON file (COCO format)
     detection_file = osp.join(results_path, "detections.json")
     with open(detection_file, "w") as f:
         json.dump(detections_list, f, indent=4)
 
-    
+    # Print first 5 detections for verification
     print("Sample Detections (COCO format):", detections_list[:5])
     write_print(output_txt, f"Detection results saved in {detection_file}")
 
-    return detection_file  # Return the path to the saved JSON file
+    return detection_file
     
 def iou(boxA, boxB):
     """Computes IoU (Intersection over Union) between two bounding boxes."""
@@ -423,3 +433,4 @@ def evaluate_tomatod(results_path, dataset, output_txt, iou_threshold=0.5):
         pickle.dump(metrics, f)
 
     return metrics
+

@@ -6419,12 +6419,19 @@
     ],
     "categories": [
         {
+            "supercategory": "tomato",
             "id": 1,
-            "name": [
-                "unripe",
-                "semi-ripe",
-                "fully-ripe"
-            ]
+            "name": "unripe"
+        },
+        {
+            "supercategory": "tomato",
+            "id": 2,
+            "name": "semi-ripe"
+        },
+        {
+            "supercategory": "tomato",
+            "id": 3,
+            "name": "fully-ripe"
         }
     ]
 }

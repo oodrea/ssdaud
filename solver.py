@@ -497,16 +497,15 @@ class Solver(object):
             write_print(self.output_txt, '{:.4f}'.format(np.mean(aps)))
 
         if self.dataset == 'tomatod': # TOMATOD
-            detection_list_path = tomatod_save(all_boxes=all_boxes,
+            detection_list = tomatod_save(all_boxes=all_boxes,
                                        dataset=dataset,
                                        results_path=results_path,
                                        output_txt=self.output_txt)
 
-            cocoGt = dataset.pycoco
-            cocoDt = cocoGt.loadRes(detection_list_path)
-
-            tomatod_eval = do_coco_eval(cocoGt, cocoDt, "bbox")
-
+            detection_list = dataset.pycoco.loadRes(detection_list)
+            tomatod_eval = do_coco_eval(dataset.pycoco,
+                                     detection_list,
+                                     'bbox')
             tomatod_eval.evaluate()
             tomatod_eval.accumulate()
             tomatod_eval.summarize()
@@ -531,13 +530,30 @@ class Solver(object):
             write_print(self.output_txt, '\nResults:')
             for val in tomatod_eval.stats:
                 write_print(self.output_txt, '{:.3f}'.format(val))
+            
+            write_print(self.output_txt, '\n--- Per-Class Evaluation Metrics ---')
+            
+            print("Category IDs:", dataset.pycoco.getCatIds())
 
-        detect_times = np.asarray(detect_times)
-        nms_times = np.asarray(nms_times)
-        total_times = np.add(detect_times, nms_times)
-        write_print(self.output_txt, str(1 / np.mean(detect_times[1:])))
-        write_print(self.output_txt, str(1 / np.mean(nms_times[1:])))
-        write_print(self.output_txt, str(1 / np.mean(total_times[1:])))
+            # Retrieve all category IDs
+            cat_ids = dataset.pycoco.getCatIds()
+            class_names = ["unripe", "semi-ripe", "fully-ripe"]  # Adjust based on your dataset
+
+            for catId, class_name in zip(cat_ids, class_names):
+                # Filter for a specific category
+                per_class_eval = do_coco_eval(dataset.pycoco, detection_list, 'bbox')
+                per_class_eval.params.catIds = [catId]  # Set category to evaluate
+                per_class_eval.evaluate()
+                per_class_eval.accumulate()
+                per_class_eval.summarize()
+
+                # Extract AP and AR from evaluation results
+                ap = per_class_eval.stats[0]  # AP at IoU=0.50:0.95
+                ar = per_class_eval.stats[8]  # AR at IoU=0.50:0.95 for maxDets=100
+
+                per_class_str = f"{class_name}: AP={ap:.3f}, AR={ar:.3f}"
+                write_print(self.output_txt, per_class_str)
+                print(per_class_str)  # Print to console
 
 
         if self.dataset == 'coco':
