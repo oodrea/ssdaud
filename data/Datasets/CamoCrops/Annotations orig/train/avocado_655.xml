@@ -1,0 +1,114 @@
+<annotation>
+    <folder>avocado</folder>
+    <filename>avocado_655.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\avocado\avocado_655.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>418</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>31</xmin>
+            <ymin>149</ymin>
+            <xmax>63</xmax>
+            <ymax>192</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>522</xmin>
+            <ymin>55</ymin>
+            <xmax>556</xmax>
+            <ymax>98</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>494</xmin>
+            <ymin>304</ymin>
+            <xmax>521</xmax>
+            <ymax>356</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>206</xmin>
+            <ymin>195</ymin>
+            <xmax>260</xmax>
+            <ymax>272</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>524</xmin>
+            <ymin>187</ymin>
+            <xmax>593</xmax>
+            <ymax>281</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>306</xmin>
+            <ymin>195</ymin>
+            <xmax>350</xmax>
+            <ymax>255</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>388</xmin>
+            <ymin>193</ymin>
+            <xmax>457</xmax>
+            <ymax>287</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>116</xmin>
+            <ymin>29</ymin>
+            <xmax>180</xmax>
+            <ymax>110</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>554</xmin>
+            <ymin>282</ymin>
+            <xmax>623</xmax>
+            <ymax>376</ymax>
+        </bndbox>
+    </object>
+</annotation>

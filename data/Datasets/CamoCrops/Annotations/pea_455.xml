@@ -1,0 +1,26 @@
+<annotation>
+    <folder>pea</folder>
+    <filename>pea_455.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\gen_fixed\gen\pea\pea_455.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>441</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>58</xmin>
+            <ymin>54</ymin>
+            <xmax>127</xmax>
+            <ymax>356</ymax>
+        </bndbox>
+    </object>
+</annotation>

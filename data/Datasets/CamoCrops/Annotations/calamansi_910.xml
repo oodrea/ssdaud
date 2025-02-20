@@ -1,0 +1,103 @@
+<annotation>
+    <folder>calamansi</folder>
+    <filename>calamansi_910.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\calamansi\calamansi_910.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>444</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>553</xmin>
+            <ymin>40</ymin>
+            <xmax>625</xmax>
+            <ymax>113</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>75</xmin>
+            <ymin>81</ymin>
+            <xmax>167</xmax>
+            <ymax>170</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>29</xmin>
+            <ymin>306</ymin>
+            <xmax>117</xmax>
+            <ymax>392</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>107</xmin>
+            <ymin>120</ymin>
+            <xmax>197</xmax>
+            <ymax>211</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>157</xmin>
+            <ymin>351</ymin>
+            <xmax>204</xmax>
+            <ymax>397</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>286</xmin>
+            <ymin>281</ymin>
+            <xmax>356</xmax>
+            <ymax>350</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>290</xmin>
+            <ymin>113</ymin>
+            <xmax>362</xmax>
+            <ymax>186</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>532</xmin>
+            <ymin>271</ymin>
+            <xmax>607</xmax>
+            <ymax>344</ymax>
+        </bndbox>
+    </object>
+</annotation>

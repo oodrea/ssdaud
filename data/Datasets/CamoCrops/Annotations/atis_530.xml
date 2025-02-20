@@ -1,0 +1,103 @@
+<annotation>
+    <folder>atis</folder>
+    <filename>atis_530.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\atis\atis_530.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>475</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>330</xmin>
+            <ymin>260</ymin>
+            <xmax>400</xmax>
+            <ymax>324</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>200</xmin>
+            <ymin>159</ymin>
+            <xmax>312</xmax>
+            <ymax>254</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>195</xmin>
+            <ymin>105</ymin>
+            <xmax>274</xmax>
+            <ymax>137</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>119</xmin>
+            <ymin>219</ymin>
+            <xmax>180</xmax>
+            <ymax>277</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>571</xmin>
+            <ymin>16</ymin>
+            <xmax>633</xmax>
+            <ymax>75</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>361</xmin>
+            <ymin>358</ymin>
+            <xmax>440</xmax>
+            <ymax>446</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>178</xmin>
+            <ymin>115</ymin>
+            <xmax>288</xmax>
+            <ymax>212</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>58</xmin>
+            <ymin>145</ymin>
+            <xmax>170</xmax>
+            <ymax>252</ymax>
+        </bndbox>
+    </object>
+</annotation>

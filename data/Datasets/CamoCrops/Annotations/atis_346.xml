@@ -1,0 +1,59 @@
+<annotation>
+    <folder>atis</folder>
+    <filename>atis_346.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\atis\atis_346.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>478</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>296</xmin>
+            <ymin>125</ymin>
+            <xmax>537</xmax>
+            <ymax>369</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>495</xmin>
+            <ymin>9</ymin>
+            <xmax>636</xmax>
+            <ymax>139</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>270</xmin>
+            <ymin>221</ymin>
+            <xmax>493</xmax>
+            <ymax>448</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>399</xmin>
+            <ymin>21</ymin>
+            <xmax>631</xmax>
+            <ymax>267</ymax>
+        </bndbox>
+    </object>
+</annotation>

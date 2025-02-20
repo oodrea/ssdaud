@@ -1,0 +1,136 @@
+<annotation>
+    <folder>sayote</folder>
+    <filename>sayote_339.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\sayote\sayote_339.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>442</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>558</xmin>
+            <ymin>90</ymin>
+            <xmax>614</xmax>
+            <ymax>171</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>408</xmin>
+            <ymin>174</ymin>
+            <xmax>444</xmax>
+            <ymax>233</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>345</xmin>
+            <ymin>79</ymin>
+            <xmax>417</xmax>
+            <ymax>183</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>299</xmin>
+            <ymin>180</ymin>
+            <xmax>340</xmax>
+            <ymax>239</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>335</xmin>
+            <ymin>9</ymin>
+            <xmax>380</xmax>
+            <ymax>82</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>114</xmin>
+            <ymin>168</ymin>
+            <xmax>152</xmax>
+            <ymax>223</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>477</xmin>
+            <ymin>107</ymin>
+            <xmax>516</xmax>
+            <ymax>182</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>531</xmin>
+            <ymin>298</ymin>
+            <xmax>577</xmax>
+            <ymax>344</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>100</xmin>
+            <ymin>305</ymin>
+            <xmax>163</xmax>
+            <ymax>395</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>450</xmin>
+            <ymin>115</ymin>
+            <xmax>498</xmax>
+            <ymax>192</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>19</xmin>
+            <ymin>219</ymin>
+            <xmax>63</xmax>
+            <ymax>283</ymax>
+        </bndbox>
+    </object>
+</annotation>

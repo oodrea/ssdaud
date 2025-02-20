@@ -1,0 +1,114 @@
+<annotation>
+    <folder>ampalaya</folder>
+    <filename>ampalaya_28.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\ampalaya\ampalaya_28.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>473</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>414</xmin>
+            <ymin>309</ymin>
+            <xmax>424</xmax>
+            <ymax>346</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>288</xmin>
+            <ymin>120</ymin>
+            <xmax>300</xmax>
+            <ymax>162</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>129</xmin>
+            <ymin>424</ymin>
+            <xmax>138</xmax>
+            <ymax>451</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>386</xmin>
+            <ymin>115</ymin>
+            <xmax>402</xmax>
+            <ymax>171</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>193</xmin>
+            <ymin>244</ymin>
+            <xmax>228</xmax>
+            <ymax>285</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>140</xmin>
+            <ymin>419</ymin>
+            <xmax>150</xmax>
+            <ymax>453</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>105</xmin>
+            <ymin>515</ymin>
+            <xmax>122</xmax>
+            <ymax>574</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>206</xmin>
+            <ymin>174</ymin>
+            <xmax>224</xmax>
+            <ymax>235</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>275</xmin>
+            <ymin>380</ymin>
+            <xmax>290</xmax>
+            <ymax>450</ymax>
+        </bndbox>
+    </object>
+</annotation>

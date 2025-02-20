@@ -1,0 +1,70 @@
+<annotation>
+    <folder>guyabano</folder>
+    <filename>guyabano_13.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\guyabano\guyabano_13.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>443</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>102</xmin>
+            <ymin>273</ymin>
+            <xmax>317</xmax>
+            <ymax>541</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>115</xmin>
+            <ymin>455</ymin>
+            <xmax>194</xmax>
+            <ymax>568</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>35</xmin>
+            <ymin>209</ymin>
+            <xmax>212</xmax>
+            <ymax>490</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>122</xmin>
+            <ymin>29</ymin>
+            <xmax>332</xmax>
+            <ymax>179</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>107</xmin>
+            <ymin>309</ymin>
+            <xmax>330</xmax>
+            <ymax>572</ymax>
+        </bndbox>
+    </object>
+</annotation>

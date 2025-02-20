@@ -1,0 +1,81 @@
+<annotation>
+    <folder>ampalaya</folder>
+    <filename>ampalaya_228.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\ampalaya\ampalaya_228.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>471</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>111</xmin>
+            <ymin>53</ymin>
+            <xmax>143</xmax>
+            <ymax>162</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>258</xmin>
+            <ymin>281</ymin>
+            <xmax>291</xmax>
+            <ymax>409</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>110</xmin>
+            <ymin>441</ymin>
+            <xmax>160</xmax>
+            <ymax>561</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>181</xmin>
+            <ymin>502</ymin>
+            <xmax>224</xmax>
+            <ymax>622</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>301</xmin>
+            <ymin>186</ymin>
+            <xmax>352</xmax>
+            <ymax>312</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>318</xmin>
+            <ymin>86</ymin>
+            <xmax>340</xmax>
+            <ymax>171</ymax>
+        </bndbox>
+    </object>
+</annotation>

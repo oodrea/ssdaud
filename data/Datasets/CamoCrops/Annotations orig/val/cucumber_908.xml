@@ -1,0 +1,70 @@
+<annotation>
+    <folder>cucumber</folder>
+    <filename>cucumber_908.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\cucumber\cucumber_908.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>444</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>103</xmin>
+            <ymin>72</ymin>
+            <xmax>189</xmax>
+            <ymax>301</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>92</xmin>
+            <ymin>175</ymin>
+            <xmax>333</xmax>
+            <ymax>320</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>348</xmin>
+            <ymin>120</ymin>
+            <xmax>424</xmax>
+            <ymax>326</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>253</xmin>
+            <ymin>247</ymin>
+            <xmax>303</xmax>
+            <ymax>435</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>75</xmin>
+            <ymin>230</ymin>
+            <xmax>148</xmax>
+            <ymax>427</ymax>
+        </bndbox>
+    </object>
+</annotation>

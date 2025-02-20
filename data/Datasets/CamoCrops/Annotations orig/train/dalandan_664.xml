@@ -1,0 +1,92 @@
+<annotation>
+    <folder>dalandan</folder>
+    <filename>dalandan_664.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\dalandan\dalandan_664.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>465</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>69</xmin>
+            <ymin>101</ymin>
+            <xmax>294</xmax>
+            <ymax>248</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>62</xmin>
+            <ymin>212</ymin>
+            <xmax>292</xmax>
+            <ymax>431</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>17</xmin>
+            <ymin>149</ymin>
+            <xmax>175</xmax>
+            <ymax>337</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>197</xmin>
+            <ymin>418</ymin>
+            <xmax>352</xmax>
+            <ymax>503</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>49</xmin>
+            <ymin>120</ymin>
+            <xmax>246</xmax>
+            <ymax>323</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>279</xmin>
+            <ymin>320</ymin>
+            <xmax>421</xmax>
+            <ymax>475</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>180</xmin>
+            <ymin>242</ymin>
+            <xmax>410</xmax>
+            <ymax>461</ymax>
+        </bndbox>
+    </object>
+</annotation>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>ampalaya</folder>
+	<filename>amp_flickr (20)</filename>
+	<size>
+		<width>1116</width>
+		<height>2000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ampalaya</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>204</xmin>
+			<ymin>0</ymin>
+			<xmax>912</xmax>
+			<ymax>2000</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,92 @@
+<annotation>
+    <folder>bell_pepper</folder>
+    <filename>bell_pepper_16.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\bell_pepper\bell_pepper_16.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>565</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>441</xmin>
+            <ymin>116</ymin>
+            <xmax>606</xmax>
+            <ymax>424</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>3</xmin>
+            <ymin>272</ymin>
+            <xmax>289</xmax>
+            <ymax>549</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>172</xmin>
+            <ymin>79</ymin>
+            <xmax>452</xmax>
+            <ymax>387</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>164</xmin>
+            <ymin>159</ymin>
+            <xmax>335</xmax>
+            <ymax>445</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>352</xmin>
+            <ymin>118</ymin>
+            <xmax>517</xmax>
+            <ymax>310</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>355</xmin>
+            <ymin>121</ymin>
+            <xmax>564</xmax>
+            <ymax>333</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>47</xmin>
+            <ymin>265</ymin>
+            <xmax>237</xmax>
+            <ymax>562</ymax>
+        </bndbox>
+    </object>
+</annotation>

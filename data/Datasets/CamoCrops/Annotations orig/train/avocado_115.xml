@@ -1,0 +1,81 @@
+<annotation>
+    <folder>avocado</folder>
+    <filename>avocado_115.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\avocado\avocado_115.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>479</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>197</xmin>
+            <ymin>66</ymin>
+            <xmax>286</xmax>
+            <ymax>170</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>8</xmin>
+            <ymin>180</ymin>
+            <xmax>172</xmax>
+            <ymax>340</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>408</xmin>
+            <ymin>81</ymin>
+            <xmax>528</xmax>
+            <ymax>251</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>302</xmin>
+            <ymin>111</ymin>
+            <xmax>398</xmax>
+            <ymax>314</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>175</xmin>
+            <ymin>125</ymin>
+            <xmax>351</xmax>
+            <ymax>362</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>25</xmin>
+            <ymin>34</ymin>
+            <xmax>224</xmax>
+            <ymax>285</ymax>
+        </bndbox>
+    </object>
+</annotation>

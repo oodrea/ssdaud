@@ -1,0 +1,125 @@
+<annotation>
+    <folder>guyabano</folder>
+    <filename>guyabano_164.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\guyabano\guyabano_164.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>463</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>327</xmin>
+            <ymin>393</ymin>
+            <xmax>410</xmax>
+            <ymax>544</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>396</xmin>
+            <ymin>128</ymin>
+            <xmax>456</xmax>
+            <ymax>234</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>251</xmin>
+            <ymin>261</ymin>
+            <xmax>364</xmax>
+            <ymax>375</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>110</xmin>
+            <ymin>448</ymin>
+            <xmax>195</xmax>
+            <ymax>535</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>257</xmin>
+            <ymin>42</ymin>
+            <xmax>366</xmax>
+            <ymax>120</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>303</xmin>
+            <ymin>213</ymin>
+            <xmax>412</xmax>
+            <ymax>291</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>146</xmin>
+            <ymin>9</ymin>
+            <xmax>190</xmax>
+            <ymax>90</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>112</xmin>
+            <ymin>131</ymin>
+            <xmax>152</xmax>
+            <ymax>205</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>350</xmin>
+            <ymin>394</ymin>
+            <xmax>405</xmax>
+            <ymax>494</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>254</xmin>
+            <ymin>59</ymin>
+            <xmax>294</xmax>
+            <ymax>133</ymax>
+        </bndbox>
+    </object>
+</annotation>

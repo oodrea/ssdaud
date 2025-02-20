@@ -1,0 +1,59 @@
+<annotation>
+    <folder>sayote</folder>
+    <filename>sayote_471.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\sayote\sayote_471.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>536</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>269</xmin>
+            <ymin>128</ymin>
+            <xmax>500</xmax>
+            <ymax>399</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>8</xmin>
+            <ymin>181</ymin>
+            <xmax>164</xmax>
+            <ymax>430</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>436</xmin>
+            <ymin>206</ymin>
+            <xmax>605</xmax>
+            <ymax>477</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>159</xmin>
+            <ymin>210</ymin>
+            <xmax>304</xmax>
+            <ymax>438</ymax>
+        </bndbox>
+    </object>
+</annotation>

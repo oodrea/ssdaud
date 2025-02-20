@@ -1,0 +1,147 @@
+<annotation>
+    <folder>sayote</folder>
+    <filename>sayote_840.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\sayote\sayote_840.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>584</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>271</xmin>
+            <ymin>21</ymin>
+            <xmax>356</xmax>
+            <ymax>159</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>103</xmin>
+            <ymin>307</ymin>
+            <xmax>173</xmax>
+            <ymax>390</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>553</xmin>
+            <ymin>242</ymin>
+            <xmax>634</xmax>
+            <ymax>314</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>461</xmin>
+            <ymin>415</ymin>
+            <xmax>535</xmax>
+            <ymax>481</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>352</xmin>
+            <ymin>331</ymin>
+            <xmax>422</xmax>
+            <ymax>409</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>327</xmin>
+            <ymin>362</ymin>
+            <xmax>361</xmax>
+            <ymax>418</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>377</xmin>
+            <ymin>140</ymin>
+            <xmax>463</xmax>
+            <ymax>243</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>141</xmin>
+            <ymin>287</ymin>
+            <xmax>273</xmax>
+            <ymax>404</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>331</xmin>
+            <ymin>58</ymin>
+            <xmax>366</xmax>
+            <ymax>114</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>40</xmin>
+            <ymin>450</ymin>
+            <xmax>75</xmax>
+            <ymax>506</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>408</xmin>
+            <ymin>266</ymin>
+            <xmax>486</xmax>
+            <ymax>404</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>236</xmin>
+            <ymin>345</ymin>
+            <xmax>304</xmax>
+            <ymax>405</ymax>
+        </bndbox>
+    </object>
+</annotation>

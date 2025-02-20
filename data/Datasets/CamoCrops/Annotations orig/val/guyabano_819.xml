@@ -1,0 +1,26 @@
+<annotation>
+    <folder>guyabano</folder>
+    <filename>guyabano_819.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\guyabano\guyabano_819.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>447</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>guyabano</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>336</xmin>
+            <ymin>75</ymin>
+            <xmax>536</xmax>
+            <ymax>435</ymax>
+        </bndbox>
+    </object>
+</annotation>

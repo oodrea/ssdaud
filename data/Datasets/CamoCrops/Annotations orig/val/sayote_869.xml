@@ -1,0 +1,81 @@
+<annotation>
+    <folder>sayote</folder>
+    <filename>sayote_869.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\sayote\sayote_869.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>464</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>50</xmin>
+            <ymin>222</ymin>
+            <xmax>238</xmax>
+            <ymax>546</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>45</xmin>
+            <ymin>137</ymin>
+            <xmax>185</xmax>
+            <ymax>371</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>188</xmin>
+            <ymin>109</ymin>
+            <xmax>254</xmax>
+            <ymax>242</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>187</xmin>
+            <ymin>272</ymin>
+            <xmax>225</xmax>
+            <ymax>404</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>222</xmin>
+            <ymin>377</ymin>
+            <xmax>400</xmax>
+            <ymax>535</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>194</xmin>
+            <ymin>74</ymin>
+            <xmax>416</xmax>
+            <ymax>424</ymax>
+        </bndbox>
+    </object>
+</annotation>

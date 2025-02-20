@@ -1,0 +1,37 @@
+<annotation>
+    <folder>sayote</folder>
+    <filename>sayote_573.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\sayote\sayote_573.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>526</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>304</xmin>
+            <ymin>11</ymin>
+            <xmax>533</xmax>
+            <ymax>335</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>sayote</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>262</xmin>
+            <ymin>64</ymin>
+            <xmax>617</xmax>
+            <ymax>419</ymax>
+        </bndbox>
+    </object>
+</annotation>

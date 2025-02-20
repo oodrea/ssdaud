@@ -1,0 +1,81 @@
+<annotation>
+    <folder>cucumber</folder>
+    <filename>cucumber_202.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\cucumber\cucumber_202.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>425</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>209</xmin>
+            <ymin>1</ymin>
+            <xmax>301</xmax>
+            <ymax>293</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>242</xmin>
+            <ymin>115</ymin>
+            <xmax>401</xmax>
+            <ymax>433</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>120</xmin>
+            <ymin>459</ymin>
+            <xmax>322</xmax>
+            <ymax>583</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>112</xmin>
+            <ymin>189</ymin>
+            <xmax>201</xmax>
+            <ymax>399</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>289</xmin>
+            <ymin>190</ymin>
+            <xmax>406</xmax>
+            <ymax>424</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>130</xmin>
+            <ymin>13</ymin>
+            <xmax>215</xmax>
+            <ymax>324</ymax>
+        </bndbox>
+    </object>
+</annotation>

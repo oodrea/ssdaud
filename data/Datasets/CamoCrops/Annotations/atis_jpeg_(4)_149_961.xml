@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>atis</folder>
+	<filename>atis_jpeg (4)</filename>
+	<size>
+		<width>1189</width>
+		<height>1165</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>atis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>250</xmin>
+			<ymin>250</ymin>
+			<xmax>939</xmax>
+			<ymax>915</ymax>
+		</bndbox>
+	</object>
+</annotation>

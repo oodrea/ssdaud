@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>bell_pepper</folder>
+	<filename>bell_google (1)</filename>
+	<size>
+		<width>2000</width>
+		<height>1757</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bell_pepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>205</xmin>
+			<ymin>858</ymin>
+			<xmax>1136</xmax>
+			<ymax>1757</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>bell_pepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1037</xmin>
+			<ymin>1248</ymin>
+			<xmax>1608</xmax>
+			<ymax>1757</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>bell_pepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>919</xmin>
+			<ymin>205</ymin>
+			<xmax>1794</xmax>
+			<ymax>1355</ymax>
+		</bndbox>
+	</object>
+</annotation>

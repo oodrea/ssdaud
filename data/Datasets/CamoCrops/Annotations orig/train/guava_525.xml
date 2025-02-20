@@ -1,0 +1,125 @@
+<annotation>
+    <folder>guava</folder>
+    <filename>guava_525.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\guava\guava_525.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>434</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>198</xmin>
+            <ymin>291</ymin>
+            <xmax>268</xmax>
+            <ymax>384</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>304</xmin>
+            <ymin>187</ymin>
+            <xmax>381</xmax>
+            <ymax>289</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>46</xmin>
+            <ymin>192</ymin>
+            <xmax>97</xmax>
+            <ymax>272</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>352</xmin>
+            <ymin>119</ymin>
+            <xmax>457</xmax>
+            <ymax>225</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>484</xmin>
+            <ymin>146</ymin>
+            <xmax>555</xmax>
+            <ymax>213</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>82</xmin>
+            <ymin>200</ymin>
+            <xmax>127</xmax>
+            <ymax>263</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>562</xmin>
+            <ymin>282</ymin>
+            <xmax>611</xmax>
+            <ymax>349</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>378</xmin>
+            <ymin>133</ymin>
+            <xmax>463</xmax>
+            <ymax>217</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>29</xmin>
+            <ymin>125</ymin>
+            <xmax>83</xmax>
+            <ymax>179</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>233</xmin>
+            <ymin>343</ymin>
+            <xmax>314</xmax>
+            <ymax>423</ymax>
+        </bndbox>
+    </object>
+</annotation>

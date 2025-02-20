@@ -1,0 +1,70 @@
+<annotation>
+    <folder>frenchbeans</folder>
+    <filename>frenchbeans_959.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\frenchbeans\frenchbeans_959.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>479</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>260</xmin>
+            <ymin>135</ymin>
+            <xmax>423</xmax>
+            <ymax>401</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>257</xmin>
+            <ymin>397</ymin>
+            <xmax>451</xmax>
+            <ymax>483</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>131</xmin>
+            <ymin>352</ymin>
+            <xmax>287</xmax>
+            <ymax>606</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>39</xmin>
+            <ymin>206</ymin>
+            <xmax>214</xmax>
+            <ymax>283</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>113</xmin>
+            <ymin>92</ymin>
+            <xmax>257</xmax>
+            <ymax>339</ymax>
+        </bndbox>
+    </object>
+</annotation>

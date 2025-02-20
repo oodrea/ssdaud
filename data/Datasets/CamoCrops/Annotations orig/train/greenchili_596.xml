@@ -1,0 +1,48 @@
+<annotation>
+    <folder>green_chili</folder>
+    <filename>greenchili_596.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\gen_fixed\gen\green_chili\greenchili_596.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>428</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>106</xmin>
+            <ymin>64</ymin>
+            <xmax>395</xmax>
+            <ymax>445</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>232</xmin>
+            <ymin>13</ymin>
+            <xmax>365</xmax>
+            <ymax>155</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>167</xmin>
+            <ymin>120</ymin>
+            <xmax>379</xmax>
+            <ymax>591</ymax>
+        </bndbox>
+    </object>
+</annotation>

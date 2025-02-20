@@ -1,0 +1,26 @@
+<annotation>
+    <folder>ampalaya</folder>
+    <filename>ampalaya_590.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\ampalaya\ampalaya_590.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>451</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>ampalaya</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>187</xmin>
+            <ymin>43</ymin>
+            <xmax>240</xmax>
+            <ymax>229</ymax>
+        </bndbox>
+    </object>
+</annotation>

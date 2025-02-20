@@ -1,0 +1,136 @@
+<annotation>
+    <folder>greenmango</folder>
+    <filename>greenmango_239.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\greenmango\greenmango_239.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>459</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>28</xmin>
+            <ymin>79</ymin>
+            <xmax>63</xmax>
+            <ymax>130</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>200</xmin>
+            <ymin>154</ymin>
+            <xmax>272</xmax>
+            <ymax>230</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>271</xmin>
+            <ymin>90</ymin>
+            <xmax>331</xmax>
+            <ymax>109</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>92</xmin>
+            <ymin>381</ymin>
+            <xmax>154</xmax>
+            <ymax>457</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>37</xmin>
+            <ymin>35</ymin>
+            <xmax>109</xmax>
+            <ymax>129</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>314</xmin>
+            <ymin>42</ymin>
+            <xmax>340</xmax>
+            <ymax>90</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>68</xmin>
+            <ymin>98</ymin>
+            <xmax>136</xmax>
+            <ymax>169</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>301</xmin>
+            <ymin>278</ymin>
+            <xmax>381</xmax>
+            <ymax>386</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>525</xmin>
+            <ymin>304</ymin>
+            <xmax>585</xmax>
+            <ymax>380</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>386</xmin>
+            <ymin>134</ymin>
+            <xmax>460</xmax>
+            <ymax>228</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>261</xmin>
+            <ymin>98</ymin>
+            <xmax>342</xmax>
+            <ymax>201</ymax>
+        </bndbox>
+    </object>
+</annotation>

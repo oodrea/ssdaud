@@ -1,0 +1,125 @@
+<annotation>
+    <folder>green_chili</folder>
+    <filename>greenchili_88.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\gen_fixed\gen\green_chili\greenchili_88.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>461</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>47</xmin>
+            <ymin>138</ymin>
+            <xmax>80</xmax>
+            <ymax>212</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>273</xmin>
+            <ymin>367</ymin>
+            <xmax>293</xmax>
+            <ymax>435</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>206</xmin>
+            <ymin>149</ymin>
+            <xmax>223</xmax>
+            <ymax>168</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>194</xmin>
+            <ymin>13</ymin>
+            <xmax>271</xmax>
+            <ymax>141</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>7</xmin>
+            <ymin>419</ymin>
+            <xmax>48</xmax>
+            <ymax>506</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>17</xmin>
+            <ymin>229</ymin>
+            <xmax>79</xmax>
+            <ymax>286</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>70</xmin>
+            <ymin>181</ymin>
+            <xmax>133</xmax>
+            <ymax>332</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>366</xmin>
+            <ymin>296</ymin>
+            <xmax>424</xmax>
+            <ymax>415</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>283</xmin>
+            <ymin>214</ymin>
+            <xmax>339</xmax>
+            <ymax>295</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_chili</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>340</xmin>
+            <ymin>251</ymin>
+            <xmax>365</xmax>
+            <ymax>332</ymax>
+        </bndbox>
+    </object>
+</annotation>

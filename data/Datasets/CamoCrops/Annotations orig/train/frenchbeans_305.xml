@@ -1,0 +1,81 @@
+<annotation>
+    <folder>frenchbeans</folder>
+    <filename>frenchbeans_305.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\frenchbeans\frenchbeans_305.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>466</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2</xmin>
+            <ymin>391</ymin>
+            <xmax>56</xmax>
+            <ymax>619</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>182</xmin>
+            <ymin>192</ymin>
+            <xmax>279</xmax>
+            <ymax>503</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>70</xmin>
+            <ymin>108</ymin>
+            <xmax>162</xmax>
+            <ymax>419</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>232</xmin>
+            <ymin>288</ymin>
+            <xmax>311</xmax>
+            <ymax>542</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>361</xmin>
+            <ymin>273</ymin>
+            <xmax>453</xmax>
+            <ymax>559</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>232</xmin>
+            <ymin>357</ymin>
+            <xmax>329</xmax>
+            <ymax>604</ymax>
+        </bndbox>
+    </object>
+</annotation>

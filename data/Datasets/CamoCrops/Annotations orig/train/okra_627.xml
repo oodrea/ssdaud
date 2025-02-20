@@ -1,0 +1,48 @@
+<annotation>
+    <folder>okra</folder>
+    <filename>okra_627.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\gen_fixed\gen\okra\okra_627.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>527</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>30</xmin>
+            <ymin>123</ymin>
+            <xmax>105</xmax>
+            <ymax>474</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>434</xmin>
+            <ymin>26</ymin>
+            <xmax>578</xmax>
+            <ymax>429</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>59</xmin>
+            <ymin>132</ymin>
+            <xmax>517</xmax>
+            <ymax>281</ymax>
+        </bndbox>
+    </object>
+</annotation>

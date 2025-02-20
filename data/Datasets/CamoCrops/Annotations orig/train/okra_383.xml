@@ -1,0 +1,125 @@
+<annotation>
+    <folder>okra</folder>
+    <filename>okra_383.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\gen_fixed\gen\okra\okra_383.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>478</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>468</xmin>
+            <ymin>22</ymin>
+            <xmax>503</xmax>
+            <ymax>96</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>530</xmin>
+            <ymin>303</ymin>
+            <xmax>552</xmax>
+            <ymax>367</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>264</xmin>
+            <ymin>293</ymin>
+            <xmax>272</xmax>
+            <ymax>341</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>118</xmin>
+            <ymin>180</ymin>
+            <xmax>150</xmax>
+            <ymax>264</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>98</xmin>
+            <ymin>139</ymin>
+            <xmax>121</xmax>
+            <ymax>203</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>252</xmin>
+            <ymin>52</ymin>
+            <xmax>286</xmax>
+            <ymax>128</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>465</xmin>
+            <ymin>246</ymin>
+            <xmax>490</xmax>
+            <ymax>315</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>278</xmin>
+            <ymin>397</ymin>
+            <xmax>359</xmax>
+            <ymax>416</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>223</xmin>
+            <ymin>124</ymin>
+            <xmax>310</xmax>
+            <ymax>145</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>okra</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>537</xmin>
+            <ymin>155</ymin>
+            <xmax>574</xmax>
+            <ymax>258</ymax>
+        </bndbox>
+    </object>
+</annotation>

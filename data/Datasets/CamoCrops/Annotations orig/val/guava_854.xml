@@ -1,0 +1,48 @@
+<annotation>
+    <folder>guava</folder>
+    <filename>guava_854.jpg</filename>
+    <path>C:\Users\Cjose\Documents\Uni\fourth_Yr\3rd_Term\github\THS-ST-SFDet-Model\gen_images\regenerate\guava\guava_854.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>457</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>17</xmin>
+            <ymin>224</ymin>
+            <xmax>389</xmax>
+            <ymax>579</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>89</xmin>
+            <ymin>60</ymin>
+            <xmax>388</xmax>
+            <ymax>308</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>guava</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>73</xmin>
+            <ymin>248</ymin>
+            <xmax>404</xmax>
+            <ymax>594</ymax>
+        </bndbox>
+    </object>
+</annotation>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>guyabano</folder>
+	<filename>guya_flickr (26)</filename>
+	<size>
+		<width>1423</width>
+		<height>2000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>guyabano</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>157</xmin>
+			<ymin>64</ymin>
+			<xmax>1266</xmax>
+			<ymax>1842</ymax>
+		</bndbox>
+	</object>
+</annotation>

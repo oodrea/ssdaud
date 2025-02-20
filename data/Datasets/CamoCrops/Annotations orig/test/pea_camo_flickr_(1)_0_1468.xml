@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>peas</folder>
+	<filename>pea_camo_flickr (1)</filename>
+	<size>
+		<width>688</width>
+		<height>1658</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pea</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>90</xmin>
+			<ymin>250</ymin>
+			<xmax>438</xmax>
+			<ymax>1408</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,81 @@
+<annotation>
+    <folder>pea</folder>
+    <filename>pea_847.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\gen_fixed\gen\pea\pea_847.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>455</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>184</xmin>
+            <ymin>170</ymin>
+            <xmax>284</xmax>
+            <ymax>419</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>193</xmin>
+            <ymin>241</ymin>
+            <xmax>294</xmax>
+            <ymax>533</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>27</xmin>
+            <ymin>193</ymin>
+            <xmax>105</xmax>
+            <ymax>479</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>50</xmin>
+            <ymin>91</ymin>
+            <xmax>154</xmax>
+            <ymax>389</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>363</xmin>
+            <ymin>310</ymin>
+            <xmax>429</xmax>
+            <ymax>532</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>83</xmin>
+            <ymin>55</ymin>
+            <xmax>198</xmax>
+            <ymax>385</ymax>
+        </bndbox>
+    </object>
+</annotation>

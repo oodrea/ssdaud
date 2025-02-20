@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>peas</folder>
+	<filename>pea_camo_google (6)</filename>
+	<size>
+		<width>1153</width>
+		<height>1369</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pea</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>604</xmin>
+			<ymin>774</ymin>
+			<xmax>903</xmax>
+			<ymax>1369</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>pea</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>250</xmin>
+			<ymin>250</ymin>
+			<xmax>704</xmax>
+			<ymax>1149</ymax>
+		</bndbox>
+	</object>
+</annotation>

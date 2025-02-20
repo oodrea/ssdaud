@@ -1,0 +1,147 @@
+<annotation>
+    <folder>pea</folder>
+    <filename>pea_500.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\gen_fixed\gen\pea\pea_500.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>432</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>201</xmin>
+            <ymin>182</ymin>
+            <xmax>212</xmax>
+            <ymax>197</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>363</xmin>
+            <ymin>63</ymin>
+            <xmax>400</xmax>
+            <ymax>201</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>223</xmin>
+            <ymin>166</ymin>
+            <xmax>256</xmax>
+            <ymax>279</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>389</xmin>
+            <ymin>229</ymin>
+            <xmax>427</xmax>
+            <ymax>361</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>191</xmin>
+            <ymin>56</ymin>
+            <xmax>230</xmax>
+            <ymax>201</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>64</xmin>
+            <ymin>434</ymin>
+            <xmax>102</xmax>
+            <ymax>579</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>324</xmin>
+            <ymin>219</ymin>
+            <xmax>355</xmax>
+            <ymax>325</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>97</xmin>
+            <ymin>493</ymin>
+            <xmax>121</xmax>
+            <ymax>587</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>26</xmin>
+            <ymin>501</ymin>
+            <xmax>54</xmax>
+            <ymax>607</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>370</xmin>
+            <ymin>466</ymin>
+            <xmax>397</xmax>
+            <ymax>540</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>392</xmin>
+            <ymin>369</ymin>
+            <xmax>421</xmax>
+            <ymax>469</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pea</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>386</xmin>
+            <ymin>481</ymin>
+            <xmax>412</xmax>
+            <ymax>581</ymax>
+        </bndbox>
+    </object>
+</annotation>

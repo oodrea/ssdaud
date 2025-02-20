@@ -1,0 +1,26 @@
+<annotation>
+    <folder>cucumber</folder>
+    <filename>cucumber_888.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\cucumber\cucumber_888.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>425</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>cucumber</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>382</xmin>
+            <ymin>105</ymin>
+            <xmax>531</xmax>
+            <ymax>404</ymax>
+        </bndbox>
+    </object>
+</annotation>

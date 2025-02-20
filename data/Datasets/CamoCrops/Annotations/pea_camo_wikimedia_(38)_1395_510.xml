@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>peas</folder>
+	<filename>pea_camo_wikimedia (38)</filename>
+	<size>
+		<width>538</width>
+		<height>630</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pea</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>250</xmin>
+			<ymin>250</ymin>
+			<xmax>288</xmax>
+			<ymax>380</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,37 @@
+<annotation>
+    <folder>greenmango</folder>
+    <filename>greenmango_508.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\greenmango\greenmango_508.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>472</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>36</xmin>
+            <ymin>73</ymin>
+            <xmax>378</xmax>
+            <ymax>503</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>green_mango</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>46</xmin>
+            <ymin>57</ymin>
+            <xmax>383</xmax>
+            <ymax>475</ymax>
+        </bndbox>
+    </object>
+</annotation>

@@ -1,0 +1,37 @@
+<annotation>
+    <folder>dalandan</folder>
+    <filename>dalandan_744.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\dalandan\dalandan_744.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>435</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>66</xmin>
+            <ymin>88</ymin>
+            <xmax>390</xmax>
+            <ymax>387</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>dalandan</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>63</xmin>
+            <ymin>124</ymin>
+            <xmax>369</xmax>
+            <ymax>354</ymax>
+        </bndbox>
+    </object>
+</annotation>

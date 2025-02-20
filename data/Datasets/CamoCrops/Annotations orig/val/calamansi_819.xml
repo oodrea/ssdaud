@@ -1,0 +1,26 @@
+<annotation>
+    <folder>calamansi</folder>
+    <filename>calamansi_819.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\calamansi\calamansi_819.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>461</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>calamansi</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2</xmin>
+            <ymin>39</ymin>
+            <xmax>384</xmax>
+            <ymax>415</ymax>
+        </bndbox>
+    </object>
+</annotation>

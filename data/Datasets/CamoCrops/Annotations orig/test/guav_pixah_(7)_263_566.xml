@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>guava</folder>
+	<filename>guav_pixah (7)</filename>
+	<size>
+		<width>1398</width>
+		<height>1505</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>guava</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>250</xmin>
+			<ymin>250</ymin>
+			<xmax>1148</xmax>
+			<ymax>1255</ymax>
+		</bndbox>
+	</object>
+</annotation>

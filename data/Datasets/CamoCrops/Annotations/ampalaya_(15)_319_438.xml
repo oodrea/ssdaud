@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>ampalaya</folder>
+	<filename>ampalaya (15)</filename>
+	<size>
+		<width>1141</width>
+		<height>1869</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ampalaya</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>250</xmin>
+			<ymin>250</ymin>
+			<xmax>891</xmax>
+			<ymax>1619</ymax>
+		</bndbox>
+	</object>
+</annotation>

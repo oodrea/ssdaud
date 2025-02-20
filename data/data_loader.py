@@ -4,6 +4,8 @@ from data.pascal_voc import PascalVOC
 from torch.utils.data import DataLoader
 from data.augmentations import Augmentations, BaseTransform
 from data.tomatod import TOMATOD
+from data.ccrop import CCROP
+from data.camocrops import CAMOCROPS
 
 
 VOC_CONFIG = {
@@ -65,6 +67,24 @@ def get_loader(config):
                 data_path=config.tomatod_data_path,
                 mode=config.mode,  # Supports train, val, or test
                 image_transform=image_transform
+            )
+    
+    if config.dataset == 'ccrop':
+            dataset = CCROP(
+                data_path=config.ccrop_data_path,
+                mode=config.mode,  # Supports train, val, or test
+                image_transform=image_transform,
+                new_size=new_size,
+
+            )
+    
+    if config.dataset == 'camocrops':
+            dataset = CAMOCROPS(
+                data_path=config.camocrops_data_path,
+                mode=config.mode,  # Supports train, val, or test
+                image_transform=image_transform,
+                new_size=new_size,
+                
             )
 
     if dataset is not None:

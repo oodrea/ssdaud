@@ -433,4 +433,3 @@ def evaluate_tomatod(results_path, dataset, output_txt, iou_threshold=0.5):
         pickle.dump(metrics, f)
 
     return metrics
-

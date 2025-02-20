@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>cucumber</folder>
+	<filename>cucum_jpg (26)</filename>
+	<size>
+		<width>830</width>
+		<height>1275</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cucumber</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>250</xmin>
+			<ymin>250</ymin>
+			<xmax>580</xmax>
+			<ymax>1275</ymax>
+		</bndbox>
+	</object>
+</annotation>

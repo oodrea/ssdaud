@@ -1,0 +1,38 @@
+<annotation>
+	<folder>CHILIPEPPER</folder>
+	<filename>458.jpg</filename>
+	<path>C:\Users\bhey\Desktop\FRUIT COUNTING\DATA\CHILIPEPPER\458.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>332</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ChiliPepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>177</xmin>
+			<ymin>62</ymin>
+			<xmax>228</xmax>
+			<ymax>223</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>ChiliPepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>355</xmin>
+			<ymin>256</ymin>
+			<xmax>402</xmax>
+			<ymax>315</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>bell_pepper</folder>
+	<filename>bell_wikim_jfif (2)</filename>
+	<size>
+		<width>600</width>
+		<height>749</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bell_pepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>137</xmin>
+			<ymin>250</ymin>
+			<xmax>438</xmax>
+			<ymax>575</ymax>
+		</bndbox>
+	</object>
+</annotation>

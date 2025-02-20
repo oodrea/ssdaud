@@ -1,0 +1,26 @@
+<annotation>
+    <folder>frenchbeans</folder>
+    <filename>frenchbeans_454.jpg</filename>
+    <path>C:\Users\JAP\Desktop\Code\THS-ST-SFDet-Model\gen_images\regenerate\frenchbeans\frenchbeans_454.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>471</width>
+        <height>640</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>french_bean</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>241</xmin>
+            <ymin>16</ymin>
+            <xmax>391</xmax>
+            <ymax>551</ymax>
+        </bndbox>
+    </object>
+</annotation>

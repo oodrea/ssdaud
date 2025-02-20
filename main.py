@@ -104,7 +104,7 @@ if __name__ == '__main__':
     parser.add_argument('--class_count', type=int, default=21,
                         help='Number of classes in dataset')
     parser.add_argument('--dataset', type=str, default='voc',
-                        choices=['voc', 'coco', 'tomatod'], # added tomatod
+                        choices=['voc', 'coco', 'tomatod', 'ccrop', 'camocrops'], # added tomatod, ccrop, camocrops
                         help='Dataset to use') 
     parser.add_argument('--new_size', type=int, default=300,
                         help='New height and width of input images')
@@ -213,6 +213,16 @@ if __name__ == '__main__':
     parser.add_argument('--tomatod_data_path', type=str,
                     default='../../Datasets/Tomatod/',
                     help='TomatoD dataset path')
+
+    # ccrop dataset
+    parser.add_argument('--ccrop_data_path', type=str,
+                    default='../../Datasets/CCROP/',
+                    help='CCROP dataset path')
+
+    # camocrops dataset
+    parser.add_argument('--camocrops_data_path', type=str,
+                    default='../../Datasets/CamoCrops/',
+                    help='CamoCrops dataset path')
 
     # path
     parser.add_argument('--model_save_path', type=str, default='./weights',

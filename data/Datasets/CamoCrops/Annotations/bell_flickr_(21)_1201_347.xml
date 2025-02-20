@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>bell_pepper</folder>
+	<filename>bell_flickr (21)</filename>
+	<size>
+		<width>1556</width>
+		<height>2000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bell_pepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>222</xmin>
+			<ymin>222</ymin>
+			<xmax>1333</xmax>
+			<ymax>1931</ymax>
+		</bndbox>
+	</object>
+</annotation>

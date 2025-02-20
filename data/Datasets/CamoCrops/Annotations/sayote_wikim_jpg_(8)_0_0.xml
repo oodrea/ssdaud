@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>sayote</folder>
+	<filename>sayote_wikim_jpg (8)</filename>
+	<size>
+		<width>737</width>
+		<height>545</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sayote</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>111</xmin>
+			<ymin>144</ymin>
+			<xmax>487</xmax>
+			<ymax>475</ymax>
+		</bndbox>
+	</object>
+</annotation>

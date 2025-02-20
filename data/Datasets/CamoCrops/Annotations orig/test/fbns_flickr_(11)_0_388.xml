@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>french_bean</folder>
+	<filename>fbns_flickr (11)</filename>
+	<size>
+		<width>665</width>
+		<height>531</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>french_bean</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>186</xmin>
+			<ymin>250</ymin>
+			<xmax>422</xmax>
+			<ymax>530</ymax>
+		</bndbox>
+	</object>
+</annotation>

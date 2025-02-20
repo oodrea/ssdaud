@@ -1,0 +1,26 @@
+<annotation>
+    <folder>atis</folder>
+    <filename>atis_885.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\atis\atis_885.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>473</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>atis</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>109</xmin>
+            <ymin>56</ymin>
+            <xmax>438</xmax>
+            <ymax>394</ymax>
+        </bndbox>
+    </object>
+</annotation>

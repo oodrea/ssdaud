@@ -1,0 +1,26 @@
+<annotation>
+	<folder>bell</folder>
+	<filename>DSC_1191.jpg</filename>
+	<path>C:\Users\user\Desktop\bell\DSC_1191.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>752</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>BellPepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>292</xmin>
+			<ymin>209</ymin>
+			<xmax>400</xmax>
+			<ymax>317</ymax>
+		</bndbox>
+	</object>
+</annotation>

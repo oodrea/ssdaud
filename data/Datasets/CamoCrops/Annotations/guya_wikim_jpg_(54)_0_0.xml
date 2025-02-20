@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<folder>guyabano</folder>
+	<filename>guya_wikim_jpg (54)</filename>
+	<size>
+		<width>450</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>guyabano</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>33</xmin>
+			<ymin>151</ymin>
+			<xmax>325</xmax>
+			<ymax>530</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+    <folder>avocado</folder>
+    <filename>avocado_849.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\avocado\avocado_849.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>430</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>avocado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>26</xmin>
+            <ymin>124</ymin>
+            <xmax>254</xmax>
+            <ymax>414</ymax>
+        </bndbox>
+    </object>
+</annotation>

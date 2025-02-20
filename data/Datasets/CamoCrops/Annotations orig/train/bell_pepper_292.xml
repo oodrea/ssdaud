@@ -1,0 +1,26 @@
+<annotation>
+    <folder>bell_pepper</folder>
+    <filename>bell_pepper_292.jpg</filename>
+    <path>C:\Users\joshu\Documents\GitHub\THS-ST-SFDet-Model\gen_images\regenerate\bell_pepper\bell_pepper_292.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>640</width>
+        <height>457</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>bell_pepper</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>307</xmin>
+            <ymin>25</ymin>
+            <xmax>506</xmax>
+            <ymax>324</ymax>
+        </bndbox>
+    </object>
+</annotation>

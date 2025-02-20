@@ -23,6 +23,12 @@ from pycocotools.cocoeval import COCOeval as do_coco_eval
 from data.tomatod import save_results as tomatod_save
 from data.tomatod import evaluate_tomatod as do_tomatod_eval 
 
+from data.ccrop import do_python_eval as do_ccrop_eval
+from data.ccrop import save_results as ccrop_save
+
+from data.camocrops import do_python_eval as do_camocrops_eval
+from data.camocrops import save_results as camocrops_save
+
 class Solver(object):
 
     DEFAULTS = {}
@@ -485,6 +491,42 @@ class Solver(object):
                      output_txt=self.output_txt)
 
             aps, mAP = do_voc_eval(results_path=results_path,
+                                   dataset=dataset,
+                                   output_txt=self.output_txt,
+                                   mode='test',
+                                   iou_threshold=self.iou_threshold,
+                                   use_07_metric=self.use_07_metric)
+
+            write_print(self.output_txt, '\nResults:')
+            for ap in aps:
+                write_print(self.output_txt, '{:.4f}'.format(ap))
+            write_print(self.output_txt, '{:.4f}'.format(np.mean(aps)))
+
+        if self.dataset == 'ccrop':
+            ccrop_save(all_boxes=all_boxes,
+                     dataset=dataset,
+                     results_path=results_path,
+                     output_txt=self.output_txt)
+
+            aps, mAP = do_ccrop_eval(results_path=results_path,
+                                   dataset=dataset,
+                                   output_txt=self.output_txt,
+                                   mode='test',
+                                   iou_threshold=self.iou_threshold,
+                                   use_07_metric=self.use_07_metric)
+
+            write_print(self.output_txt, '\nResults:')
+            for ap in aps:
+                write_print(self.output_txt, '{:.4f}'.format(ap))
+            write_print(self.output_txt, '{:.4f}'.format(np.mean(aps)))
+        
+        if self.dataset == 'camocrops':
+            camocrops_save(all_boxes=all_boxes,
+                     dataset=dataset,
+                     results_path=results_path,
+                     output_txt=self.output_txt)
+
+            aps, mAP = do_camocrops_save(results_path=results_path,
                                    dataset=dataset,
                                    output_txt=self.output_txt,
                                    mode='test',
