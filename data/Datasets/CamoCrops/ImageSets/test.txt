@@ -578,7 +578,6 @@ guya_wikim_jpg_(55)_0_0
 guya_wikim_jpg_(6)_0_0
 guya_wikim_jpg_(9)_0_0
 guya_wikim_png_0_0
-main
 okra_camo_flickr_(10)_5_121
 okra_camo_flickr_(14)_0_182
 okra_camo_flickr_(15)_329_0

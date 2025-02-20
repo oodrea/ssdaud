@@ -526,7 +526,7 @@ class Solver(object):
                      results_path=results_path,
                      output_txt=self.output_txt)
 
-            aps, mAP = do_camocrops_save(results_path=results_path,
+            aps, mAP = do_camocrops_eval(results_path=results_path,
                                    dataset=dataset,
                                    output_txt=self.output_txt,
                                    mode='test',

@@ -304,31 +304,21 @@ def save_results(all_boxes,
 
 
 def parse_annotation(file_name):
-    """Parse a CAMOCROPS annotation in VOC XML format."""
+    """ Parse a CAMOCROPS Annotations in Pascal Format xml file """
     tree = ET.parse(file_name)
     objects = []
-    
     for obj in tree.findall('object'):
         obj_struct = {}
-
-        raw_name = obj.find('name').text.strip()  # Read the original class name
-        obj_struct['name'] = CLASS_NAME_MAPPING.get(raw_name, raw_name)  # Convert to expected class name
-
+        obj_struct['name'] = obj.find('name').text
         obj_struct['pose'] = obj.find('pose').text
         obj_struct['truncated'] = int(obj.find('truncated').text)
         obj_struct['difficult'] = int(obj.find('difficult').text)
-
         bbox = obj.find('bndbox')
-        obj_struct['bbox'] = [
-            int(bbox.find('xmin').text) - 1,
-            int(bbox.find('ymin').text) - 1,
-            int(bbox.find('xmax').text) - 1,
-            int(bbox.find('ymax').text) - 1
-        ]
-
+        obj_struct['bbox'] = [int(bbox.find('xmin').text) - 1,
+                              int(bbox.find('ymin').text) - 1,
+                              int(bbox.find('xmax').text) - 1,
+                              int(bbox.find('ymax').text) - 1]
         objects.append(obj_struct)
-
-    # print(f"Parsed {len(objects)} objects from {file_name}: {objects}")
 
     return objects
 
@@ -544,7 +534,7 @@ def do_python_eval(results_path,
     aps = []
     for class_name in VOC_CLASSES:
         detection_path = osp.join(results_path, class_name + '.txt')
-        recall, precision, ap = ccrop_eval(detection_path=detection_path,
+        recall, precision, ap = camocrops_eval(detection_path=detection_path,
                                          dataset=dataset,
                                          annotation_path=annotation_path,
                                          list_path=list_path,

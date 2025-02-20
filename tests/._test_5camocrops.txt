@@ -148,3 +148,4893 @@ detection: 32/698 0.0080s 0.0080s
 detection: 33/698 0.0070s 0.0358s
 detection: 34/698 0.0080s 0.0316s
 detection: 35/698 0.0080s 0.0446s
+------------ Options -------------
+input_channels: 3
+class_count: 16
+dataset: camocrops
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./5camocrops
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ../../Datasets/Tomatod/
+ccrop_data_path: ../../Datasets/CCROP/
+camocrops_data_path: ./data/Datasets/CamoCrops/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 25617176
+loaded trained model ./5camocrops
+detection: 1/698 0.6019s 0.0226s
+detection: 2/698 0.0095s 0.0326s
+detection: 3/698 0.0075s 0.0296s
+detection: 4/698 0.0070s 0.0160s
+detection: 5/698 0.0076s 0.0266s
+detection: 6/698 0.0075s 0.0085s
+detection: 7/698 0.0075s 0.0090s
+detection: 8/698 0.0086s 0.0075s
+detection: 9/698 0.0076s 0.0340s
+detection: 10/698 0.0075s 0.0192s
+detection: 11/698 0.0080s 0.0240s
+detection: 12/698 0.0075s 0.0266s
+detection: 13/698 0.0085s 0.0327s
+detection: 14/698 0.0085s 0.0331s
+detection: 15/698 0.0075s 0.0241s
+detection: 16/698 0.0070s 0.0125s
+detection: 17/698 0.0086s 0.0100s
+detection: 18/698 0.0080s 0.0191s
+detection: 19/698 0.0075s 0.0211s
+detection: 20/698 0.0076s 0.0060s
+detection: 21/698 0.0075s 0.0105s
+detection: 22/698 0.0080s 0.0360s
+detection: 23/698 0.0080s 0.0105s
+detection: 24/698 0.0080s 0.0121s
+detection: 25/698 0.0075s 0.0176s
+detection: 26/698 0.0080s 0.0125s
+detection: 27/698 0.0080s 0.0091s
+detection: 28/698 0.0081s 0.0075s
+detection: 29/698 0.0075s 0.0306s
+detection: 30/698 0.0085s 0.0131s
+detection: 31/698 0.0075s 0.0212s
+detection: 32/698 0.0070s 0.0120s
+detection: 33/698 0.0080s 0.0395s
+detection: 34/698 0.0070s 0.0372s
+detection: 35/698 0.0095s 0.0431s
+detection: 36/698 0.0081s 0.0130s
+detection: 37/698 0.0085s 0.0201s
+detection: 38/698 0.0085s 0.0200s
+detection: 39/698 0.0086s 0.0075s
+detection: 40/698 0.0095s 0.0090s
+detection: 41/698 0.0100s 0.0065s
+detection: 42/698 0.0086s 0.0097s
+detection: 43/698 0.0080s 0.0080s
+detection: 44/698 0.0080s 0.0236s
+detection: 45/698 0.0090s 0.0113s
+detection: 46/698 0.0085s 0.0105s
+detection: 47/698 0.0085s 0.0106s
+detection: 48/698 0.0100s 0.0080s
+detection: 49/698 0.0090s 0.0096s
+detection: 50/698 0.0080s 0.0086s
+detection: 51/698 0.0085s 0.0080s
+detection: 52/698 0.0080s 0.0126s
+detection: 53/698 0.0090s 0.0090s
+detection: 54/698 0.0090s 0.0096s
+detection: 55/698 0.0076s 0.0080s
+detection: 56/698 0.0095s 0.0055s
+detection: 57/698 0.0095s 0.0155s
+detection: 58/698 0.0090s 0.0185s
+detection: 59/698 0.0090s 0.0126s
+detection: 60/698 0.0085s 0.0080s
+detection: 61/698 0.0080s 0.0065s
+detection: 62/698 0.0090s 0.0085s
+detection: 63/698 0.0096s 0.0151s
+detection: 64/698 0.0086s 0.0070s
+detection: 65/698 0.0085s 0.0102s
+detection: 66/698 0.0080s 0.0080s
+detection: 67/698 0.0085s 0.0090s
+detection: 68/698 0.0086s 0.0080s
+detection: 69/698 0.0080s 0.0075s
+detection: 70/698 0.0080s 0.0355s
+detection: 71/698 0.0081s 0.0146s
+detection: 72/698 0.0076s 0.0171s
+detection: 73/698 0.0085s 0.0150s
+detection: 74/698 0.0090s 0.0135s
+detection: 75/698 0.0085s 0.0080s
+detection: 76/698 0.0085s 0.0100s
+detection: 77/698 0.0091s 0.0166s
+detection: 78/698 0.0091s 0.0110s
+detection: 79/698 0.0085s 0.0160s
+detection: 80/698 0.0086s 0.0106s
+detection: 81/698 0.0095s 0.0075s
+detection: 82/698 0.0096s 0.0061s
+detection: 83/698 0.0085s 0.0080s
+detection: 84/698 0.0092s 0.0074s
+detection: 85/698 0.0085s 0.0101s
+detection: 86/698 0.0086s 0.0145s
+detection: 87/698 0.0090s 0.0191s
+detection: 88/698 0.0085s 0.0110s
+detection: 89/698 0.0085s 0.0200s
+detection: 90/698 0.0080s 0.0091s
+detection: 91/698 0.0081s 0.0091s
+detection: 92/698 0.0085s 0.0081s
+detection: 93/698 0.0085s 0.0076s
+detection: 94/698 0.0075s 0.0055s
+detection: 95/698 0.0080s 0.0150s
+detection: 96/698 0.0090s 0.0110s
+detection: 97/698 0.0090s 0.0200s
+detection: 98/698 0.0090s 0.0336s
+detection: 99/698 0.0080s 0.0050s
+detection: 100/698 0.0090s 0.0085s
+detection: 101/698 0.0091s 0.0115s
+detection: 102/698 0.0090s 0.0075s
+detection: 103/698 0.0096s 0.0081s
+detection: 104/698 0.0081s 0.0111s
+detection: 105/698 0.0095s 0.0100s
+detection: 106/698 0.0085s 0.0050s
+detection: 107/698 0.0090s 0.0115s
+detection: 108/698 0.0090s 0.0110s
+detection: 109/698 0.0090s 0.0276s
+detection: 110/698 0.0095s 0.0076s
+detection: 111/698 0.0090s 0.0060s
+detection: 112/698 0.0160s 0.0271s
+detection: 113/698 0.0086s 0.0241s
+detection: 114/698 0.0095s 0.0096s
+detection: 115/698 0.0095s 0.0106s
+detection: 116/698 0.0105s 0.0171s
+detection: 117/698 0.0095s 0.0095s
+detection: 118/698 0.0090s 0.0095s
+detection: 119/698 0.0095s 0.0105s
+detection: 120/698 0.0112s 0.0120s
+detection: 121/698 0.0104s 0.0125s
+detection: 122/698 0.0106s 0.0091s
+detection: 123/698 0.0100s 0.0040s
+detection: 124/698 0.0106s 0.0080s
+detection: 125/698 0.0095s 0.0246s
+detection: 126/698 0.0086s 0.0186s
+detection: 127/698 0.0090s 0.0130s
+detection: 128/698 0.0096s 0.0080s
+detection: 129/698 0.0085s 0.0085s
+detection: 130/698 0.0090s 0.0112s
+detection: 131/698 0.0095s 0.0080s
+detection: 132/698 0.0090s 0.0130s
+detection: 133/698 0.0090s 0.0110s
+detection: 134/698 0.0091s 0.0086s
+detection: 135/698 0.0085s 0.0160s
+detection: 136/698 0.0096s 0.0131s
+detection: 137/698 0.0090s 0.0060s
+detection: 138/698 0.0100s 0.0070s
+detection: 139/698 0.0105s 0.0130s
+detection: 140/698 0.0111s 0.0121s
+detection: 141/698 0.0106s 0.0181s
+detection: 142/698 0.0106s 0.0131s
+detection: 143/698 0.0106s 0.0081s
+detection: 144/698 0.0110s 0.0090s
+detection: 145/698 0.0115s 0.0055s
+detection: 146/698 0.0115s 0.0080s
+detection: 147/698 0.0095s 0.0090s
+detection: 148/698 0.0110s 0.0121s
+detection: 149/698 0.0105s 0.0126s
+detection: 150/698 0.0110s 0.0096s
+detection: 151/698 0.0116s 0.0106s
+detection: 152/698 0.0110s 0.0106s
+detection: 153/698 0.0100s 0.0096s
+detection: 154/698 0.0096s 0.0050s
+detection: 155/698 0.0095s 0.0060s
+detection: 156/698 0.0116s 0.0081s
+detection: 157/698 0.0095s 0.0070s
+detection: 158/698 0.0095s 0.0060s
+detection: 159/698 0.0090s 0.0070s
+detection: 160/698 0.0097s 0.0211s
+detection: 161/698 0.0095s 0.0101s
+detection: 162/698 0.0090s 0.0105s
+detection: 163/698 0.0101s 0.0115s
+detection: 164/698 0.0091s 0.0125s
+detection: 165/698 0.0086s 0.0106s
+detection: 166/698 0.0085s 0.0050s
+detection: 167/698 0.0090s 0.0116s
+detection: 168/698 0.0085s 0.0055s
+detection: 169/698 0.0085s 0.0075s
+detection: 170/698 0.0090s 0.0086s
+detection: 171/698 0.0095s 0.0050s
+detection: 172/698 0.0086s 0.0126s
+detection: 173/698 0.0090s 0.0210s
+detection: 174/698 0.0105s 0.0191s
+detection: 175/698 0.0097s 0.0357s
+detection: 176/698 0.0101s 0.0196s
+detection: 177/698 0.0110s 0.0275s
+detection: 178/698 0.0110s 0.0065s
+detection: 179/698 0.0085s 0.0095s
+detection: 180/698 0.0090s 0.0110s
+detection: 181/698 0.0096s 0.0055s
+detection: 182/698 0.0090s 0.0075s
+detection: 183/698 0.0091s 0.0091s
+detection: 184/698 0.0091s 0.0075s
+detection: 185/698 0.0100s 0.0070s
+detection: 186/698 0.0090s 0.0366s
+detection: 187/698 0.0091s 0.0146s
+detection: 188/698 0.0090s 0.0136s
+detection: 189/698 0.0090s 0.0407s
+detection: 190/698 0.0101s 0.0181s
+detection: 191/698 0.0095s 0.0101s
+detection: 192/698 0.0095s 0.0181s
+detection: 193/698 0.0105s 0.0306s
+detection: 194/698 0.0101s 0.0065s
+detection: 195/698 0.0095s 0.0206s
+detection: 196/698 0.0085s 0.0206s
+detection: 197/698 0.0090s 0.0230s
+detection: 198/698 0.0090s 0.0065s
+detection: 199/698 0.0090s 0.0120s
+detection: 200/698 0.0100s 0.0140s
+detection: 201/698 0.0096s 0.0156s
+detection: 202/698 0.0100s 0.0141s
+detection: 203/698 0.0090s 0.0126s
+detection: 204/698 0.0090s 0.0056s
+detection: 205/698 0.0126s 0.0166s
+detection: 206/698 0.0105s 0.0065s
+detection: 207/698 0.0106s 0.0131s
+detection: 208/698 0.0101s 0.0147s
+detection: 209/698 0.0090s 0.0076s
+detection: 210/698 0.0091s 0.0142s
+detection: 211/698 0.0090s 0.0170s
+detection: 212/698 0.0090s 0.0090s
+detection: 213/698 0.0095s 0.0131s
+detection: 214/698 0.0091s 0.0081s
+detection: 215/698 0.0101s 0.0262s
+detection: 216/698 0.0347s 0.0192s
+detection: 217/698 0.0106s 0.0146s
+detection: 218/698 0.0090s 0.0476s
+detection: 219/698 0.0095s 0.0457s
+detection: 220/698 0.0105s 0.0407s
+detection: 221/698 0.0096s 0.0216s
+detection: 222/698 0.0090s 0.0115s
+detection: 223/698 0.0095s 0.0272s
+detection: 224/698 0.0100s 0.0100s
+detection: 225/698 0.0085s 0.0096s
+detection: 226/698 0.0090s 0.0110s
+detection: 227/698 0.0090s 0.0150s
+detection: 228/698 0.0095s 0.0130s
+detection: 229/698 0.0111s 0.0091s
+detection: 230/698 0.0090s 0.0111s
+detection: 231/698 0.0090s 0.0192s
+detection: 232/698 0.0105s 0.0100s
+detection: 233/698 0.0090s 0.0101s
+detection: 234/698 0.0101s 0.0101s
+detection: 235/698 0.0091s 0.0096s
+detection: 236/698 0.0090s 0.0050s
+detection: 237/698 0.0099s 0.0090s
+detection: 238/698 0.0090s 0.0130s
+detection: 239/698 0.0091s 0.0045s
+detection: 240/698 0.0095s 0.0156s
+detection: 241/698 0.0125s 0.0362s
+detection: 242/698 0.0125s 0.0190s
+detection: 243/698 0.0121s 0.0090s
+detection: 244/698 0.0126s 0.0170s
+detection: 245/698 0.0150s 0.0116s
+detection: 246/698 0.0135s 0.0146s
+detection: 247/698 0.0125s 0.0120s
+detection: 248/698 0.0139s 0.0173s
+detection: 249/698 0.0131s 0.0190s
+detection: 250/698 0.0139s 0.0183s
+detection: 251/698 0.0136s 0.0085s
+detection: 252/698 0.0128s 0.0105s
+detection: 253/698 0.0120s 0.0110s
+detection: 254/698 0.0126s 0.0070s
+detection: 255/698 0.0125s 0.0065s
+detection: 256/698 0.0126s 0.0055s
+detection: 257/698 0.0125s 0.0060s
+detection: 258/698 0.0120s 0.0101s
+detection: 259/698 0.0142s 0.0070s
+detection: 260/698 0.0140s 0.0060s
+detection: 261/698 0.0146s 0.0055s
+detection: 262/698 0.0130s 0.0065s
+detection: 263/698 0.0135s 0.0055s
+detection: 264/698 0.0135s 0.0065s
+detection: 265/698 0.0140s 0.0060s
+detection: 266/698 0.0146s 0.0080s
+detection: 267/698 0.0125s 0.0060s
+detection: 268/698 0.0126s 0.0050s
+detection: 269/698 0.0125s 0.0086s
+detection: 270/698 0.0126s 0.0065s
+detection: 271/698 0.0135s 0.0055s
+detection: 272/698 0.0120s 0.0070s
+detection: 273/698 0.0120s 0.0080s
+detection: 274/698 0.0151s 0.0050s
+detection: 275/698 0.0135s 0.0040s
+detection: 276/698 0.0140s 0.0055s
+detection: 277/698 0.0141s 0.0075s
+detection: 278/698 0.0156s 0.0125s
+detection: 279/698 0.0135s 0.0121s
+detection: 280/698 0.0146s 0.0090s
+detection: 281/698 0.0130s 0.0111s
+detection: 282/698 0.0120s 0.0080s
+detection: 283/698 0.0121s 0.0165s
+detection: 284/698 0.0136s 0.0060s
+detection: 285/698 0.0132s 0.0071s
+detection: 286/698 0.0125s 0.0100s
+detection: 287/698 0.0131s 0.0076s
+detection: 288/698 0.0141s 0.0078s
+detection: 289/698 0.0130s 0.0206s
+detection: 290/698 0.0110s 0.0085s
+detection: 291/698 0.0115s 0.0075s
+detection: 292/698 0.0100s 0.0180s
+detection: 293/698 0.0105s 0.0150s
+detection: 294/698 0.0100s 0.0136s
+detection: 295/698 0.0110s 0.0106s
+detection: 296/698 0.0111s 0.0154s
+detection: 297/698 0.0106s 0.0131s
+detection: 298/698 0.0098s 0.0337s
+detection: 299/698 0.0100s 0.0286s
+detection: 300/698 0.0111s 0.0180s
+detection: 301/698 0.0105s 0.0091s
+detection: 302/698 0.0100s 0.0291s
+detection: 303/698 0.0106s 0.0106s
+detection: 304/698 0.0105s 0.0071s
+detection: 305/698 0.0105s 0.0125s
+detection: 306/698 0.0100s 0.0096s
+detection: 307/698 0.0105s 0.0262s
+detection: 308/698 0.0115s 0.0080s
+detection: 309/698 0.0105s 0.0339s
+detection: 310/698 0.0105s 0.0468s
+detection: 311/698 0.0110s 0.0161s
+detection: 312/698 0.0110s 0.0347s
+detection: 313/698 0.0100s 0.0396s
+detection: 314/698 0.0100s 0.0391s
+detection: 315/698 0.0101s 0.0236s
+detection: 316/698 0.0105s 0.0110s
+detection: 317/698 0.0101s 0.0156s
+detection: 318/698 0.0110s 0.0120s
+detection: 319/698 0.0110s 0.0225s
+detection: 320/698 0.0111s 0.0286s
+detection: 321/698 0.0272s 0.0322s
+detection: 322/698 0.0116s 0.0272s
+detection: 323/698 0.0106s 0.0136s
+detection: 324/698 0.0105s 0.0176s
+detection: 325/698 0.0135s 0.0201s
+detection: 326/698 0.0150s 0.0106s
+detection: 327/698 0.0150s 0.0095s
+detection: 328/698 0.0155s 0.0141s
+detection: 329/698 0.0155s 0.0131s
+detection: 330/698 0.0145s 0.0171s
+detection: 331/698 0.0140s 0.0115s
+detection: 332/698 0.0151s 0.0090s
+detection: 333/698 0.0141s 0.0190s
+detection: 334/698 0.0141s 0.0146s
+detection: 335/698 0.0141s 0.0441s
+detection: 336/698 0.0150s 0.0387s
+detection: 337/698 0.0155s 0.0170s
+detection: 338/698 0.0150s 0.0250s
+detection: 339/698 0.0145s 0.0200s
+detection: 340/698 0.0145s 0.0291s
+detection: 341/698 0.0150s 0.0150s
+detection: 342/698 0.0150s 0.0225s
+detection: 343/698 0.0145s 0.0146s
+detection: 344/698 0.0155s 0.0217s
+detection: 345/698 0.0155s 0.0121s
+detection: 346/698 0.0156s 0.0300s
+detection: 347/698 0.0160s 0.0281s
+detection: 348/698 0.0153s 0.0110s
+detection: 349/698 0.0145s 0.0085s
+detection: 350/698 0.0160s 0.0070s
+detection: 351/698 0.0155s 0.0206s
+detection: 352/698 0.0152s 0.0136s
+detection: 353/698 0.0150s 0.0134s
+detection: 354/698 0.0151s 0.0100s
+detection: 355/698 0.0165s 0.0070s
+detection: 356/698 0.0151s 0.0105s
+detection: 357/698 0.0140s 0.0150s
+detection: 358/698 0.0145s 0.0150s
+detection: 359/698 0.0150s 0.0148s
+detection: 360/698 0.0140s 0.0146s
+detection: 361/698 0.0141s 0.0286s
+detection: 362/698 0.0146s 0.0130s
+detection: 363/698 0.0151s 0.0090s
+detection: 364/698 0.0151s 0.0080s
+detection: 365/698 0.0156s 0.0055s
+detection: 366/698 0.0156s 0.0061s
+detection: 367/698 0.0151s 0.0105s
+detection: 368/698 0.0161s 0.0105s
+detection: 369/698 0.0150s 0.0090s
+detection: 370/698 0.0155s 0.0085s
+detection: 371/698 0.0146s 0.0080s
+detection: 372/698 0.0146s 0.0191s
+detection: 373/698 0.0145s 0.0065s
+detection: 374/698 0.0146s 0.0227s
+detection: 375/698 0.0145s 0.0161s
+detection: 376/698 0.0146s 0.0130s
+detection: 377/698 0.0145s 0.0216s
+detection: 378/698 0.0141s 0.0206s
+detection: 379/698 0.0145s 0.0166s
+detection: 380/698 0.0146s 0.0190s
+detection: 381/698 0.0145s 0.0050s
+detection: 382/698 0.0152s 0.0130s
+detection: 383/698 0.0140s 0.0186s
+detection: 384/698 0.0140s 0.0176s
+detection: 385/698 0.0156s 0.0100s
+detection: 386/698 0.0150s 0.0166s
+detection: 387/698 0.0145s 0.0271s
+detection: 388/698 0.0150s 0.0193s
+detection: 389/698 0.0145s 0.0160s
+detection: 390/698 0.0140s 0.0180s
+detection: 391/698 0.0151s 0.0075s
+detection: 392/698 0.0136s 0.0271s
+detection: 393/698 0.0141s 0.0231s
+detection: 394/698 0.0140s 0.0241s
+detection: 395/698 0.0145s 0.0106s
+detection: 396/698 0.0146s 0.0125s
+detection: 397/698 0.0151s 0.0251s
+detection: 398/698 0.0146s 0.0287s
+detection: 399/698 0.0145s 0.0215s
+detection: 400/698 0.0145s 0.0110s
+detection: 401/698 0.0146s 0.0201s
+detection: 402/698 0.0146s 0.0302s
+detection: 403/698 0.0145s 0.0106s
+detection: 404/698 0.0151s 0.0060s
+detection: 405/698 0.0141s 0.0136s
+detection: 406/698 0.0156s 0.0191s
+detection: 407/698 0.0155s 0.0206s
+detection: 408/698 0.0150s 0.0086s
+detection: 409/698 0.0145s 0.0080s
+detection: 410/698 0.0140s 0.0076s
+detection: 411/698 0.0146s 0.0231s
+detection: 412/698 0.0150s 0.0211s
+detection: 413/698 0.0150s 0.0115s
+detection: 414/698 0.0140s 0.0201s
+detection: 415/698 0.0140s 0.0306s
+detection: 416/698 0.0151s 0.0216s
+detection: 417/698 0.0150s 0.0261s
+detection: 418/698 0.0145s 0.0090s
+detection: 419/698 0.0136s 0.0121s
+detection: 420/698 0.0144s 0.0160s
+detection: 421/698 0.0156s 0.0080s
+detection: 422/698 0.0151s 0.0231s
+detection: 423/698 0.0150s 0.0070s
+detection: 424/698 0.0161s 0.0045s
+detection: 425/698 0.0150s 0.0240s
+detection: 426/698 0.0151s 0.0317s
+detection: 427/698 0.0141s 0.0105s
+detection: 428/698 0.0140s 0.0061s
+detection: 429/698 0.0156s 0.0136s
+detection: 430/698 0.0139s 0.0281s
+detection: 431/698 0.0151s 0.0206s
+detection: 432/698 0.0151s 0.0140s
+detection: 433/698 0.0141s 0.0060s
+detection: 434/698 0.0140s 0.0231s
+detection: 435/698 0.0146s 0.0231s
+detection: 436/698 0.0141s 0.0115s
+detection: 437/698 0.0140s 0.0146s
+detection: 438/698 0.0140s 0.0065s
+detection: 439/698 0.0141s 0.0166s
+detection: 440/698 0.0141s 0.0246s
+detection: 441/698 0.0135s 0.0306s
+detection: 442/698 0.0130s 0.0121s
+detection: 443/698 0.0146s 0.0120s
+detection: 444/698 0.0141s 0.0105s
+detection: 445/698 0.0141s 0.0115s
+detection: 446/698 0.0145s 0.0096s
+detection: 447/698 0.0151s 0.0065s
+detection: 448/698 0.0149s 0.0125s
+detection: 449/698 0.0142s 0.0055s
+detection: 450/698 0.0145s 0.0256s
+detection: 451/698 0.0135s 0.0231s
+detection: 452/698 0.0131s 0.0100s
+detection: 453/698 0.0136s 0.0100s
+detection: 454/698 0.0135s 0.0085s
+detection: 455/698 0.0135s 0.0076s
+detection: 456/698 0.0146s 0.0110s
+detection: 457/698 0.0141s 0.0065s
+detection: 458/698 0.0152s 0.0124s
+detection: 459/698 0.0150s 0.0473s
+detection: 460/698 0.0151s 0.0508s
+detection: 461/698 0.0095s 0.0106s
+detection: 462/698 0.0090s 0.0180s
+detection: 463/698 0.0080s 0.0156s
+detection: 464/698 0.0085s 0.0121s
+detection: 465/698 0.0085s 0.0090s
+detection: 466/698 0.0085s 0.0096s
+detection: 467/698 0.0091s 0.0071s
+detection: 468/698 0.0090s 0.0075s
+detection: 469/698 0.0085s 0.0052s
+detection: 470/698 0.0080s 0.0055s
+detection: 471/698 0.0086s 0.0080s
+detection: 472/698 0.0090s 0.0105s
+detection: 473/698 0.0095s 0.0077s
+detection: 474/698 0.0085s 0.0080s
+detection: 475/698 0.0087s 0.0070s
+detection: 476/698 0.0100s 0.0080s
+detection: 477/698 0.0080s 0.0090s
+detection: 478/698 0.0090s 0.0065s
+detection: 479/698 0.0090s 0.0055s
+detection: 480/698 0.0095s 0.0075s
+detection: 481/698 0.0084s 0.0057s
+detection: 482/698 0.0085s 0.0075s
+detection: 483/698 0.0086s 0.0050s
+detection: 484/698 0.0082s 0.0080s
+detection: 485/698 0.0085s 0.0060s
+detection: 486/698 0.0085s 0.0105s
+detection: 487/698 0.0090s 0.0050s
+detection: 488/698 0.0085s 0.0080s
+detection: 489/698 0.0085s 0.0080s
+detection: 490/698 0.0080s 0.0080s
+detection: 491/698 0.0090s 0.0060s
+detection: 492/698 0.0090s 0.0100s
+detection: 493/698 0.0080s 0.0080s
+detection: 494/698 0.0090s 0.0055s
+detection: 495/698 0.0080s 0.0100s
+detection: 496/698 0.0090s 0.0061s
+detection: 497/698 0.0090s 0.0075s
+detection: 498/698 0.0085s 0.0081s
+detection: 499/698 0.0080s 0.0070s
+detection: 500/698 0.0090s 0.0060s
+detection: 501/698 0.0090s 0.0075s
+detection: 502/698 0.0085s 0.0090s
+detection: 503/698 0.0080s 0.0060s
+detection: 504/698 0.0086s 0.0071s
+detection: 505/698 0.0086s 0.0120s
+detection: 506/698 0.0090s 0.0110s
+detection: 507/698 0.0093s 0.0219s
+detection: 508/698 0.0090s 0.0105s
+detection: 509/698 0.0091s 0.0130s
+detection: 510/698 0.0090s 0.0331s
+detection: 511/698 0.0090s 0.0120s
+detection: 512/698 0.0081s 0.0185s
+detection: 513/698 0.0084s 0.0170s
+detection: 514/698 0.0085s 0.0201s
+detection: 515/698 0.0095s 0.0276s
+detection: 516/698 0.0091s 0.0106s
+detection: 517/698 0.0080s 0.0120s
+detection: 518/698 0.0085s 0.0156s
+detection: 519/698 0.0090s 0.0111s
+detection: 520/698 0.0091s 0.0170s
+detection: 521/698 0.0090s 0.0115s
+detection: 522/698 0.0086s 0.0140s
+detection: 523/698 0.0086s 0.0096s
+detection: 524/698 0.0083s 0.0211s
+detection: 525/698 0.0105s 0.0180s
+detection: 526/698 0.0085s 0.0095s
+detection: 527/698 0.0115s 0.0070s
+detection: 528/698 0.0090s 0.0232s
+detection: 529/698 0.0086s 0.0180s
+detection: 530/698 0.0080s 0.0191s
+detection: 531/698 0.0080s 0.0131s
+detection: 532/698 0.0085s 0.0156s
+detection: 533/698 0.0096s 0.0306s
+detection: 534/698 0.0090s 0.0120s
+detection: 535/698 0.0098s 0.0209s
+detection: 536/698 0.0080s 0.0346s
+detection: 537/698 0.0089s 0.0083s
+detection: 538/698 0.0091s 0.0196s
+detection: 539/698 0.0086s 0.0115s
+detection: 540/698 0.0090s 0.0216s
+detection: 541/698 0.0085s 0.0231s
+detection: 542/698 0.0090s 0.0200s
+detection: 543/698 0.0079s 0.0140s
+detection: 544/698 0.0130s 0.0161s
+detection: 545/698 0.0141s 0.0141s
+detection: 546/698 0.0146s 0.0075s
+detection: 547/698 0.0135s 0.0131s
+detection: 548/698 0.0125s 0.0169s
+detection: 549/698 0.0140s 0.0462s
+detection: 550/698 0.0136s 0.0257s
+detection: 551/698 0.0141s 0.0339s
+detection: 552/698 0.0136s 0.0317s
+detection: 553/698 0.0135s 0.0446s
+detection: 554/698 0.0141s 0.0171s
+detection: 555/698 0.0137s 0.0141s
+detection: 556/698 0.0140s 0.0367s
+detection: 557/698 0.0146s 0.0296s
+detection: 558/698 0.0146s 0.0316s
+detection: 559/698 0.0136s 0.0111s
+detection: 560/698 0.0146s 0.0180s
+detection: 561/698 0.0140s 0.0086s
+detection: 562/698 0.0148s 0.0267s
+detection: 563/698 0.0150s 0.0231s
+detection: 564/698 0.0145s 0.0256s
+detection: 565/698 0.0140s 0.0090s
+detection: 566/698 0.0146s 0.0314s
+detection: 567/698 0.0156s 0.0100s
+detection: 568/698 0.0156s 0.0090s
+detection: 569/698 0.0156s 0.0448s
+detection: 570/698 0.0145s 0.0246s
+detection: 571/698 0.0150s 0.0231s
+detection: 572/698 0.0150s 0.0261s
+detection: 573/698 0.0160s 0.0347s
+detection: 574/698 0.0150s 0.0326s
+detection: 575/698 0.0145s 0.0192s
+detection: 576/698 0.0165s 0.0186s
+detection: 577/698 0.0156s 0.0196s
+detection: 578/698 0.0146s 0.0332s
+detection: 579/698 0.0161s 0.0140s
+detection: 580/698 0.0160s 0.0270s
+------------ Options -------------
+input_channels: 3
+class_count: 16
+dataset: camocrops
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./5camocrops
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ../../Datasets/Tomatod/
+ccrop_data_path: ../../Datasets/CCROP/
+camocrops_data_path: ./data/Datasets/CamoCrops/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 25617176
+loaded trained model ./5camocrops
+detection: 1/697 0.5381s 0.0201s
+detection: 2/697 0.0105s 0.0251s
+detection: 3/697 0.0085s 0.0241s
+detection: 4/697 0.0090s 0.0125s
+detection: 5/697 0.0075s 0.0246s
+detection: 6/697 0.0080s 0.0085s
+detection: 7/697 0.0085s 0.0070s
+detection: 8/697 0.0080s 0.0085s
+detection: 9/697 0.0086s 0.0351s
+detection: 10/697 0.0080s 0.0161s
+detection: 11/697 0.0095s 0.0241s
+detection: 12/697 0.0080s 0.0276s
+detection: 13/697 0.0095s 0.0281s
+detection: 14/697 0.0085s 0.0856s
+detection: 15/697 0.0081s 0.0271s
+detection: 16/697 0.0085s 0.0105s
+detection: 17/697 0.0085s 0.0105s
+detection: 18/697 0.0075s 0.0190s
+detection: 19/697 0.0075s 0.0201s
+detection: 20/697 0.0080s 0.0065s
+detection: 21/697 0.0085s 0.0100s
+detection: 22/697 0.0085s 0.0331s
+detection: 23/697 0.0080s 0.0095s
+detection: 24/697 0.0080s 0.0115s
+detection: 25/697 0.0080s 0.0146s
+detection: 26/697 0.0080s 0.0115s
+detection: 27/697 0.0080s 0.0070s
+detection: 28/697 0.0075s 0.0100s
+detection: 29/697 0.0086s 0.0296s
+detection: 30/697 0.0075s 0.0126s
+detection: 31/697 0.0090s 0.0206s
+detection: 32/697 0.0080s 0.0095s
+detection: 33/697 0.0085s 0.0361s
+detection: 34/697 0.0084s 0.0351s
+detection: 35/697 0.0081s 0.0411s
+detection: 36/697 0.0090s 0.0120s
+detection: 37/697 0.0070s 0.0181s
+detection: 38/697 0.0080s 0.0221s
+detection: 39/697 0.0080s 0.0056s
+detection: 40/697 0.0076s 0.0095s
+detection: 41/697 0.0086s 0.0081s
+detection: 42/697 0.0080s 0.0115s
+detection: 43/697 0.0080s 0.0085s
+detection: 44/697 0.0090s 0.0271s
+detection: 45/697 0.0093s 0.0090s
+detection: 46/697 0.0090s 0.0120s
+detection: 47/697 0.0101s 0.0090s
+detection: 48/697 0.0090s 0.0070s
+detection: 49/697 0.0095s 0.0090s
+detection: 50/697 0.0090s 0.0091s
+detection: 51/697 0.0101s 0.0070s
+detection: 52/697 0.0090s 0.0110s
+detection: 53/697 0.0085s 0.0075s
+detection: 54/697 0.0085s 0.0060s
+detection: 55/697 0.0090s 0.0065s
+detection: 56/697 0.0090s 0.0055s
+detection: 57/697 0.0091s 0.0131s
+detection: 58/697 0.0090s 0.0196s
+detection: 59/697 0.0100s 0.0090s
+detection: 60/697 0.0095s 0.0070s
+detection: 61/697 0.0090s 0.0060s
+detection: 62/697 0.0080s 0.0075s
+detection: 63/697 0.0086s 0.0171s
+detection: 64/697 0.0095s 0.0090s
+detection: 65/697 0.0091s 0.0121s
+detection: 66/697 0.0101s 0.0086s
+detection: 67/697 0.0095s 0.0151s
+detection: 68/697 0.0111s 0.0085s
+detection: 69/697 0.0100s 0.0085s
+detection: 70/697 0.0105s 0.0326s
+detection: 71/697 0.0100s 0.0186s
+detection: 72/697 0.0096s 0.0171s
+detection: 73/697 0.0101s 0.0148s
+detection: 74/697 0.0095s 0.0176s
+detection: 75/697 0.0105s 0.0100s
+detection: 76/697 0.0095s 0.0115s
+detection: 77/697 0.0086s 0.0226s
+detection: 78/697 0.0106s 0.0140s
+detection: 79/697 0.0105s 0.0196s
+detection: 80/697 0.0100s 0.0090s
+detection: 81/697 0.0086s 0.0061s
+detection: 82/697 0.0086s 0.0060s
+detection: 83/697 0.0090s 0.0070s
+detection: 84/697 0.0096s 0.0055s
+detection: 85/697 0.0086s 0.0081s
+detection: 86/697 0.0091s 0.0130s
+detection: 87/697 0.0090s 0.0120s
+detection: 88/697 0.0091s 0.0101s
+detection: 89/697 0.0085s 0.0206s
+detection: 90/697 0.0080s 0.0086s
+detection: 91/697 0.0085s 0.0100s
+detection: 92/697 0.0192s 0.0128s
+detection: 93/697 0.0090s 0.0076s
+detection: 94/697 0.0100s 0.0070s
+detection: 95/697 0.0096s 0.0165s
+detection: 96/697 0.0091s 0.0095s
+detection: 97/697 0.0095s 0.0181s
+detection: 98/697 0.0090s 0.0391s
+detection: 99/697 0.0090s 0.0065s
+detection: 100/697 0.0095s 0.0091s
+detection: 101/697 0.0086s 0.0151s
+detection: 102/697 0.0085s 0.0110s
+detection: 103/697 0.0086s 0.0070s
+detection: 104/697 0.0090s 0.0111s
+detection: 105/697 0.0086s 0.0121s
+detection: 106/697 0.0095s 0.0046s
+detection: 107/697 0.0090s 0.0081s
+detection: 108/697 0.0090s 0.0085s
+detection: 109/697 0.0096s 0.0261s
+detection: 110/697 0.0090s 0.0070s
+detection: 111/697 0.0100s 0.0055s
+detection: 112/697 0.0083s 0.0216s
+detection: 113/697 0.0086s 0.0211s
+detection: 114/697 0.0090s 0.0070s
+detection: 115/697 0.0096s 0.0130s
+detection: 116/697 0.0086s 0.0140s
+detection: 117/697 0.0096s 0.0065s
+detection: 118/697 0.0100s 0.0071s
+detection: 119/697 0.0111s 0.0085s
+detection: 120/697 0.0089s 0.0075s
+detection: 121/697 0.0100s 0.0086s
+detection: 122/697 0.0095s 0.0065s
+detection: 123/697 0.0095s 0.0050s
+detection: 124/697 0.0095s 0.0056s
+detection: 125/697 0.0100s 0.0195s
+detection: 126/697 0.0100s 0.0176s
+detection: 127/697 0.0092s 0.0095s
+detection: 128/697 0.0095s 0.0088s
+detection: 129/697 0.0090s 0.0100s
+detection: 130/697 0.0090s 0.0080s
+detection: 131/697 0.0095s 0.0080s
+detection: 132/697 0.0085s 0.0131s
+detection: 133/697 0.0090s 0.0085s
+detection: 134/697 0.0095s 0.0093s
+detection: 135/697 0.0090s 0.0170s
+detection: 136/697 0.0105s 0.0101s
+detection: 137/697 0.0100s 0.0035s
+detection: 138/697 0.0090s 0.0051s
+detection: 139/697 0.0095s 0.0105s
+detection: 140/697 0.0086s 0.0096s
+detection: 141/697 0.0090s 0.0120s
+detection: 142/697 0.0110s 0.0096s
+detection: 143/697 0.0100s 0.0065s
+detection: 144/697 0.0096s 0.0055s
+detection: 145/697 0.0100s 0.0045s
+detection: 146/697 0.0090s 0.0076s
+detection: 147/697 0.0100s 0.0066s
+detection: 148/697 0.0101s 0.0085s
+detection: 149/697 0.0085s 0.0105s
+detection: 150/697 0.0096s 0.0065s
+detection: 151/697 0.0095s 0.0071s
+detection: 152/697 0.0095s 0.0080s
+detection: 153/697 0.0101s 0.0065s
+detection: 154/697 0.0086s 0.0045s
+detection: 155/697 0.0096s 0.0040s
+detection: 156/697 0.0090s 0.0055s
+detection: 157/697 0.0090s 0.0045s
+detection: 158/697 0.0096s 0.0060s
+detection: 159/697 0.0095s 0.0065s
+detection: 160/697 0.0090s 0.0186s
+detection: 161/697 0.0091s 0.0096s
+detection: 162/697 0.0096s 0.0095s
+detection: 163/697 0.0101s 0.0090s
+detection: 164/697 0.0090s 0.0156s
+detection: 165/697 0.0085s 0.0075s
+detection: 166/697 0.0095s 0.0055s
+detection: 167/697 0.0096s 0.0105s
+detection: 168/697 0.0090s 0.0050s
+detection: 169/697 0.0086s 0.0071s
+detection: 170/697 0.0100s 0.0070s
+detection: 171/697 0.0095s 0.0056s
+detection: 172/697 0.0095s 0.0106s
+detection: 173/697 0.0100s 0.0135s
+detection: 174/697 0.0096s 0.0126s
+detection: 175/697 0.0095s 0.0251s
+detection: 176/697 0.0095s 0.0130s
+detection: 177/697 0.0100s 0.0111s
+detection: 178/697 0.0086s 0.0045s
+detection: 179/697 0.0105s 0.0050s
+detection: 180/697 0.0095s 0.0060s
+detection: 181/697 0.0095s 0.0050s
+detection: 182/697 0.0090s 0.0035s
+detection: 183/697 0.0100s 0.0045s
+detection: 184/697 0.0100s 0.0045s
+detection: 185/697 0.0106s 0.0045s
+detection: 186/697 0.0100s 0.0297s
+detection: 187/697 0.0100s 0.0146s
+detection: 188/697 0.0105s 0.0084s
+detection: 189/697 0.0106s 0.0296s
+detection: 190/697 0.0106s 0.0140s
+detection: 191/697 0.0105s 0.0070s
+detection: 192/697 0.0105s 0.0161s
+detection: 193/697 0.0096s 0.0247s
+detection: 194/697 0.0101s 0.0060s
+detection: 195/697 0.0110s 0.0180s
+detection: 196/697 0.0105s 0.0165s
+detection: 197/697 0.0115s 0.0160s
+detection: 198/697 0.0106s 0.0041s
+detection: 199/697 0.0096s 0.0106s
+detection: 200/697 0.0110s 0.0171s
+detection: 201/697 0.0115s 0.0171s
+detection: 202/697 0.0116s 0.0145s
+detection: 203/697 0.0115s 0.0141s
+detection: 204/697 0.0125s 0.0060s
+detection: 205/697 0.0125s 0.0111s
+detection: 206/697 0.0118s 0.0058s
+detection: 207/697 0.0125s 0.0115s
+detection: 208/697 0.0117s 0.0110s
+detection: 209/697 0.0121s 0.0080s
+detection: 210/697 0.0126s 0.0141s
+detection: 211/697 0.0125s 0.0166s
+detection: 212/697 0.0105s 0.0060s
+detection: 213/697 0.0125s 0.0126s
+detection: 214/697 0.0121s 0.0060s
+detection: 215/697 0.0131s 0.0201s
+detection: 216/697 0.0115s 0.0070s
+detection: 217/697 0.0125s 0.0091s
+detection: 218/697 0.0120s 0.0476s
+detection: 219/697 0.0120s 0.0391s
+detection: 220/697 0.0125s 0.0381s
+detection: 221/697 0.0126s 0.0186s
+detection: 222/697 0.0135s 0.0096s
+detection: 223/697 0.0130s 0.0185s
+detection: 224/697 0.0121s 0.0065s
+detection: 225/697 0.0125s 0.0055s
+detection: 226/697 0.0129s 0.0080s
+detection: 227/697 0.0121s 0.0090s
+detection: 228/697 0.0130s 0.0075s
+detection: 229/697 0.0125s 0.0080s
+detection: 230/697 0.0121s 0.0080s
+detection: 231/697 0.0121s 0.0121s
+detection: 232/697 0.0130s 0.0065s
+detection: 233/697 0.0126s 0.0050s
+detection: 234/697 0.0131s 0.0075s
+detection: 235/697 0.0131s 0.0190s
+detection: 236/697 0.0121s 0.0060s
+detection: 237/697 0.0120s 0.0080s
+detection: 238/697 0.0126s 0.0101s
+detection: 239/697 0.0120s 0.0040s
+detection: 240/697 0.0130s 0.0145s
+detection: 241/697 0.0120s 0.0376s
+detection: 242/697 0.0130s 0.0145s
+detection: 243/697 0.0136s 0.0080s
+detection: 244/697 0.0131s 0.0136s
+detection: 245/697 0.0125s 0.0080s
+detection: 246/697 0.0131s 0.0106s
+detection: 247/697 0.0130s 0.0090s
+detection: 248/697 0.0135s 0.0161s
+detection: 249/697 0.0135s 0.0146s
+detection: 250/697 0.0125s 0.0191s
+detection: 251/697 0.0135s 0.0085s
+detection: 252/697 0.0135s 0.0095s
+detection: 253/697 0.0131s 0.0116s
+detection: 254/697 0.0121s 0.0066s
+detection: 255/697 0.0130s 0.0080s
+detection: 256/697 0.0126s 0.0060s
+detection: 257/697 0.0130s 0.0080s
+detection: 258/697 0.0121s 0.0100s
+detection: 259/697 0.0123s 0.0035s
+detection: 260/697 0.0115s 0.0040s
+detection: 261/697 0.0120s 0.0050s
+detection: 262/697 0.0130s 0.0056s
+detection: 263/697 0.0125s 0.0060s
+detection: 264/697 0.0120s 0.0055s
+detection: 265/697 0.0106s 0.0040s
+detection: 266/697 0.0116s 0.0051s
+detection: 267/697 0.0115s 0.0045s
+detection: 268/697 0.0105s 0.0035s
+detection: 269/697 0.0116s 0.0060s
+detection: 270/697 0.0121s 0.0055s
+detection: 271/697 0.0111s 0.0045s
+detection: 272/697 0.0105s 0.0046s
+detection: 273/697 0.0100s 0.0070s
+detection: 274/697 0.0100s 0.0052s
+detection: 275/697 0.0095s 0.0055s
+detection: 276/697 0.0105s 0.0040s
+detection: 277/697 0.0110s 0.0045s
+detection: 278/697 0.0096s 0.0045s
+detection: 279/697 0.0100s 0.0070s
+detection: 280/697 0.0095s 0.0075s
+detection: 281/697 0.0100s 0.0105s
+detection: 282/697 0.0095s 0.0080s
+detection: 283/697 0.0100s 0.0150s
+detection: 284/697 0.0095s 0.0060s
+detection: 285/697 0.0105s 0.0070s
+detection: 286/697 0.0100s 0.0080s
+detection: 287/697 0.0100s 0.0065s
+detection: 288/697 0.0090s 0.0060s
+detection: 289/697 0.0095s 0.0156s
+detection: 290/697 0.0100s 0.0060s
+detection: 291/697 0.0100s 0.0106s
+detection: 292/697 0.0095s 0.0201s
+detection: 293/697 0.0106s 0.0146s
+detection: 294/697 0.0100s 0.0156s
+detection: 295/697 0.0111s 0.0115s
+detection: 296/697 0.0110s 0.0176s
+detection: 297/697 0.0100s 0.0166s
+detection: 298/697 0.0101s 0.0346s
+detection: 299/697 0.0110s 0.0210s
+detection: 300/697 0.0095s 0.0156s
+detection: 301/697 0.0095s 0.0090s
+detection: 302/697 0.0105s 0.0216s
+detection: 303/697 0.0090s 0.0090s
+detection: 304/697 0.0110s 0.0070s
+detection: 305/697 0.0106s 0.0131s
+detection: 306/697 0.0095s 0.0086s
+detection: 307/697 0.0090s 0.0206s
+detection: 308/697 0.0101s 0.0075s
+detection: 309/697 0.0106s 0.0290s
+detection: 310/697 0.0101s 0.0427s
+detection: 311/697 0.0100s 0.0160s
+detection: 312/697 0.0101s 0.0346s
+detection: 313/697 0.0100s 0.0383s
+detection: 314/697 0.0096s 0.0361s
+detection: 315/697 0.0095s 0.0331s
+detection: 316/697 0.0096s 0.0116s
+detection: 317/697 0.0100s 0.0105s
+detection: 318/697 0.0090s 0.0081s
+detection: 319/697 0.0105s 0.0146s
+detection: 320/697 0.0106s 0.0221s
+detection: 321/697 0.0090s 0.0185s
+detection: 322/697 0.0086s 0.0186s
+detection: 323/697 0.0095s 0.0110s
+detection: 324/697 0.0100s 0.0176s
+detection: 325/697 0.0100s 0.0186s
+detection: 326/697 0.0095s 0.0060s
+detection: 327/697 0.0100s 0.0090s
+detection: 328/697 0.0095s 0.0131s
+detection: 329/697 0.0090s 0.0101s
+detection: 330/697 0.0100s 0.0166s
+detection: 331/697 0.0120s 0.0110s
+detection: 332/697 0.0135s 0.0096s
+detection: 333/697 0.0120s 0.0170s
+detection: 334/697 0.0130s 0.0135s
+detection: 335/697 0.0125s 0.0406s
+detection: 336/697 0.0121s 0.0316s
+detection: 337/697 0.0120s 0.0155s
+detection: 338/697 0.0130s 0.0235s
+detection: 339/697 0.0126s 0.0185s
+detection: 340/697 0.0122s 0.0261s
+detection: 341/697 0.0125s 0.0121s
+detection: 342/697 0.0130s 0.0226s
+detection: 343/697 0.0120s 0.0146s
+detection: 344/697 0.0120s 0.0210s
+detection: 345/697 0.0121s 0.0105s
+detection: 346/697 0.0125s 0.0256s
+detection: 347/697 0.0126s 0.0256s
+detection: 348/697 0.0130s 0.0121s
+detection: 349/697 0.0131s 0.0070s
+detection: 350/697 0.0130s 0.0075s
+detection: 351/697 0.0135s 0.0216s
+detection: 352/697 0.0135s 0.0120s
+detection: 353/697 0.0130s 0.0101s
+detection: 354/697 0.0125s 0.0095s
+detection: 355/697 0.0136s 0.0075s
+detection: 356/697 0.0120s 0.0075s
+detection: 357/697 0.0140s 0.0176s
+detection: 358/697 0.0135s 0.0150s
+detection: 359/697 0.0135s 0.0136s
+detection: 360/697 0.0131s 0.0140s
+detection: 361/697 0.0140s 0.0261s
+detection: 362/697 0.0131s 0.0070s
+detection: 363/697 0.0135s 0.0060s
+detection: 364/697 0.0116s 0.0065s
+detection: 365/697 0.0136s 0.0045s
+detection: 366/697 0.0125s 0.0055s
+detection: 367/697 0.0130s 0.0121s
+detection: 368/697 0.0125s 0.0091s
+detection: 369/697 0.0126s 0.0075s
+detection: 370/697 0.0136s 0.0116s
+detection: 371/697 0.0126s 0.0076s
+detection: 372/697 0.0140s 0.0196s
+detection: 373/697 0.0125s 0.0050s
+detection: 374/697 0.0135s 0.0205s
+detection: 375/697 0.0140s 0.0141s
+detection: 376/697 0.0136s 0.0150s
+detection: 377/697 0.0141s 0.0222s
+detection: 378/697 0.0130s 0.0186s
+detection: 379/697 0.0131s 0.0155s
+detection: 380/697 0.0145s 0.0170s
+detection: 381/697 0.0141s 0.0035s
+detection: 382/697 0.0135s 0.0120s
+detection: 383/697 0.0140s 0.0185s
+detection: 384/697 0.0140s 0.0165s
+detection: 385/697 0.0125s 0.0120s
+detection: 386/697 0.0130s 0.0186s
+detection: 387/697 0.0125s 0.0251s
+detection: 388/697 0.0115s 0.0195s
+detection: 389/697 0.0130s 0.0176s
+detection: 390/697 0.0125s 0.0156s
+detection: 391/697 0.0126s 0.0060s
+detection: 392/697 0.0130s 0.0246s
+detection: 393/697 0.0121s 0.0286s
+detection: 394/697 0.0125s 0.0226s
+detection: 395/697 0.0126s 0.0121s
+detection: 396/697 0.0126s 0.0115s
+detection: 397/697 0.0130s 0.0239s
+detection: 398/697 0.0121s 0.0277s
+detection: 399/697 0.0126s 0.0191s
+detection: 400/697 0.0130s 0.0116s
+detection: 401/697 0.0125s 0.0181s
+detection: 402/697 0.0125s 0.0261s
+detection: 403/697 0.0125s 0.0090s
+detection: 404/697 0.0120s 0.0060s
+detection: 405/697 0.0130s 0.0110s
+detection: 406/697 0.0130s 0.0165s
+detection: 407/697 0.0120s 0.0185s
+detection: 408/697 0.0121s 0.0070s
+detection: 409/697 0.0126s 0.0065s
+detection: 410/697 0.0120s 0.0065s
+detection: 411/697 0.0120s 0.0105s
+detection: 412/697 0.0126s 0.0207s
+detection: 413/697 0.0130s 0.0145s
+detection: 414/697 0.0126s 0.0201s
+detection: 415/697 0.0121s 0.0272s
+detection: 416/697 0.0125s 0.0215s
+detection: 417/697 0.0125s 0.0261s
+detection: 418/697 0.0135s 0.0100s
+detection: 419/697 0.0125s 0.0100s
+detection: 420/697 0.0130s 0.0155s
+detection: 421/697 0.0126s 0.0075s
+detection: 422/697 0.0126s 0.0206s
+detection: 423/697 0.0120s 0.0040s
+detection: 424/697 0.0115s 0.0060s
+detection: 425/697 0.0125s 0.0237s
+detection: 426/697 0.0123s 0.0326s
+detection: 427/697 0.0130s 0.0126s
+detection: 428/697 0.0131s 0.0065s
+detection: 429/697 0.0126s 0.0121s
+detection: 430/697 0.0131s 0.0266s
+detection: 431/697 0.0116s 0.0156s
+detection: 432/697 0.0130s 0.0140s
+detection: 433/697 0.0131s 0.0050s
+detection: 434/697 0.0135s 0.0211s
+detection: 435/697 0.0130s 0.0246s
+detection: 436/697 0.0120s 0.0106s
+detection: 437/697 0.0120s 0.0125s
+detection: 438/697 0.0130s 0.0060s
+detection: 439/697 0.0130s 0.0105s
+detection: 440/697 0.0126s 0.0216s
+detection: 441/697 0.0125s 0.0271s
+detection: 442/697 0.0131s 0.0116s
+detection: 443/697 0.0131s 0.0090s
+detection: 444/697 0.0120s 0.0085s
+detection: 445/697 0.0125s 0.0106s
+detection: 446/697 0.0125s 0.0070s
+detection: 447/697 0.0141s 0.0055s
+detection: 448/697 0.0135s 0.0110s
+detection: 449/697 0.0131s 0.0050s
+detection: 450/697 0.0130s 0.0234s
+detection: 451/697 0.0130s 0.0185s
+detection: 452/697 0.0130s 0.0080s
+detection: 453/697 0.0125s 0.0081s
+detection: 454/697 0.0121s 0.0080s
+detection: 455/697 0.0120s 0.0070s
+detection: 456/697 0.0125s 0.0065s
+detection: 457/697 0.0115s 0.0035s
+detection: 458/697 0.0120s 0.0086s
+detection: 459/697 0.0130s 0.0366s
+detection: 460/697 0.0126s 0.0436s
+detection: 461/697 0.0126s 0.0095s
+detection: 462/697 0.0130s 0.0135s
+detection: 463/697 0.0131s 0.0141s
+detection: 464/697 0.0135s 0.0120s
+detection: 465/697 0.0121s 0.0065s
+detection: 466/697 0.0121s 0.0065s
+detection: 467/697 0.0125s 0.0090s
+detection: 468/697 0.0201s 0.0080s
+detection: 469/697 0.0125s 0.0045s
+detection: 470/697 0.0130s 0.0050s
+detection: 471/697 0.0136s 0.0090s
+detection: 472/697 0.0130s 0.0085s
+detection: 473/697 0.0126s 0.0060s
+detection: 474/697 0.0131s 0.0065s
+detection: 475/697 0.0135s 0.0065s
+detection: 476/697 0.0131s 0.0075s
+detection: 477/697 0.0121s 0.0060s
+detection: 478/697 0.0125s 0.0051s
+detection: 479/697 0.0116s 0.0045s
+detection: 480/697 0.0115s 0.0045s
+detection: 481/697 0.0125s 0.0075s
+detection: 482/697 0.0115s 0.0060s
+detection: 483/697 0.0125s 0.0065s
+detection: 484/697 0.0121s 0.0085s
+detection: 485/697 0.0126s 0.0045s
+detection: 486/697 0.0126s 0.0070s
+detection: 487/697 0.0126s 0.0045s
+detection: 488/697 0.0130s 0.0141s
+detection: 489/697 0.0211s 0.0081s
+detection: 490/697 0.0130s 0.0080s
+detection: 491/697 0.0135s 0.0050s
+detection: 492/697 0.0145s 0.0075s
+detection: 493/697 0.0136s 0.0070s
+detection: 494/697 0.0140s 0.0045s
+detection: 495/697 0.0121s 0.0096s
+detection: 496/697 0.0115s 0.0086s
+detection: 497/697 0.0126s 0.0075s
+detection: 498/697 0.0115s 0.0065s
+detection: 499/697 0.0126s 0.0076s
+detection: 500/697 0.0125s 0.0055s
+detection: 501/697 0.0140s 0.0050s
+detection: 502/697 0.0125s 0.0075s
+detection: 503/697 0.0125s 0.0070s
+detection: 504/697 0.0135s 0.0070s
+detection: 505/697 0.0130s 0.0120s
+detection: 506/697 0.0135s 0.0081s
+detection: 507/697 0.0126s 0.0246s
+detection: 508/697 0.0115s 0.0090s
+detection: 509/697 0.0105s 0.0151s
+detection: 510/697 0.0110s 0.0316s
+detection: 511/697 0.0110s 0.0120s
+detection: 512/697 0.0101s 0.0220s
+detection: 513/697 0.0100s 0.0125s
+detection: 514/697 0.0111s 0.0191s
+detection: 515/697 0.0101s 0.0267s
+detection: 516/697 0.0110s 0.0080s
+detection: 517/697 0.0110s 0.0105s
+detection: 518/697 0.0110s 0.0115s
+detection: 519/697 0.0105s 0.0080s
+detection: 520/697 0.0110s 0.0131s
+detection: 521/697 0.0110s 0.0100s
+detection: 522/697 0.0100s 0.0130s
+detection: 523/697 0.0105s 0.0080s
+detection: 524/697 0.0100s 0.0165s
+detection: 525/697 0.0105s 0.0140s
+detection: 526/697 0.0096s 0.0085s
+detection: 527/697 0.0110s 0.0055s
+detection: 528/697 0.0110s 0.0181s
+detection: 529/697 0.0105s 0.0141s
+detection: 530/697 0.0110s 0.0146s
+detection: 531/697 0.0106s 0.0141s
+detection: 532/697 0.0111s 0.0166s
+detection: 533/697 0.0115s 0.0277s
+detection: 534/697 0.0105s 0.0090s
+detection: 535/697 0.0100s 0.0187s
+detection: 536/697 0.0105s 0.0331s
+detection: 537/697 0.0110s 0.0076s
+detection: 538/697 0.0111s 0.0185s
+detection: 539/697 0.0111s 0.0080s
+detection: 540/697 0.0110s 0.0216s
+detection: 541/697 0.0110s 0.0207s
+detection: 542/697 0.0095s 0.0185s
+detection: 543/697 0.0106s 0.0100s
+detection: 544/697 0.0110s 0.0150s
+detection: 545/697 0.0110s 0.0130s
+detection: 546/697 0.0100s 0.0055s
+detection: 547/697 0.0106s 0.0110s
+detection: 548/697 0.0105s 0.0154s
+detection: 549/697 0.0106s 0.0372s
+detection: 550/697 0.0110s 0.0191s
+detection: 551/697 0.0110s 0.0296s
+detection: 552/697 0.0115s 0.0266s
+detection: 553/697 0.0141s 0.0377s
+detection: 554/697 0.0145s 0.0146s
+detection: 555/697 0.0140s 0.0086s
+detection: 556/697 0.0140s 0.0231s
+detection: 557/697 0.0145s 0.0266s
+detection: 558/697 0.0140s 0.0285s
+detection: 559/697 0.0140s 0.0101s
+detection: 560/697 0.0151s 0.0141s
+detection: 561/697 0.0151s 0.0070s
+detection: 562/697 0.0150s 0.0237s
+detection: 563/697 0.0141s 0.0176s
+detection: 564/697 0.0144s 0.0248s
+detection: 565/697 0.0141s 0.0080s
+detection: 566/697 0.0145s 0.0271s
+detection: 567/697 0.0141s 0.0095s
+detection: 568/697 0.0150s 0.0075s
+detection: 569/697 0.0140s 0.0391s
+detection: 570/697 0.0137s 0.0166s
+detection: 571/697 0.0151s 0.0166s
+detection: 572/697 0.0146s 0.0196s
+detection: 573/697 0.0141s 0.0287s
+detection: 574/697 0.0151s 0.0298s
+detection: 575/697 0.0151s 0.0151s
+detection: 576/697 0.0155s 0.0172s
+detection: 577/697 0.0146s 0.0156s
+detection: 578/697 0.0150s 0.0307s
+detection: 579/697 0.0145s 0.0125s
+detection: 580/697 0.0150s 0.0231s
+detection: 581/697 0.0136s 0.0247s
+detection: 582/697 0.0136s 0.0266s
+detection: 583/697 0.0135s 0.0090s
+detection: 584/697 0.0140s 0.0201s
+detection: 585/697 0.0146s 0.0170s
+detection: 586/697 0.0141s 0.0326s
+detection: 587/697 0.0140s 0.0236s
+detection: 588/697 0.0146s 0.0356s
+detection: 589/697 0.0150s 0.0135s
+detection: 590/697 0.0151s 0.0115s
+detection: 591/697 0.0140s 0.0191s
+detection: 592/697 0.0140s 0.0055s
+detection: 593/697 0.0141s 0.0331s
+detection: 594/697 0.0150s 0.0081s
+detection: 595/697 0.0141s 0.0161s
+detection: 596/697 0.0151s 0.0130s
+detection: 597/697 0.0156s 0.0120s
+detection: 598/697 0.0140s 0.0196s
+detection: 599/697 0.0145s 0.0401s
+detection: 600/697 0.0150s 0.0361s
+detection: 601/697 0.0146s 0.0372s
+detection: 602/697 0.0161s 0.0186s
+detection: 603/697 0.0150s 0.0190s
+detection: 604/697 0.0150s 0.0190s
+detection: 605/697 0.0156s 0.0150s
+detection: 606/697 0.0150s 0.0221s
+detection: 607/697 0.0161s 0.0140s
+detection: 608/697 0.0156s 0.0086s
+detection: 609/697 0.0160s 0.0115s
+detection: 610/697 0.0155s 0.0246s
+detection: 611/697 0.0160s 0.0105s
+detection: 612/697 0.0160s 0.0180s
+detection: 613/697 0.0156s 0.0121s
+detection: 614/697 0.0161s 0.0156s
+detection: 615/697 0.0161s 0.0176s
+detection: 616/697 0.0150s 0.0176s
+detection: 617/697 0.0156s 0.0197s
+detection: 618/697 0.0151s 0.0236s
+detection: 619/697 0.0151s 0.0236s
+detection: 620/697 0.0156s 0.0136s
+detection: 621/697 0.0155s 0.0456s
+detection: 622/697 0.0151s 0.0553s
+detection: 623/697 0.0160s 0.0175s
+detection: 624/697 0.0155s 0.0145s
+detection: 625/697 0.0166s 0.0251s
+detection: 626/697 0.0170s 0.0442s
+detection: 627/697 0.0166s 0.0090s
+detection: 628/697 0.0170s 0.0181s
+detection: 629/697 0.0170s 0.0196s
+detection: 630/697 0.0171s 0.0241s
+detection: 631/697 0.0171s 0.0256s
+detection: 632/697 0.0165s 0.0295s
+detection: 633/697 0.0165s 0.0175s
+detection: 634/697 0.0160s 0.0217s
+detection: 635/697 0.0180s 0.0110s
+detection: 636/697 0.0160s 0.0205s
+detection: 637/697 0.0165s 0.0150s
+detection: 638/697 0.0171s 0.0176s
+detection: 639/697 0.0171s 0.0115s
+detection: 640/697 0.0171s 0.0146s
+detection: 641/697 0.0166s 0.0115s
+detection: 642/697 0.0175s 0.0085s
+detection: 643/697 0.0167s 0.0066s
+detection: 644/697 0.0170s 0.0128s
+detection: 645/697 0.0166s 0.0110s
+detection: 646/697 0.0166s 0.0130s
+detection: 647/697 0.0167s 0.0130s
+detection: 648/697 0.0166s 0.0165s
+detection: 649/697 0.0176s 0.0105s
+detection: 650/697 0.0160s 0.0125s
+detection: 651/697 0.0171s 0.0095s
+detection: 652/697 0.0171s 0.0131s
+detection: 653/697 0.0181s 0.0206s
+detection: 654/697 0.0167s 0.0121s
+detection: 655/697 0.0176s 0.0091s
+detection: 656/697 0.0176s 0.0110s
+detection: 657/697 0.0170s 0.0140s
+detection: 658/697 0.0171s 0.0176s
+detection: 659/697 0.0166s 0.0088s
+detection: 660/697 0.0176s 0.0331s
+detection: 661/697 0.0160s 0.0166s
+detection: 662/697 0.0165s 0.0110s
+detection: 663/697 0.0153s 0.0173s
+detection: 664/697 0.0156s 0.0180s
+detection: 665/697 0.0159s 0.0478s
+detection: 666/697 0.0151s 0.0135s
+detection: 667/697 0.0160s 0.0131s
+detection: 668/697 0.0161s 0.0130s
+detection: 669/697 0.0155s 0.0216s
+detection: 670/697 0.0151s 0.0156s
+detection: 671/697 0.0155s 0.0085s
+detection: 672/697 0.0150s 0.0362s
+detection: 673/697 0.0155s 0.0190s
+detection: 674/697 0.0165s 0.0453s
+detection: 675/697 0.0156s 0.0401s
+detection: 676/697 0.0155s 0.0336s
+detection: 677/697 0.0155s 0.0211s
+detection: 678/697 0.0155s 0.0156s
+detection: 679/697 0.0150s 0.0161s
+detection: 680/697 0.0156s 0.0105s
+detection: 681/697 0.0150s 0.0100s
+detection: 682/697 0.0151s 0.0165s
+detection: 683/697 0.0155s 0.0090s
+detection: 684/697 0.0155s 0.0220s
+detection: 685/697 0.0156s 0.0090s
+detection: 686/697 0.0160s 0.0100s
+detection: 687/697 0.0146s 0.0211s
+detection: 688/697 0.0155s 0.0171s
+detection: 689/697 0.0151s 0.0160s
+detection: 690/697 0.0156s 0.0241s
+detection: 691/697 0.0165s 0.0095s
+detection: 692/697 0.0151s 0.0135s
+detection: 693/697 0.0165s 0.0080s
+detection: 694/697 0.0160s 0.0135s
+detection: 695/697 0.0150s 0.0115s
+detection: 696/697 0.0161s 0.0256s
+detection: 697/697 0.0161s 0.0237s
+
+Evaluating detections
+Writing ampalaya CAMOCROPS results file
+Writing atis CAMOCROPS results file
+Writing avocado CAMOCROPS results file
+Writing bell_pepper CAMOCROPS results file
+Writing calamansi CAMOCROPS results file
+Writing cucumber CAMOCROPS results file
+Writing dalandan CAMOCROPS results file
+Writing french_bean CAMOCROPS results file
+Writing green_chili CAMOCROPS results file
+Writing green_mango CAMOCROPS results file
+Writing guava CAMOCROPS results file
+Writing guyabano CAMOCROPS results file
+Writing okra CAMOCROPS results file
+Writing pea CAMOCROPS results file
+Writing sayote CAMOCROPS results file
+------------ Options -------------
+input_channels: 3
+class_count: 16
+dataset: camocrops
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./5camocrops
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ../../Datasets/Tomatod/
+ccrop_data_path: ../../Datasets/CCROP/
+camocrops_data_path: ./data/Datasets/CamoCrops/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 25617176
+loaded trained model ./5camocrops
+detection: 1/697 0.5387s 0.0237s
+detection: 2/697 0.0106s 0.0306s
+detection: 3/697 0.0080s 0.0321s
+detection: 4/697 0.0090s 0.0160s
+detection: 5/697 0.0090s 0.0267s
+detection: 6/697 0.0085s 0.0105s
+detection: 7/697 0.0071s 0.0071s
+detection: 8/697 0.0095s 0.0085s
+detection: 9/697 0.0085s 0.0332s
+detection: 10/697 0.0085s 0.0166s
+detection: 11/697 0.0086s 0.0271s
+detection: 12/697 0.0090s 0.0251s
+detection: 13/697 0.0080s 0.0311s
+detection: 14/697 0.0085s 0.0391s
+detection: 15/697 0.0086s 0.0312s
+detection: 16/697 0.0090s 0.0126s
+detection: 17/697 0.0096s 0.0126s
+detection: 18/697 0.0090s 0.0231s
+detection: 19/697 0.0085s 0.0266s
+detection: 20/697 0.0085s 0.0101s
+detection: 21/697 0.0091s 0.0140s
+detection: 22/697 0.0086s 0.0432s
+detection: 23/697 0.0347s 0.0201s
+detection: 24/697 0.0085s 0.0296s
+detection: 25/697 0.0091s 0.0211s
+detection: 26/697 0.0085s 0.0141s
+detection: 27/697 0.0085s 0.0096s
+detection: 28/697 0.0081s 0.0096s
+detection: 29/697 0.0085s 0.0332s
+detection: 30/697 0.0095s 0.0156s
+detection: 31/697 0.0084s 0.0222s
+detection: 32/697 0.0131s 0.0166s
+detection: 33/697 0.0081s 0.0441s
+detection: 34/697 0.0090s 0.0416s
+detection: 35/697 0.0100s 0.0552s
+detection: 36/697 0.0088s 0.0164s
+detection: 37/697 0.0106s 0.0245s
+detection: 38/697 0.0096s 0.0251s
+detection: 39/697 0.0085s 0.0086s
+detection: 40/697 0.0106s 0.0130s
+detection: 41/697 0.0095s 0.0106s
+detection: 42/697 0.0106s 0.0121s
+detection: 43/697 0.0105s 0.0126s
+detection: 44/697 0.0090s 0.0347s
+detection: 45/697 0.0091s 0.0105s
+detection: 46/697 0.0091s 0.0115s
+detection: 47/697 0.0090s 0.0095s
+detection: 48/697 0.0100s 0.0100s
+detection: 49/697 0.0090s 0.0116s
+detection: 50/697 0.0085s 0.0106s
+detection: 51/697 0.0095s 0.0131s
+detection: 52/697 0.0086s 0.0100s
+detection: 53/697 0.0090s 0.0076s
+detection: 54/697 0.0090s 0.0085s
+detection: 55/697 0.0090s 0.0100s
+detection: 56/697 0.0091s 0.0085s
+detection: 57/697 0.0090s 0.0156s
+detection: 58/697 0.0090s 0.0202s
+detection: 59/697 0.0081s 0.0105s
+detection: 60/697 0.0090s 0.0070s
+detection: 61/697 0.0100s 0.0070s
+detection: 62/697 0.0090s 0.0086s
+detection: 63/697 0.0090s 0.0165s
+detection: 64/697 0.0085s 0.0100s
+detection: 65/697 0.0096s 0.0121s
+detection: 66/697 0.0086s 0.0080s
+detection: 67/697 0.0100s 0.0115s
+detection: 68/697 0.0085s 0.0095s
+detection: 69/697 0.0096s 0.0065s
+detection: 70/697 0.0080s 0.0317s
+detection: 71/697 0.0086s 0.0155s
+detection: 72/697 0.0090s 0.0135s
+detection: 73/697 0.0095s 0.0126s
+detection: 74/697 0.0096s 0.0155s
+detection: 75/697 0.0081s 0.0085s
+detection: 76/697 0.0095s 0.0100s
+detection: 77/697 0.0090s 0.0200s
+detection: 78/697 0.0094s 0.0140s
+detection: 79/697 0.0085s 0.0166s
+detection: 80/697 0.0090s 0.0105s
+detection: 81/697 0.0080s 0.0070s
+detection: 82/697 0.0090s 0.0065s
+detection: 83/697 0.0090s 0.0110s
+detection: 84/697 0.0090s 0.0086s
+detection: 85/697 0.0090s 0.0090s
+detection: 86/697 0.0100s 0.0170s
+detection: 87/697 0.0090s 0.0140s
+detection: 88/697 0.0096s 0.0090s
+detection: 89/697 0.0090s 0.0180s
+detection: 90/697 0.0090s 0.0090s
+detection: 91/697 0.0090s 0.0096s
+detection: 92/697 0.0090s 0.0096s
+detection: 93/697 0.0090s 0.0080s
+detection: 94/697 0.0096s 0.0060s
+detection: 95/697 0.0091s 0.0160s
+detection: 96/697 0.0100s 0.0171s
+detection: 97/697 0.0095s 0.0221s
+detection: 98/697 0.0095s 0.0407s
+detection: 99/697 0.0096s 0.0066s
+detection: 100/697 0.0100s 0.0065s
+detection: 101/697 0.0081s 0.0130s
+detection: 102/697 0.0090s 0.0086s
+detection: 103/697 0.0090s 0.0065s
+detection: 104/697 0.0095s 0.0095s
+detection: 105/697 0.0100s 0.0101s
+detection: 106/697 0.0091s 0.0071s
+detection: 107/697 0.0100s 0.0110s
+detection: 108/697 0.0090s 0.0105s
+detection: 109/697 0.0081s 0.0271s
+detection: 110/697 0.0090s 0.0085s
+detection: 111/697 0.0080s 0.0065s
+detection: 112/697 0.0096s 0.0232s
+detection: 113/697 0.0090s 0.0261s
+detection: 114/697 0.0091s 0.0060s
+detection: 115/697 0.0091s 0.0106s
+detection: 116/697 0.0090s 0.0116s
+detection: 117/697 0.0086s 0.0071s
+detection: 118/697 0.0096s 0.0070s
+detection: 119/697 0.0090s 0.0086s
+detection: 120/697 0.0090s 0.0101s
+detection: 121/697 0.0090s 0.0085s
+detection: 122/697 0.0096s 0.0070s
+detection: 123/697 0.0085s 0.0045s
+detection: 124/697 0.0090s 0.0060s
+detection: 125/697 0.0091s 0.0211s
+detection: 126/697 0.0090s 0.0170s
+detection: 127/697 0.0100s 0.0130s
+detection: 128/697 0.0090s 0.0091s
+detection: 129/697 0.0091s 0.0111s
+detection: 130/697 0.0090s 0.0100s
+detection: 131/697 0.0095s 0.0090s
+detection: 132/697 0.0095s 0.0161s
+detection: 133/697 0.0101s 0.0120s
+detection: 134/697 0.0102s 0.0151s
+detection: 135/697 0.0110s 0.0236s
+detection: 136/697 0.0081s 0.0186s
+detection: 137/697 0.0086s 0.0060s
+detection: 138/697 0.0111s 0.0071s
+detection: 139/697 0.0090s 0.0130s
+detection: 140/697 0.0090s 0.0110s
+detection: 141/697 0.0090s 0.0144s
+detection: 142/697 0.0081s 0.0091s
+detection: 143/697 0.0086s 0.0081s
+detection: 144/697 0.0090s 0.0060s
+detection: 145/697 0.0110s 0.0070s
+detection: 146/697 0.0090s 0.0091s
+detection: 147/697 0.0095s 0.0085s
+detection: 148/697 0.0095s 0.0125s
+detection: 149/697 0.0090s 0.0105s
+detection: 150/697 0.0090s 0.0080s
+detection: 151/697 0.0085s 0.0080s
+detection: 152/697 0.0086s 0.0085s
+detection: 153/697 0.0085s 0.0090s
+detection: 154/697 0.0090s 0.0075s
+detection: 155/697 0.0095s 0.0045s
+detection: 156/697 0.0081s 0.0061s
+detection: 157/697 0.0096s 0.0055s
+detection: 158/697 0.0100s 0.0050s
+detection: 159/697 0.0095s 0.0085s
+detection: 160/697 0.0105s 0.0195s
+detection: 161/697 0.0100s 0.0106s
+detection: 162/697 0.0106s 0.0105s
+detection: 163/697 0.0106s 0.0080s
+detection: 164/697 0.0100s 0.0131s
+detection: 165/697 0.0096s 0.0101s
+detection: 166/697 0.0100s 0.0055s
+detection: 167/697 0.0110s 0.0125s
+detection: 168/697 0.0109s 0.0052s
+detection: 169/697 0.0110s 0.0080s
+detection: 170/697 0.0110s 0.0100s
+detection: 171/697 0.0104s 0.0065s
+detection: 172/697 0.0110s 0.0146s
+detection: 173/697 0.0110s 0.0155s
+detection: 174/697 0.0111s 0.0141s
+detection: 175/697 0.0101s 0.0280s
+detection: 176/697 0.0116s 0.0130s
+detection: 177/697 0.0116s 0.0110s
+detection: 178/697 0.0105s 0.0050s
+detection: 179/697 0.0109s 0.0055s
+detection: 180/697 0.0101s 0.0095s
+detection: 181/697 0.0115s 0.0070s
+detection: 182/697 0.0105s 0.0060s
+detection: 183/697 0.0115s 0.0080s
+detection: 184/697 0.0115s 0.0076s
+detection: 185/697 0.0121s 0.0065s
+detection: 186/697 0.0110s 0.0311s
+detection: 187/697 0.0125s 0.0146s
+detection: 188/697 0.0120s 0.0070s
+detection: 189/697 0.0121s 0.0327s
+detection: 190/697 0.0121s 0.0130s
+detection: 191/697 0.0126s 0.0125s
+detection: 192/697 0.0117s 0.0171s
+detection: 193/697 0.0121s 0.0281s
+detection: 194/697 0.0130s 0.0070s
+detection: 195/697 0.0120s 0.0165s
+detection: 196/697 0.0125s 0.0175s
+detection: 197/697 0.0116s 0.0180s
+detection: 198/697 0.0126s 0.0046s
+detection: 199/697 0.0125s 0.0080s
+detection: 200/697 0.0125s 0.0166s
+detection: 201/697 0.0110s 0.0186s
+detection: 202/697 0.0121s 0.0161s
+detection: 203/697 0.0115s 0.0125s
+detection: 204/697 0.0115s 0.0055s
+detection: 205/697 0.0115s 0.0090s
+detection: 206/697 0.0121s 0.0055s
+detection: 207/697 0.0110s 0.0116s
+detection: 208/697 0.0115s 0.0105s
+detection: 209/697 0.0120s 0.0085s
+detection: 210/697 0.0125s 0.0146s
+detection: 211/697 0.0125s 0.0146s
+detection: 212/697 0.0116s 0.0075s
+detection: 213/697 0.0125s 0.0141s
+detection: 214/697 0.0136s 0.0091s
+detection: 215/697 0.0155s 0.0262s
+detection: 216/697 0.0135s 0.0111s
+detection: 217/697 0.0145s 0.0121s
+detection: 218/697 0.0141s 0.0469s
+detection: 219/697 0.0151s 0.0465s
+detection: 220/697 0.0125s 0.0381s
+detection: 221/697 0.0126s 0.0171s
+detection: 222/697 0.0120s 0.0100s
+detection: 223/697 0.0135s 0.0211s
+detection: 224/697 0.0130s 0.0070s
+detection: 225/697 0.0136s 0.0075s
+detection: 226/697 0.0125s 0.0080s
+detection: 227/697 0.0121s 0.0110s
+detection: 228/697 0.0135s 0.0110s
+detection: 229/697 0.0120s 0.0090s
+detection: 230/697 0.0147s 0.0100s
+detection: 231/697 0.0131s 0.0152s
+detection: 232/697 0.0125s 0.0075s
+detection: 233/697 0.0125s 0.0055s
+detection: 234/697 0.0125s 0.0081s
+detection: 235/697 0.0126s 0.0080s
+detection: 236/697 0.0130s 0.0080s
+detection: 237/697 0.0135s 0.0095s
+detection: 238/697 0.0135s 0.0100s
+detection: 239/697 0.0130s 0.0060s
+detection: 240/697 0.0130s 0.0150s
+detection: 241/697 0.0131s 0.0331s
+detection: 242/697 0.0135s 0.0136s
+detection: 243/697 0.0130s 0.0081s
+detection: 244/697 0.0136s 0.0146s
+detection: 245/697 0.0135s 0.0090s
+detection: 246/697 0.0131s 0.0135s
+detection: 247/697 0.0136s 0.0116s
+detection: 248/697 0.0130s 0.0175s
+detection: 249/697 0.0126s 0.0177s
+detection: 250/697 0.0136s 0.0150s
+detection: 251/697 0.0150s 0.0090s
+detection: 252/697 0.0130s 0.0110s
+detection: 253/697 0.0130s 0.0126s
+detection: 254/697 0.0130s 0.0070s
+detection: 255/697 0.0131s 0.0060s
+detection: 256/697 0.0136s 0.0065s
+detection: 257/697 0.0125s 0.0055s
+detection: 258/697 0.0121s 0.0090s
+detection: 259/697 0.0125s 0.0050s
+detection: 260/697 0.0131s 0.0065s
+detection: 261/697 0.0125s 0.0046s
+detection: 262/697 0.0136s 0.0090s
+detection: 263/697 0.0121s 0.0080s
+detection: 264/697 0.0135s 0.0055s
+detection: 265/697 0.0130s 0.0070s
+detection: 266/697 0.0116s 0.0065s
+detection: 267/697 0.0135s 0.0055s
+detection: 268/697 0.0125s 0.0065s
+detection: 269/697 0.0131s 0.0055s
+detection: 270/697 0.0126s 0.0045s
+detection: 271/697 0.0125s 0.0050s
+detection: 272/697 0.0121s 0.0045s
+detection: 273/697 0.0125s 0.0071s
+detection: 274/697 0.0126s 0.0060s
+detection: 275/697 0.0121s 0.0051s
+detection: 276/697 0.0125s 0.0061s
+detection: 277/697 0.0120s 0.0045s
+detection: 278/697 0.0106s 0.0050s
+detection: 279/697 0.0100s 0.0075s
+detection: 280/697 0.0110s 0.0080s
+detection: 281/697 0.0096s 0.0110s
+detection: 282/697 0.0106s 0.0081s
+detection: 283/697 0.0106s 0.0150s
+detection: 284/697 0.0106s 0.0051s
+detection: 285/697 0.0106s 0.0075s
+detection: 286/697 0.0116s 0.0126s
+detection: 287/697 0.0111s 0.0081s
+detection: 288/697 0.0106s 0.0085s
+detection: 289/697 0.0105s 0.0180s
+detection: 290/697 0.0115s 0.0096s
+detection: 291/697 0.0116s 0.0105s
+detection: 292/697 0.0110s 0.0201s
+detection: 293/697 0.0111s 0.0186s
+detection: 294/697 0.0125s 0.0186s
+detection: 295/697 0.0105s 0.0106s
+detection: 296/697 0.0116s 0.0126s
+detection: 297/697 0.0105s 0.0161s
+detection: 298/697 0.0106s 0.0311s
+detection: 299/697 0.0105s 0.0297s
+detection: 300/697 0.0101s 0.0237s
+detection: 301/697 0.0105s 0.0136s
+detection: 302/697 0.0116s 0.0670s
+detection: 303/697 0.0105s 0.0105s
+detection: 304/697 0.0096s 0.0080s
+detection: 305/697 0.0105s 0.0161s
+detection: 306/697 0.0105s 0.0120s
+detection: 307/697 0.0100s 0.0256s
+detection: 308/697 0.0100s 0.0100s
+detection: 309/697 0.0105s 0.0327s
+detection: 310/697 0.0110s 0.0437s
+detection: 311/697 0.0110s 0.0185s
+detection: 312/697 0.0110s 0.0366s
+detection: 313/697 0.0100s 0.0638s
+detection: 314/697 0.0105s 0.0397s
+detection: 315/697 0.0100s 0.0211s
+detection: 316/697 0.0105s 0.0105s
+detection: 317/697 0.0096s 0.0140s
+detection: 318/697 0.0110s 0.0115s
+detection: 319/697 0.0095s 0.0167s
+detection: 320/697 0.0106s 0.0246s
+detection: 321/697 0.0100s 0.0201s
+detection: 322/697 0.0126s 0.0206s
+detection: 323/697 0.0131s 0.0116s
+detection: 324/697 0.0133s 0.0200s
+detection: 325/697 0.0140s 0.0271s
+detection: 326/697 0.0156s 0.0100s
+detection: 327/697 0.0170s 0.0160s
+detection: 328/697 0.0165s 0.0176s
+detection: 329/697 0.0160s 0.0136s
+detection: 330/697 0.0155s 0.0236s
+detection: 331/697 0.0165s 0.0106s
+detection: 332/697 0.0151s 0.0105s
+detection: 333/697 0.0140s 0.0181s
+detection: 334/697 0.0135s 0.0161s
+detection: 335/697 0.0131s 0.0386s
+detection: 336/697 0.0146s 0.0351s
+detection: 337/697 0.0130s 0.0166s
+detection: 338/697 0.0131s 0.0210s
+detection: 339/697 0.0141s 0.0190s
+detection: 340/697 0.0131s 0.0277s
+detection: 341/697 0.0136s 0.0120s
+detection: 342/697 0.0150s 0.0216s
+detection: 343/697 0.0130s 0.0146s
+detection: 344/697 0.0126s 0.0251s
+detection: 345/697 0.0135s 0.0105s
+detection: 346/697 0.0136s 0.0271s
+detection: 347/697 0.0130s 0.0302s
+detection: 348/697 0.0141s 0.0145s
+detection: 349/697 0.0136s 0.0111s
+detection: 350/697 0.0155s 0.0085s
+detection: 351/697 0.0165s 0.0274s
+detection: 352/697 0.0168s 0.0234s
+detection: 353/697 0.0165s 0.0195s
+detection: 354/697 0.0141s 0.0120s
+detection: 355/697 0.0140s 0.0080s
+detection: 356/697 0.0130s 0.0101s
+detection: 357/697 0.0126s 0.0191s
+detection: 358/697 0.0135s 0.0130s
+detection: 359/697 0.0135s 0.0150s
+detection: 360/697 0.0146s 0.0176s
+detection: 361/697 0.0131s 0.0307s
+detection: 362/697 0.0135s 0.0085s
+detection: 363/697 0.0130s 0.0080s
+detection: 364/697 0.0140s 0.0070s
+detection: 365/697 0.0130s 0.0050s
+detection: 366/697 0.0130s 0.0070s
+detection: 367/697 0.0135s 0.0126s
+detection: 368/697 0.0141s 0.0115s
+detection: 369/697 0.0135s 0.0090s
+detection: 370/697 0.0135s 0.0115s
+detection: 371/697 0.0125s 0.0070s
+detection: 372/697 0.0131s 0.0216s
+detection: 373/697 0.0126s 0.0070s
+detection: 374/697 0.0145s 0.0266s
+detection: 375/697 0.0150s 0.0180s
+detection: 376/697 0.0130s 0.0160s
+detection: 377/697 0.0131s 0.0205s
+detection: 378/697 0.0140s 0.0201s
+detection: 379/697 0.0131s 0.0196s
+detection: 380/697 0.0142s 0.0241s
+detection: 381/697 0.0136s 0.0075s
+detection: 382/697 0.0136s 0.0297s
+detection: 383/697 0.0146s 0.0241s
+detection: 384/697 0.0126s 0.0206s
+detection: 385/697 0.0136s 0.0125s
+detection: 386/697 0.0126s 0.0226s
+detection: 387/697 0.0136s 0.0316s
+detection: 388/697 0.0135s 0.0286s
+detection: 389/697 0.0136s 0.0200s
+detection: 390/697 0.0140s 0.0145s
+detection: 391/697 0.0141s 0.0080s
+detection: 392/697 0.0130s 0.0256s
+detection: 393/697 0.0136s 0.0584s
+detection: 394/697 0.0135s 0.0226s
+detection: 395/697 0.0135s 0.0151s
+detection: 396/697 0.0136s 0.0151s
+detection: 397/697 0.0140s 0.0246s
+detection: 398/697 0.0130s 0.0281s
+detection: 399/697 0.0126s 0.0151s
+detection: 400/697 0.0141s 0.0105s
+detection: 401/697 0.0140s 0.0196s
+detection: 402/697 0.0140s 0.0271s
+detection: 403/697 0.0140s 0.0106s
+detection: 404/697 0.0136s 0.0056s
+detection: 405/697 0.0145s 0.0146s
+detection: 406/697 0.0130s 0.0175s
+detection: 407/697 0.0136s 0.0231s
+detection: 408/697 0.0140s 0.0105s
+detection: 409/697 0.0140s 0.0080s
+detection: 410/697 0.0140s 0.0095s
+detection: 411/697 0.0130s 0.0130s
+detection: 412/697 0.0136s 0.0232s
+detection: 413/697 0.0146s 0.0145s
+detection: 414/697 0.0140s 0.0200s
+detection: 415/697 0.0145s 0.0292s
+detection: 416/697 0.0146s 0.0246s
+detection: 417/697 0.0146s 0.0241s
+detection: 418/697 0.0151s 0.0106s
+detection: 419/697 0.0135s 0.0126s
+detection: 420/697 0.0146s 0.0170s
+detection: 421/697 0.0151s 0.0100s
+detection: 422/697 0.0156s 0.0226s
+detection: 423/697 0.0150s 0.0066s
+detection: 424/697 0.0155s 0.0070s
+detection: 425/697 0.0142s 0.0262s
+detection: 426/697 0.0156s 0.0365s
+detection: 427/697 0.0150s 0.0140s
+detection: 428/697 0.0146s 0.0075s
+detection: 429/697 0.0145s 0.0136s
+detection: 430/697 0.0136s 0.0321s
+detection: 431/697 0.0146s 0.0161s
+detection: 432/697 0.0151s 0.0159s
+detection: 433/697 0.0147s 0.0060s
+detection: 434/697 0.0141s 0.0296s
+detection: 435/697 0.0151s 0.0331s
+detection: 436/697 0.0141s 0.0136s
+detection: 437/697 0.0140s 0.0166s
+detection: 438/697 0.0150s 0.0060s
+detection: 439/697 0.0155s 0.0110s
+detection: 440/697 0.0150s 0.0210s
+detection: 441/697 0.0150s 0.0291s
+detection: 442/697 0.0146s 0.0135s
+detection: 443/697 0.0151s 0.0121s
+detection: 444/697 0.0150s 0.0096s
+detection: 445/697 0.0142s 0.0126s
+detection: 446/697 0.0156s 0.0075s
+detection: 447/697 0.0151s 0.0091s
+detection: 448/697 0.0135s 0.0115s
+detection: 449/697 0.0140s 0.0065s
+detection: 450/697 0.0140s 0.0272s
+detection: 451/697 0.0146s 0.0221s
+detection: 452/697 0.0136s 0.0110s
+detection: 453/697 0.0126s 0.0095s
+detection: 454/697 0.0135s 0.0085s
+detection: 455/697 0.0135s 0.0070s
+detection: 456/697 0.0136s 0.0081s
+detection: 457/697 0.0135s 0.0055s
+detection: 458/697 0.0151s 0.0136s
+detection: 459/697 0.0151s 0.0437s
+detection: 460/697 0.0155s 0.0442s
+detection: 461/697 0.0140s 0.0126s
+detection: 462/697 0.0146s 0.0181s
+detection: 463/697 0.0140s 0.0241s
+detection: 464/697 0.0151s 0.0130s
+detection: 465/697 0.0145s 0.0095s
+detection: 466/697 0.0156s 0.0070s
+detection: 467/697 0.0150s 0.0086s
+detection: 468/697 0.0155s 0.0062s
+detection: 469/697 0.0160s 0.0045s
+detection: 470/697 0.0145s 0.0055s
+detection: 471/697 0.0130s 0.0078s
+detection: 472/697 0.0150s 0.0121s
+detection: 473/697 0.0146s 0.0095s
+detection: 474/697 0.0151s 0.0105s
+detection: 475/697 0.0151s 0.0110s
+detection: 476/697 0.0150s 0.0090s
+detection: 477/697 0.0160s 0.0070s
+detection: 478/697 0.0131s 0.0060s
+detection: 479/697 0.0151s 0.0071s
+detection: 480/697 0.0145s 0.0070s
+detection: 481/697 0.0141s 0.0076s
+detection: 482/697 0.0140s 0.0080s
+detection: 483/697 0.0150s 0.0055s
+detection: 484/697 0.0141s 0.0115s
+detection: 485/697 0.0146s 0.0062s
+detection: 486/697 0.0146s 0.0095s
+detection: 487/697 0.0130s 0.0080s
+detection: 488/697 0.0130s 0.0100s
+detection: 489/697 0.0171s 0.0182s
+detection: 490/697 0.0135s 0.0116s
+detection: 491/697 0.0141s 0.0070s
+detection: 492/697 0.0141s 0.0166s
+detection: 493/697 0.0141s 0.0121s
+detection: 494/697 0.0146s 0.0085s
+detection: 495/697 0.0145s 0.0130s
+detection: 496/697 0.0136s 0.0075s
+detection: 497/697 0.0130s 0.0100s
+detection: 498/697 0.0135s 0.0247s
+detection: 499/697 0.0135s 0.0105s
+detection: 500/697 0.0120s 0.0070s
+detection: 501/697 0.0125s 0.0060s
+detection: 502/697 0.0126s 0.0126s
+detection: 503/697 0.0130s 0.0100s
+detection: 504/697 0.0130s 0.0080s
+detection: 505/697 0.0122s 0.0120s
+detection: 506/697 0.0130s 0.0111s
+detection: 507/697 0.0130s 0.0210s
+detection: 508/697 0.0120s 0.0126s
+detection: 509/697 0.0111s 0.0165s
+detection: 510/697 0.0115s 0.0375s
+detection: 511/697 0.0121s 0.0131s
+detection: 512/697 0.0110s 0.0221s
+detection: 513/697 0.0116s 0.0150s
+detection: 514/697 0.0115s 0.0251s
+detection: 515/697 0.0110s 0.0370s
+detection: 516/697 0.0600s 0.0335s
+detection: 517/697 0.0096s 0.0110s
+detection: 518/697 0.0105s 0.0176s
+detection: 519/697 0.0111s 0.0091s
+detection: 520/697 0.0100s 0.0155s
+detection: 521/697 0.0110s 0.0100s
+detection: 522/697 0.0106s 0.0609s
+detection: 523/697 0.0195s 0.0180s
+detection: 524/697 0.0105s 0.0400s
+detection: 525/697 0.0110s 0.0200s
+detection: 526/697 0.0113s 0.0146s
+detection: 527/697 0.0110s 0.0095s
+detection: 528/697 0.0100s 0.0231s
+detection: 529/697 0.0106s 0.0196s
+detection: 530/697 0.0100s 0.0175s
+detection: 531/697 0.0196s 0.0201s
+detection: 532/697 0.0116s 0.0171s
+detection: 533/697 0.0116s 0.0332s
+detection: 534/697 0.0110s 0.0125s
+detection: 535/697 0.0100s 0.0206s
+detection: 536/697 0.0120s 0.0464s
+detection: 537/697 0.0121s 0.0106s
+detection: 538/697 0.0116s 0.0261s
+detection: 539/697 0.0116s 0.0151s
+detection: 540/697 0.0116s 0.0271s
+detection: 541/697 0.0145s 0.0306s
+detection: 542/697 0.0156s 0.0232s
+detection: 543/697 0.0136s 0.0170s
+detection: 544/697 0.0155s 0.0165s
+detection: 545/697 0.0161s 0.0160s
+detection: 546/697 0.0156s 0.0070s
+detection: 547/697 0.0161s 0.0145s
+detection: 548/697 0.0137s 0.0199s
+detection: 549/697 0.0135s 0.0528s
+detection: 550/697 0.0156s 0.0276s
+detection: 551/697 0.0141s 0.0336s
+detection: 552/697 0.0131s 0.0336s
+detection: 553/697 0.0135s 0.0425s
+detection: 554/697 0.0140s 0.0165s
+detection: 555/697 0.0150s 0.0110s
+detection: 556/697 0.0156s 0.0261s
+detection: 557/697 0.0160s 0.0337s
+detection: 558/697 0.0130s 0.0331s
+detection: 559/697 0.0140s 0.0105s
+detection: 560/697 0.0135s 0.0191s
+detection: 561/697 0.0131s 0.0101s
+detection: 562/697 0.0146s 0.0276s
+detection: 563/697 0.0130s 0.0176s
+detection: 564/697 0.0131s 0.0275s
+detection: 565/697 0.0125s 0.0081s
+detection: 566/697 0.0130s 0.0306s
+detection: 567/697 0.0130s 0.0100s
+detection: 568/697 0.0130s 0.0080s
+detection: 569/697 0.0145s 0.0437s
+detection: 570/697 0.0156s 0.0251s
+detection: 571/697 0.0140s 0.0216s
+detection: 572/697 0.0151s 0.0272s
+detection: 573/697 0.0146s 0.0321s
+detection: 574/697 0.0157s 0.0422s
+detection: 575/697 0.0151s 0.0237s
+detection: 576/697 0.0152s 0.0196s
+detection: 577/697 0.0150s 0.0211s
+detection: 578/697 0.0152s 0.0357s
+detection: 579/697 0.0161s 0.0267s
+detection: 580/697 0.0156s 0.0316s
+detection: 581/697 0.0141s 0.0297s
+detection: 582/697 0.0161s 0.0266s
+detection: 583/697 0.0136s 0.0115s
+detection: 584/697 0.0140s 0.0221s
+detection: 585/697 0.0141s 0.0201s
+detection: 586/697 0.0131s 0.0231s
+detection: 587/697 0.0156s 0.0241s
+detection: 588/697 0.0146s 0.0425s
+detection: 589/697 0.0150s 0.0180s
+detection: 590/697 0.0160s 0.0140s
+detection: 591/697 0.0140s 0.0240s
+detection: 592/697 0.0160s 0.0090s
+detection: 593/697 0.0170s 0.0475s
+detection: 594/697 0.0170s 0.0150s
+detection: 595/697 0.0190s 0.0200s
+detection: 596/697 0.0140s 0.0181s
+detection: 597/697 0.0140s 0.0150s
+detection: 598/697 0.0150s 0.0256s
+detection: 599/697 0.0146s 0.0597s
+detection: 600/697 0.0164s 0.0548s
+detection: 601/697 0.0139s 0.0440s
+detection: 602/697 0.0172s 0.0281s
+detection: 603/697 0.0171s 0.0283s
+detection: 604/697 0.0151s 0.0240s
+detection: 605/697 0.0136s 0.0185s
+detection: 606/697 0.0146s 0.0271s
+detection: 607/697 0.0141s 0.0181s
+detection: 608/697 0.0140s 0.0110s
+detection: 609/697 0.0145s 0.0136s
+detection: 610/697 0.0140s 0.0276s
+detection: 611/697 0.0156s 0.0131s
+detection: 612/697 0.0140s 0.0221s
+detection: 613/697 0.0150s 0.0125s
+detection: 614/697 0.0150s 0.0170s
+detection: 615/697 0.0150s 0.0175s
+detection: 616/697 0.0140s 0.0180s
+detection: 617/697 0.0141s 0.0211s
+detection: 618/697 0.0141s 0.0276s
+detection: 619/697 0.0135s 0.0301s
+detection: 620/697 0.0136s 0.0171s
+detection: 621/697 0.0156s 0.0517s
+detection: 622/697 0.0151s 0.0642s
+detection: 623/697 0.0146s 0.0227s
+detection: 624/697 0.0142s 0.0191s
+detection: 625/697 0.0146s 0.0332s
+detection: 626/697 0.0136s 0.0546s
+detection: 627/697 0.0150s 0.0101s
+detection: 628/697 0.0141s 0.0241s
+detection: 629/697 0.0136s 0.0211s
+detection: 630/697 0.0150s 0.0251s
+detection: 631/697 0.0150s 0.0277s
+detection: 632/697 0.0136s 0.0311s
+detection: 633/697 0.0140s 0.0211s
+detection: 634/697 0.0161s 0.0252s
+detection: 635/697 0.0190s 0.0125s
+detection: 636/697 0.0185s 0.0252s
+detection: 637/697 0.0180s 0.0176s
+detection: 638/697 0.0186s 0.0190s
+detection: 639/697 0.0170s 0.0110s
+detection: 640/697 0.0170s 0.0160s
+detection: 641/697 0.0186s 0.0116s
+detection: 642/697 0.0146s 0.0151s
+detection: 643/697 0.0155s 0.0096s
+detection: 644/697 0.0190s 0.0166s
+detection: 645/697 0.0207s 0.0201s
+detection: 646/697 0.0186s 0.0195s
+detection: 647/697 0.0196s 0.0186s
+detection: 648/697 0.0195s 0.0181s
+detection: 649/697 0.0186s 0.0126s
+detection: 650/697 0.0156s 0.0135s
+detection: 651/697 0.0130s 0.0121s
+detection: 652/697 0.0130s 0.0140s
+detection: 653/697 0.0135s 0.0200s
+detection: 654/697 0.0136s 0.0101s
+detection: 655/697 0.0131s 0.0105s
+detection: 656/697 0.0130s 0.0135s
+detection: 657/697 0.0136s 0.0140s
+detection: 658/697 0.0135s 0.0182s
+detection: 659/697 0.0141s 0.0096s
+detection: 660/697 0.0134s 0.0339s
+detection: 661/697 0.0131s 0.0166s
+detection: 662/697 0.0142s 0.0126s
+detection: 663/697 0.0130s 0.0191s
+detection: 664/697 0.0130s 0.0216s
+detection: 665/697 0.0135s 0.0541s
+detection: 666/697 0.0156s 0.0156s
+detection: 667/697 0.0155s 0.0131s
+detection: 668/697 0.0151s 0.0171s
+detection: 669/697 0.0151s 0.0251s
+detection: 670/697 0.0161s 0.0216s
+detection: 671/697 0.0156s 0.0125s
+detection: 672/697 0.0146s 0.0493s
+detection: 673/697 0.0140s 0.0200s
+detection: 674/697 0.0151s 0.0507s
+detection: 675/697 0.0151s 0.0452s
+detection: 676/697 0.0151s 0.0412s
+detection: 677/697 0.0146s 0.0311s
+detection: 678/697 0.0150s 0.0181s
+detection: 679/697 0.0155s 0.0196s
+detection: 680/697 0.0150s 0.0175s
+detection: 681/697 0.0146s 0.0176s
+detection: 682/697 0.0131s 0.0347s
+detection: 683/697 0.0131s 0.0126s
+detection: 684/697 0.0130s 0.0276s
+detection: 685/697 0.0145s 0.0145s
+detection: 686/697 0.0145s 0.0130s
+detection: 687/697 0.0140s 0.0299s
+detection: 688/697 0.0155s 0.0252s
+detection: 689/697 0.0186s 0.0226s
+detection: 690/697 0.0196s 0.0367s
+detection: 691/697 0.0136s 0.0136s
+detection: 692/697 0.0201s 0.0176s
+detection: 693/697 0.0178s 0.0143s
+detection: 694/697 0.0175s 0.0181s
+detection: 695/697 0.0151s 0.0262s
+detection: 696/697 0.0130s 0.0419s
+detection: 697/697 0.0120s 0.0302s
+
+Evaluating detections
+Writing ampalaya CAMOCROPS results file
+Writing atis CAMOCROPS results file
+Writing avocado CAMOCROPS results file
+Writing bell_pepper CAMOCROPS results file
+Writing calamansi CAMOCROPS results file
+Writing cucumber CAMOCROPS results file
+Writing dalandan CAMOCROPS results file
+Writing french_bean CAMOCROPS results file
+Writing green_chili CAMOCROPS results file
+Writing green_mango CAMOCROPS results file
+Writing guava CAMOCROPS results file
+Writing guyabano CAMOCROPS results file
+Writing okra CAMOCROPS results file
+Writing pea CAMOCROPS results file
+Writing sayote CAMOCROPS results file
+------------ Options -------------
+input_channels: 3
+class_count: 16
+dataset: camocrops
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./5camocrops
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ../../Datasets/Tomatod/
+ccrop_data_path: ../../Datasets/CCROP/
+camocrops_data_path: ./data/Datasets/CamoCrops/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 25617176
+loaded trained model ./5camocrops
+detection: 1/697 0.5231s 0.0180s
+detection: 2/697 0.0100s 0.0256s
+detection: 3/697 0.0090s 0.0236s
+detection: 4/697 0.0090s 0.0161s
+detection: 5/697 0.0090s 0.0251s
+detection: 6/697 0.0090s 0.0080s
+detection: 7/697 0.0080s 0.0065s
+detection: 8/697 0.0080s 0.0075s
+detection: 9/697 0.0085s 0.0341s
+detection: 10/697 0.0085s 0.0231s
+detection: 11/697 0.0090s 0.0345s
+detection: 12/697 0.0086s 0.0356s
+detection: 13/697 0.0090s 0.0286s
+detection: 14/697 0.0080s 0.0311s
+detection: 15/697 0.0096s 0.0271s
+detection: 16/697 0.0089s 0.0102s
+detection: 17/697 0.0090s 0.0090s
+detection: 18/697 0.0080s 0.0250s
+detection: 19/697 0.0085s 0.0249s
+detection: 20/697 0.0081s 0.0080s
+detection: 21/697 0.0090s 0.0116s
+detection: 22/697 0.0080s 0.0416s
+detection: 23/697 0.0085s 0.0105s
+detection: 24/697 0.0085s 0.0106s
+detection: 25/697 0.0085s 0.0156s
+detection: 26/697 0.0085s 0.0145s
+detection: 27/697 0.0086s 0.0090s
+detection: 28/697 0.0090s 0.0090s
+detection: 29/697 0.0085s 0.0266s
+detection: 30/697 0.0091s 0.0125s
+detection: 31/697 0.0096s 0.0311s
+detection: 32/697 0.0090s 0.0090s
+detection: 33/697 0.0095s 0.0361s
+detection: 34/697 0.0090s 0.0341s
+detection: 35/697 0.0090s 0.0442s
+detection: 36/697 0.0081s 0.0131s
+detection: 37/697 0.0081s 0.0205s
+detection: 38/697 0.0085s 0.0231s
+detection: 39/697 0.0090s 0.0065s
+detection: 40/697 0.0095s 0.0096s
+detection: 41/697 0.0085s 0.0100s
+detection: 42/697 0.0095s 0.0090s
+detection: 43/697 0.0091s 0.0105s
+detection: 44/697 0.0091s 0.0363s
+detection: 45/697 0.0090s 0.0121s
+detection: 46/697 0.0095s 0.0121s
+detection: 47/697 0.0090s 0.0100s
+detection: 48/697 0.0090s 0.0081s
+detection: 49/697 0.0096s 0.0096s
+detection: 50/697 0.0086s 0.0100s
+detection: 51/697 0.0100s 0.0091s
+detection: 52/697 0.0085s 0.0131s
+detection: 53/697 0.0090s 0.0075s
+detection: 54/697 0.0085s 0.0096s
+detection: 55/697 0.0080s 0.0075s
+detection: 56/697 0.0095s 0.0070s
+detection: 57/697 0.0091s 0.0166s
+detection: 58/697 0.0101s 0.0196s
+detection: 59/697 0.0105s 0.0106s
+detection: 60/697 0.0100s 0.0090s
+detection: 61/697 0.0101s 0.0090s
+detection: 62/697 0.0090s 0.0090s
+detection: 63/697 0.0095s 0.0146s
+detection: 64/697 0.0095s 0.0080s
+detection: 65/697 0.0090s 0.0090s
+detection: 66/697 0.0090s 0.0100s
+detection: 67/697 0.0090s 0.0090s
+detection: 68/697 0.0086s 0.0085s
+detection: 69/697 0.0090s 0.0070s
+detection: 70/697 0.0096s 0.0372s
+detection: 71/697 0.0090s 0.0145s
+detection: 72/697 0.0096s 0.0166s
+detection: 73/697 0.0091s 0.0130s
+detection: 74/697 0.0085s 0.0130s
+detection: 75/697 0.0095s 0.0095s
+detection: 76/697 0.0095s 0.0095s
+detection: 77/697 0.0095s 0.0195s
+detection: 78/697 0.0100s 0.0116s
+detection: 79/697 0.0091s 0.0160s
+detection: 80/697 0.0080s 0.0090s
+detection: 81/697 0.0090s 0.0080s
+detection: 82/697 0.0096s 0.0080s
+detection: 83/697 0.0091s 0.0100s
+detection: 84/697 0.0096s 0.0070s
+detection: 85/697 0.0095s 0.0101s
+detection: 86/697 0.0095s 0.0156s
+detection: 87/697 0.0085s 0.0171s
+detection: 88/697 0.0090s 0.0091s
+detection: 89/697 0.0090s 0.0155s
+detection: 90/697 0.0095s 0.0100s
+detection: 91/697 0.0091s 0.0095s
+detection: 92/697 0.0081s 0.0070s
+detection: 93/697 0.0096s 0.0070s
+detection: 94/697 0.0080s 0.0055s
+detection: 95/697 0.0090s 0.0171s
+detection: 96/697 0.0091s 0.0080s
+detection: 97/697 0.0100s 0.0211s
+detection: 98/697 0.0100s 0.0382s
+detection: 99/697 0.0091s 0.0050s
+detection: 100/697 0.0095s 0.0060s
+detection: 101/697 0.0090s 0.0140s
+detection: 102/697 0.0090s 0.0095s
+detection: 103/697 0.0086s 0.0065s
+detection: 104/697 0.0090s 0.0086s
+detection: 105/697 0.0100s 0.0096s
+detection: 106/697 0.0090s 0.0045s
+detection: 107/697 0.0100s 0.0080s
+detection: 108/697 0.0090s 0.0090s
+detection: 109/697 0.0090s 0.0255s
+detection: 110/697 0.0090s 0.0075s
+detection: 111/697 0.0100s 0.0066s
+detection: 112/697 0.0096s 0.0215s
+detection: 113/697 0.0106s 0.0231s
+detection: 114/697 0.0090s 0.0090s
+detection: 115/697 0.0095s 0.0115s
+detection: 116/697 0.0096s 0.0146s
+detection: 117/697 0.0090s 0.0070s
+detection: 118/697 0.0090s 0.0050s
+detection: 119/697 0.0080s 0.0075s
+detection: 120/697 0.0091s 0.0100s
+detection: 121/697 0.0100s 0.0110s
+detection: 122/697 0.0090s 0.0070s
+detection: 123/697 0.0096s 0.0045s
+detection: 124/697 0.0100s 0.0075s
+detection: 125/697 0.0096s 0.0245s
+detection: 126/697 0.0100s 0.0165s
+detection: 127/697 0.0096s 0.0116s
+detection: 128/697 0.0080s 0.0080s
+detection: 129/697 0.0086s 0.0085s
+detection: 130/697 0.0085s 0.0080s
+detection: 131/697 0.0101s 0.0086s
+detection: 132/697 0.0096s 0.0156s
+detection: 133/697 0.0085s 0.0121s
+detection: 134/697 0.0095s 0.0105s
+detection: 135/697 0.0090s 0.0192s
+detection: 136/697 0.0090s 0.0120s
+detection: 137/697 0.0090s 0.0040s
+detection: 138/697 0.0086s 0.0071s
+detection: 139/697 0.0080s 0.0115s
+detection: 140/697 0.0091s 0.0105s
+detection: 141/697 0.0090s 0.0121s
+detection: 142/697 0.0090s 0.0100s
+detection: 143/697 0.0100s 0.0075s
+detection: 144/697 0.0086s 0.0061s
+detection: 145/697 0.0091s 0.0045s
+detection: 146/697 0.0090s 0.0080s
+detection: 147/697 0.0091s 0.0065s
+detection: 148/697 0.0090s 0.0110s
+detection: 149/697 0.0095s 0.0116s
+detection: 150/697 0.0090s 0.0070s
+detection: 151/697 0.0090s 0.0096s
+detection: 152/697 0.0100s 0.0095s
+detection: 153/697 0.0085s 0.0075s
+detection: 154/697 0.0086s 0.0060s
+detection: 155/697 0.0093s 0.0051s
+detection: 156/697 0.0090s 0.0050s
+detection: 157/697 0.0090s 0.0060s
+detection: 158/697 0.0085s 0.0055s
+detection: 159/697 0.0086s 0.0075s
+detection: 160/697 0.0100s 0.0222s
+detection: 161/697 0.0091s 0.0101s
+detection: 162/697 0.0100s 0.0116s
+detection: 163/697 0.0091s 0.0091s
+detection: 164/697 0.0085s 0.0110s
+detection: 165/697 0.0100s 0.0085s
+detection: 166/697 0.0105s 0.0075s
+detection: 167/697 0.0106s 0.0155s
+detection: 168/697 0.0105s 0.0061s
+detection: 169/697 0.0110s 0.0070s
+detection: 170/697 0.0105s 0.0080s
+detection: 171/697 0.0100s 0.0045s
+detection: 172/697 0.0111s 0.0105s
+detection: 173/697 0.0106s 0.0170s
+detection: 174/697 0.0111s 0.0155s
+detection: 175/697 0.0106s 0.0261s
+detection: 176/697 0.0115s 0.0125s
+detection: 177/697 0.0111s 0.0130s
+detection: 178/697 0.0105s 0.0040s
+detection: 179/697 0.0095s 0.0055s
+detection: 180/697 0.0106s 0.0065s
+detection: 181/697 0.0110s 0.0055s
+detection: 182/697 0.0105s 0.0045s
+detection: 183/697 0.0115s 0.0075s
+detection: 184/697 0.0115s 0.0060s
+detection: 185/697 0.0110s 0.0055s
+detection: 186/697 0.0126s 0.0296s
+detection: 187/697 0.0116s 0.0146s
+detection: 188/697 0.0125s 0.0100s
+detection: 189/697 0.0116s 0.0361s
+detection: 190/697 0.0115s 0.0156s
+detection: 191/697 0.0120s 0.0081s
+detection: 192/697 0.0115s 0.0176s
+detection: 193/697 0.0110s 0.0280s
+detection: 194/697 0.0125s 0.0070s
+detection: 195/697 0.0125s 0.0171s
+detection: 196/697 0.0120s 0.0150s
+detection: 197/697 0.0116s 0.0196s
+detection: 198/697 0.0116s 0.0055s
+detection: 199/697 0.0120s 0.0108s
+detection: 200/697 0.0125s 0.0150s
+detection: 201/697 0.0125s 0.0140s
+detection: 202/697 0.0121s 0.0162s
+detection: 203/697 0.0126s 0.0146s
+detection: 204/697 0.0121s 0.0080s
+detection: 205/697 0.0130s 0.0141s
+detection: 206/697 0.0121s 0.0055s
+detection: 207/697 0.0126s 0.0120s
+detection: 208/697 0.0125s 0.0106s
+detection: 209/697 0.0120s 0.0090s
+detection: 210/697 0.0121s 0.0171s
+detection: 211/697 0.0121s 0.0137s
+detection: 212/697 0.0125s 0.0091s
+detection: 213/697 0.0126s 0.0131s
+detection: 214/697 0.0126s 0.0085s
+detection: 215/697 0.0120s 0.0201s
+detection: 216/697 0.0110s 0.0075s
+detection: 217/697 0.0125s 0.0075s
+detection: 218/697 0.0135s 0.0436s
+detection: 219/697 0.0120s 0.0387s
+detection: 220/697 0.0130s 0.0376s
+detection: 221/697 0.0116s 0.0166s
+detection: 222/697 0.0136s 0.0121s
+detection: 223/697 0.0126s 0.0166s
+detection: 224/697 0.0135s 0.0075s
+detection: 225/697 0.0130s 0.0075s
+detection: 226/697 0.0125s 0.0055s
+detection: 227/697 0.0131s 0.0101s
+detection: 228/697 0.0126s 0.0090s
+detection: 229/697 0.0130s 0.0090s
+detection: 230/697 0.0120s 0.0096s
+detection: 231/697 0.0125s 0.0136s
+detection: 232/697 0.0125s 0.0080s
+detection: 233/697 0.0116s 0.0050s
+detection: 234/697 0.0124s 0.0093s
+detection: 235/697 0.0120s 0.0100s
+detection: 236/697 0.0130s 0.0070s
+detection: 237/697 0.0130s 0.0120s
+detection: 238/697 0.0130s 0.0131s
+detection: 239/697 0.0125s 0.0061s
+detection: 240/697 0.0126s 0.0146s
+detection: 241/697 0.0136s 0.0331s
+detection: 242/697 0.0130s 0.0161s
+detection: 243/697 0.0125s 0.0075s
+detection: 244/697 0.0120s 0.0120s
+detection: 245/697 0.0121s 0.0095s
+detection: 246/697 0.0130s 0.0115s
+detection: 247/697 0.0125s 0.0100s
+detection: 248/697 0.0135s 0.0146s
+detection: 249/697 0.0135s 0.0140s
+detection: 250/697 0.0131s 0.0185s
+detection: 251/697 0.0125s 0.0081s
+detection: 252/697 0.0136s 0.0090s
+detection: 253/697 0.0130s 0.0096s
+detection: 254/697 0.0121s 0.0065s
+detection: 255/697 0.0131s 0.0060s
+detection: 256/697 0.0135s 0.0065s
+detection: 257/697 0.0125s 0.0060s
+detection: 258/697 0.0121s 0.0085s
+detection: 259/697 0.0121s 0.0040s
+detection: 260/697 0.0121s 0.0060s
+detection: 261/697 0.0125s 0.0060s
+detection: 262/697 0.0125s 0.0065s
+detection: 263/697 0.0116s 0.0045s
+detection: 264/697 0.0130s 0.0045s
+detection: 265/697 0.0120s 0.0056s
+detection: 266/697 0.0116s 0.0055s
+detection: 267/697 0.0106s 0.0045s
+detection: 268/697 0.0110s 0.0056s
+detection: 269/697 0.0100s 0.0060s
+detection: 270/697 0.0100s 0.0055s
+detection: 271/697 0.0105s 0.0050s
+detection: 272/697 0.0115s 0.0065s
+detection: 273/697 0.0097s 0.0060s
+detection: 274/697 0.0100s 0.0045s
+detection: 275/697 0.0100s 0.0035s
+detection: 276/697 0.0116s 0.0045s
+detection: 277/697 0.0115s 0.0050s
+detection: 278/697 0.0110s 0.0070s
+detection: 279/697 0.0110s 0.0101s
+detection: 280/697 0.0105s 0.0095s
+detection: 281/697 0.0110s 0.0176s
+detection: 282/697 0.0106s 0.0111s
+detection: 283/697 0.0106s 0.0192s
+detection: 284/697 0.0105s 0.0080s
+detection: 285/697 0.0110s 0.0065s
+detection: 286/697 0.0100s 0.0091s
+detection: 287/697 0.0111s 0.0076s
+detection: 288/697 0.0115s 0.0065s
+detection: 289/697 0.0105s 0.0151s
+detection: 290/697 0.0105s 0.0085s
+detection: 291/697 0.0106s 0.0075s
+detection: 292/697 0.0106s 0.0221s
+detection: 293/697 0.0110s 0.0156s
+detection: 294/697 0.0111s 0.0125s
+detection: 295/697 0.0100s 0.0100s
+detection: 296/697 0.0115s 0.0120s
+detection: 297/697 0.0100s 0.0150s
+detection: 298/697 0.0100s 0.0336s
+detection: 299/697 0.0096s 0.0241s
+detection: 300/697 0.0105s 0.0161s
+detection: 301/697 0.0106s 0.0090s
+detection: 302/697 0.0101s 0.0206s
+detection: 303/697 0.0101s 0.0105s
+detection: 304/697 0.0095s 0.0070s
+detection: 305/697 0.0105s 0.0137s
+detection: 306/697 0.0106s 0.0109s
+detection: 307/697 0.0095s 0.0241s
+detection: 308/697 0.0105s 0.0110s
+detection: 309/697 0.0107s 0.0301s
+detection: 310/697 0.0100s 0.0440s
+detection: 311/697 0.0095s 0.0180s
+detection: 312/697 0.0106s 0.0373s
+detection: 313/697 0.0100s 0.0392s
+detection: 314/697 0.0100s 0.0367s
+detection: 315/697 0.0110s 0.0226s
+detection: 316/697 0.0100s 0.0120s
+detection: 317/697 0.0100s 0.0141s
+detection: 318/697 0.0100s 0.0106s
+detection: 319/697 0.0106s 0.0175s
+detection: 320/697 0.0100s 0.0246s
+detection: 321/697 0.0106s 0.0181s
+detection: 322/697 0.0100s 0.0201s
+detection: 323/697 0.0091s 0.0126s
+detection: 324/697 0.0100s 0.0175s
+detection: 325/697 0.0106s 0.0211s
+detection: 326/697 0.0105s 0.0080s
+detection: 327/697 0.0105s 0.0115s
+detection: 328/697 0.0110s 0.0130s
+detection: 329/697 0.0100s 0.0111s
+detection: 330/697 0.0121s 0.0190s
+detection: 331/697 0.0120s 0.0096s
+detection: 332/697 0.0135s 0.0090s
+detection: 333/697 0.0130s 0.0160s
+detection: 334/697 0.0130s 0.0166s
+detection: 335/697 0.0125s 0.0426s
+detection: 336/697 0.0125s 0.0341s
+detection: 337/697 0.0131s 0.0175s
+detection: 338/697 0.0125s 0.0211s
+detection: 339/697 0.0120s 0.0225s
+detection: 340/697 0.0125s 0.0311s
+detection: 341/697 0.0131s 0.0120s
+detection: 342/697 0.0136s 0.0216s
+detection: 343/697 0.0125s 0.0145s
+detection: 344/697 0.0303s 0.0341s
+detection: 345/697 0.0131s 0.0105s
+detection: 346/697 0.0130s 0.0271s
+detection: 347/697 0.0136s 0.0331s
+detection: 348/697 0.0135s 0.0185s
+detection: 349/697 0.0131s 0.0116s
+detection: 350/697 0.0145s 0.0091s
+detection: 351/697 0.0131s 0.0201s
+detection: 352/697 0.0136s 0.0136s
+detection: 353/697 0.0144s 0.0097s
+detection: 354/697 0.0131s 0.0120s
+detection: 355/697 0.0135s 0.0071s
+detection: 356/697 0.0130s 0.0080s
+detection: 357/697 0.0130s 0.0171s
+detection: 358/697 0.0126s 0.0146s
+detection: 359/697 0.0136s 0.0136s
+detection: 360/697 0.0141s 0.0141s
+detection: 361/697 0.0140s 0.0249s
+detection: 362/697 0.0140s 0.0085s
+detection: 363/697 0.0130s 0.0081s
+detection: 364/697 0.0146s 0.0065s
+detection: 365/697 0.0145s 0.0060s
+detection: 366/697 0.0135s 0.0075s
+detection: 367/697 0.0130s 0.0135s
+detection: 368/697 0.0135s 0.0095s
+detection: 369/697 0.0141s 0.0110s
+detection: 370/697 0.0135s 0.0105s
+detection: 371/697 0.0121s 0.0075s
+detection: 372/697 0.0125s 0.0246s
+detection: 373/697 0.0120s 0.0070s
+detection: 374/697 0.0140s 0.0231s
+detection: 375/697 0.0136s 0.0151s
+detection: 376/697 0.0126s 0.0151s
+detection: 377/697 0.0141s 0.0196s
+detection: 378/697 0.0125s 0.0196s
+detection: 379/697 0.0135s 0.0141s
+detection: 380/697 0.0131s 0.0195s
+detection: 381/697 0.0126s 0.0076s
+detection: 382/697 0.0126s 0.0151s
+detection: 383/697 0.0130s 0.0261s
+detection: 384/697 0.0145s 0.0222s
+detection: 385/697 0.0135s 0.0151s
+detection: 386/697 0.0121s 0.0166s
+detection: 387/697 0.0125s 0.0236s
+detection: 388/697 0.0136s 0.0191s
+detection: 389/697 0.0125s 0.0160s
+detection: 390/697 0.0125s 0.0176s
+detection: 391/697 0.0136s 0.0060s
+detection: 392/697 0.0136s 0.0211s
+detection: 393/697 0.0130s 0.0281s
+detection: 394/697 0.0119s 0.0196s
+detection: 395/697 0.0125s 0.0151s
+detection: 396/697 0.0130s 0.0138s
+detection: 397/697 0.0121s 0.0206s
+detection: 398/697 0.0125s 0.0241s
+detection: 399/697 0.0120s 0.0176s
+detection: 400/697 0.0125s 0.0095s
+detection: 401/697 0.0131s 0.0221s
+detection: 402/697 0.0131s 0.0256s
+detection: 403/697 0.0126s 0.0100s
+detection: 404/697 0.0130s 0.0071s
+detection: 405/697 0.0135s 0.0150s
+detection: 406/697 0.0135s 0.0165s
+detection: 407/697 0.0131s 0.0176s
+detection: 408/697 0.0136s 0.0086s
+detection: 409/697 0.0135s 0.0070s
+detection: 410/697 0.0140s 0.0050s
+detection: 411/697 0.0131s 0.0106s
+detection: 412/697 0.0130s 0.0210s
+detection: 413/697 0.0130s 0.0110s
+detection: 414/697 0.0136s 0.0185s
+detection: 415/697 0.0126s 0.0276s
+detection: 416/697 0.0125s 0.0207s
+detection: 417/697 0.0131s 0.0318s
+detection: 418/697 0.0130s 0.0146s
+detection: 419/697 0.0125s 0.0130s
+detection: 420/697 0.0126s 0.0156s
+detection: 421/697 0.0145s 0.0100s
+detection: 422/697 0.0130s 0.0236s
+detection: 423/697 0.0136s 0.0045s
+detection: 424/697 0.0131s 0.0060s
+detection: 425/697 0.0136s 0.0225s
+detection: 426/697 0.0131s 0.0331s
+detection: 427/697 0.0131s 0.0130s
+detection: 428/697 0.0135s 0.0060s
+detection: 429/697 0.0131s 0.0126s
+detection: 430/697 0.0131s 0.0281s
+detection: 431/697 0.0140s 0.0170s
+detection: 432/697 0.0126s 0.0150s
+detection: 433/697 0.0141s 0.0080s
+detection: 434/697 0.0136s 0.0206s
+detection: 435/697 0.0136s 0.0241s
+detection: 436/697 0.0145s 0.0115s
+detection: 437/697 0.0130s 0.0141s
+detection: 438/697 0.0126s 0.0070s
+detection: 439/697 0.0136s 0.0105s
+detection: 440/697 0.0140s 0.0221s
+detection: 441/697 0.0141s 0.0276s
+detection: 442/697 0.0136s 0.0115s
+detection: 443/697 0.0145s 0.0115s
+detection: 444/697 0.0140s 0.0095s
+detection: 445/697 0.0135s 0.0100s
+detection: 446/697 0.0135s 0.0080s
+detection: 447/697 0.0130s 0.0060s
+detection: 448/697 0.0140s 0.0130s
+detection: 449/697 0.0135s 0.0070s
+detection: 450/697 0.0141s 0.0277s
+detection: 451/697 0.0136s 0.0259s
+detection: 452/697 0.0125s 0.0125s
+detection: 453/697 0.0131s 0.0121s
+detection: 454/697 0.0131s 0.0070s
+detection: 455/697 0.0130s 0.0080s
+detection: 456/697 0.0131s 0.0080s
+detection: 457/697 0.0130s 0.0045s
+detection: 458/697 0.0130s 0.0095s
+detection: 459/697 0.0150s 0.0417s
+detection: 460/697 0.0130s 0.0472s
+detection: 461/697 0.0131s 0.0095s
+detection: 462/697 0.0125s 0.0141s
+detection: 463/697 0.0131s 0.0146s
+detection: 464/697 0.0135s 0.0121s
+detection: 465/697 0.0135s 0.0081s
+detection: 466/697 0.0135s 0.0065s
+detection: 467/697 0.0136s 0.0096s
+detection: 468/697 0.0141s 0.0070s
+detection: 469/697 0.0125s 0.0060s
+detection: 470/697 0.0125s 0.0065s
+detection: 471/697 0.0123s 0.0070s
+detection: 472/697 0.0126s 0.0110s
+detection: 473/697 0.0126s 0.0071s
+detection: 474/697 0.0135s 0.0080s
+detection: 475/697 0.0131s 0.0071s
+detection: 476/697 0.0135s 0.0076s
+detection: 477/697 0.0130s 0.0080s
+detection: 478/697 0.0131s 0.0065s
+detection: 479/697 0.0120s 0.0055s
+detection: 480/697 0.0120s 0.0070s
+detection: 481/697 0.0125s 0.0060s
+detection: 482/697 0.0131s 0.0090s
+detection: 483/697 0.0125s 0.0075s
+detection: 484/697 0.0126s 0.0091s
+detection: 485/697 0.0136s 0.0050s
+detection: 486/697 0.0130s 0.0106s
+detection: 487/697 0.0135s 0.0070s
+detection: 488/697 0.0131s 0.0097s
+detection: 489/697 0.0140s 0.0100s
+detection: 490/697 0.0131s 0.0095s
+detection: 491/697 0.0135s 0.0050s
+detection: 492/697 0.0131s 0.0090s
+detection: 493/697 0.0135s 0.0090s
+detection: 494/697 0.0135s 0.0055s
+detection: 495/697 0.0141s 0.0110s
+detection: 496/697 0.0125s 0.0080s
+detection: 497/697 0.0125s 0.0100s
+detection: 498/697 0.0131s 0.0090s
+detection: 499/697 0.0140s 0.0081s
+detection: 500/697 0.0120s 0.0060s
+detection: 501/697 0.0125s 0.0045s
+detection: 502/697 0.0130s 0.0080s
+detection: 503/697 0.0140s 0.0075s
+detection: 504/697 0.0140s 0.0070s
+detection: 505/697 0.0135s 0.0106s
+detection: 506/697 0.0136s 0.0080s
+detection: 507/697 0.0136s 0.0196s
+detection: 508/697 0.0132s 0.0100s
+detection: 509/697 0.0140s 0.0150s
+detection: 510/697 0.0131s 0.0322s
+detection: 511/697 0.0126s 0.0100s
+detection: 512/697 0.0125s 0.0186s
+detection: 513/697 0.0111s 0.0115s
+detection: 514/697 0.0110s 0.0200s
+detection: 515/697 0.0116s 0.0251s
+detection: 516/697 0.0120s 0.0080s
+detection: 517/697 0.0126s 0.0116s
+detection: 518/697 0.0121s 0.0121s
+detection: 519/697 0.0110s 0.0110s
+detection: 520/697 0.0120s 0.0186s
+detection: 521/697 0.0115s 0.0161s
+detection: 522/697 0.0116s 0.0175s
+detection: 523/697 0.0115s 0.0097s
+detection: 524/697 0.0120s 0.0175s
+detection: 525/697 0.0121s 0.0140s
+detection: 526/697 0.0125s 0.0101s
+detection: 527/697 0.0110s 0.0070s
+detection: 528/697 0.0115s 0.0222s
+detection: 529/697 0.0115s 0.0175s
+detection: 530/697 0.0115s 0.0170s
+detection: 531/697 0.0125s 0.0166s
+detection: 532/697 0.0115s 0.0140s
+detection: 533/697 0.0119s 0.0299s
+detection: 534/697 0.0120s 0.0090s
+detection: 535/697 0.0114s 0.0157s
+detection: 536/697 0.0120s 0.0367s
+detection: 537/697 0.0126s 0.0096s
+detection: 538/697 0.0121s 0.0226s
+detection: 539/697 0.0111s 0.0105s
+detection: 540/697 0.0120s 0.0216s
+detection: 541/697 0.0115s 0.0271s
+detection: 542/697 0.0116s 0.0231s
+detection: 543/697 0.0120s 0.0100s
+detection: 544/697 0.0111s 0.0150s
+detection: 545/697 0.0116s 0.0140s
+detection: 546/697 0.0110s 0.0055s
+detection: 547/697 0.0120s 0.0115s
+detection: 548/697 0.0130s 0.0161s
+detection: 549/697 0.0116s 0.0396s
+detection: 550/697 0.0110s 0.0191s
+detection: 551/697 0.0146s 0.0340s
+detection: 552/697 0.0130s 0.0338s
+detection: 553/697 0.0141s 0.0488s
+detection: 554/697 0.0141s 0.0176s
+detection: 555/697 0.0135s 0.0105s
+detection: 556/697 0.0151s 0.0242s
+detection: 557/697 0.0136s 0.0316s
+detection: 558/697 0.0151s 0.0316s
+detection: 559/697 0.0140s 0.0110s
+detection: 560/697 0.0150s 0.0196s
+detection: 561/697 0.0155s 0.0095s
+detection: 562/697 0.0151s 0.0225s
+detection: 563/697 0.0146s 0.0221s
+detection: 564/697 0.0140s 0.0277s
+detection: 565/697 0.0141s 0.0101s
+detection: 566/697 0.0145s 0.0316s
+detection: 567/697 0.0135s 0.0105s
+detection: 568/697 0.0146s 0.0095s
+detection: 569/697 0.0135s 0.0418s
+detection: 570/697 0.0140s 0.0216s
+detection: 571/697 0.0145s 0.0180s
+detection: 572/697 0.0145s 0.0246s
+detection: 573/697 0.0136s 0.0291s
+detection: 574/697 0.0145s 0.0316s
+detection: 575/697 0.0140s 0.0161s
+detection: 576/697 0.0146s 0.0171s
+detection: 577/697 0.0151s 0.0165s
+detection: 578/697 0.0140s 0.0306s
+detection: 579/697 0.0151s 0.0135s
+detection: 580/697 0.0140s 0.0286s
+detection: 581/697 0.0141s 0.0321s
+detection: 582/697 0.0150s 0.0351s
+detection: 583/697 0.0142s 0.0121s
+detection: 584/697 0.0153s 0.0186s
+detection: 585/697 0.0151s 0.0185s
+detection: 586/697 0.0150s 0.0196s
+detection: 587/697 0.0151s 0.0251s
+detection: 588/697 0.0160s 0.0346s
+detection: 589/697 0.0155s 0.0156s
+detection: 590/697 0.0145s 0.0111s
+detection: 591/697 0.0151s 0.0225s
+detection: 592/697 0.0146s 0.0065s
+detection: 593/697 0.0150s 0.0327s
+detection: 594/697 0.0156s 0.0085s
+detection: 595/697 0.0146s 0.0171s
+detection: 596/697 0.0141s 0.0141s
+detection: 597/697 0.0145s 0.0151s
+detection: 598/697 0.0146s 0.0251s
+detection: 599/697 0.0140s 0.0443s
+detection: 600/697 0.0156s 0.0438s
+detection: 601/697 0.0156s 0.0406s
+detection: 602/697 0.0150s 0.0230s
+detection: 603/697 0.0151s 0.0215s
+detection: 604/697 0.0150s 0.0220s
+detection: 605/697 0.0160s 0.0150s
+detection: 606/697 0.0160s 0.0236s
+detection: 607/697 0.0156s 0.0242s
+detection: 608/697 0.0151s 0.0100s
+detection: 609/697 0.0156s 0.0166s
+detection: 610/697 0.0160s 0.0286s
+detection: 611/697 0.0146s 0.0140s
+detection: 612/697 0.0160s 0.0207s
+detection: 613/697 0.0155s 0.0131s
+detection: 614/697 0.0160s 0.0165s
+detection: 615/697 0.0150s 0.0156s
+detection: 616/697 0.0160s 0.0150s
+detection: 617/697 0.0151s 0.0205s
+detection: 618/697 0.0150s 0.0296s
+detection: 619/697 0.0155s 0.0266s
+detection: 620/697 0.0156s 0.0151s
+detection: 621/697 0.0165s 0.0442s
+detection: 622/697 0.0160s 0.0642s
+detection: 623/697 0.0165s 0.0191s
+detection: 624/697 0.0151s 0.0166s
+detection: 625/697 0.0161s 0.0255s
+detection: 626/697 0.0160s 0.0462s
+detection: 627/697 0.0165s 0.0116s
+detection: 628/697 0.0175s 0.0231s
+detection: 629/697 0.0166s 0.0196s
+detection: 630/697 0.0165s 0.0236s
+detection: 631/697 0.0165s 0.0276s
+detection: 632/697 0.0165s 0.0342s
+detection: 633/697 0.0155s 0.0191s
+detection: 634/697 0.0160s 0.0261s
+detection: 635/697 0.0166s 0.0151s
+detection: 636/697 0.0166s 0.0311s
+detection: 637/697 0.0161s 0.0186s
+detection: 638/697 0.0176s 0.0141s
+detection: 639/697 0.0170s 0.0111s
+detection: 640/697 0.0161s 0.0151s
+detection: 641/697 0.0170s 0.0095s
+detection: 642/697 0.0166s 0.0090s
+detection: 643/697 0.0155s 0.0070s
+detection: 644/697 0.0156s 0.0135s
+detection: 645/697 0.0171s 0.0115s
+detection: 646/697 0.0160s 0.0141s
+detection: 647/697 0.0160s 0.0141s
+detection: 648/697 0.0165s 0.0196s
+detection: 649/697 0.0166s 0.0126s
+detection: 650/697 0.0160s 0.0145s
+detection: 651/697 0.0170s 0.0100s
+detection: 652/697 0.0160s 0.0136s
+detection: 653/697 0.0171s 0.0191s
+detection: 654/697 0.0165s 0.0110s
+detection: 655/697 0.0160s 0.0106s
+detection: 656/697 0.0165s 0.0140s
+detection: 657/697 0.0161s 0.0121s
+detection: 658/697 0.0161s 0.0186s
+detection: 659/697 0.0165s 0.0105s
+detection: 660/697 0.0166s 0.0331s
+detection: 661/697 0.0166s 0.0181s
+detection: 662/697 0.0156s 0.0140s
+detection: 663/697 0.0161s 0.0213s
+detection: 664/697 0.0166s 0.0241s
+detection: 665/697 0.0161s 0.1146s
+detection: 666/697 0.0156s 0.0145s
+detection: 667/697 0.0166s 0.0120s
+detection: 668/697 0.0151s 0.0186s
+detection: 669/697 0.0150s 0.0256s
+detection: 670/697 0.0155s 0.0175s
+detection: 671/697 0.0155s 0.0090s
+detection: 672/697 0.0160s 0.0437s
+detection: 673/697 0.0166s 0.0211s
+detection: 674/697 0.0156s 0.0482s
+detection: 675/697 0.0160s 0.0437s
+detection: 676/697 0.0151s 0.0370s
+detection: 677/697 0.0160s 0.0247s
+detection: 678/697 0.0146s 0.0176s
+detection: 679/697 0.0150s 0.0170s
+detection: 680/697 0.0145s 0.0125s
+detection: 681/697 0.0157s 0.0115s
+detection: 682/697 0.0165s 0.0166s
+detection: 683/697 0.0161s 0.0091s
+detection: 684/697 0.0156s 0.0216s
+detection: 685/697 0.0166s 0.0110s
+detection: 686/697 0.0160s 0.0105s
+detection: 687/697 0.0146s 0.0211s
+detection: 688/697 0.0150s 0.0220s
+detection: 689/697 0.0150s 0.0208s
+detection: 690/697 0.0149s 0.0267s
+detection: 691/697 0.0151s 0.0115s
+detection: 692/697 0.0151s 0.0171s
+detection: 693/697 0.0146s 0.0141s
+detection: 694/697 0.0145s 0.0166s
+detection: 695/697 0.0146s 0.0155s
+detection: 696/697 0.0160s 0.0261s
+detection: 697/697 0.0160s 0.0256s
+
+Evaluating detections
+Writing ampalaya CAMOCROPS results file
+Writing atis CAMOCROPS results file
+Writing avocado CAMOCROPS results file
+Writing bell_pepper CAMOCROPS results file
+Writing calamansi CAMOCROPS results file
+Writing cucumber CAMOCROPS results file
+Writing dalandan CAMOCROPS results file
+Writing french_bean CAMOCROPS results file
+Writing green_chili CAMOCROPS results file
+Writing green_mango CAMOCROPS results file
+Writing guava CAMOCROPS results file
+Writing guyabano CAMOCROPS results file
+Writing okra CAMOCROPS results file
+Writing pea CAMOCROPS results file
+Writing sayote CAMOCROPS results file
+
+VOC07 metric? Yes
+
+------------ Options -------------
+input_channels: 3
+class_count: 16
+dataset: camocrops
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./5camocrops
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ../../Datasets/Tomatod/
+ccrop_data_path: ../../Datasets/CCROP/
+camocrops_data_path: ./data/Datasets/CamoCrops/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 25617176
+loaded trained model ./5camocrops
+detection: 1/697 0.5414s 0.0201s
+detection: 2/697 0.0101s 0.0275s
+detection: 3/697 0.0080s 0.0402s
+detection: 4/697 0.0080s 0.0141s
+detection: 5/697 0.0090s 0.0342s
+detection: 6/697 0.0081s 0.0100s
+detection: 7/697 0.0080s 0.0070s
+detection: 8/697 0.0085s 0.0080s
+detection: 9/697 0.0081s 0.0358s
+detection: 10/697 0.0087s 0.0201s
+detection: 11/697 0.0085s 0.0246s
+detection: 12/697 0.0081s 0.0252s
+detection: 13/697 0.0080s 0.0307s
+detection: 14/697 0.0090s 0.0336s
+detection: 15/697 0.0080s 0.0262s
+detection: 16/697 0.0085s 0.0131s
+detection: 17/697 0.0085s 0.0126s
+detection: 18/697 0.0071s 0.0241s
+detection: 19/697 0.0080s 0.0251s
+detection: 20/697 0.0070s 0.0075s
+detection: 21/697 0.0080s 0.0110s
+detection: 22/697 0.0080s 0.0447s
+detection: 23/697 0.0086s 0.0120s
+detection: 24/697 0.0080s 0.0110s
+detection: 25/697 0.0095s 0.0186s
+detection: 26/697 0.0090s 0.0115s
+detection: 27/697 0.0085s 0.0101s
+detection: 28/697 0.0080s 0.0100s
+detection: 29/697 0.0091s 0.0316s
+detection: 30/697 0.0085s 0.0146s
+detection: 31/697 0.0090s 0.0231s
+detection: 32/697 0.0090s 0.0106s
+detection: 33/697 0.0090s 0.0422s
+detection: 34/697 0.0080s 0.0330s
+detection: 35/697 0.0085s 0.0478s
+detection: 36/697 0.0085s 0.0140s
+detection: 37/697 0.0080s 0.0221s
+detection: 38/697 0.0090s 0.0221s
+detection: 39/697 0.0086s 0.0060s
+detection: 40/697 0.0076s 0.0110s
+detection: 41/697 0.0090s 0.0080s
+detection: 42/697 0.0090s 0.0090s
+detection: 43/697 0.0095s 0.0111s
+detection: 44/697 0.0107s 0.0266s
+detection: 45/697 0.0096s 0.0110s
+detection: 46/697 0.0095s 0.0126s
+detection: 47/697 0.0100s 0.0100s
+detection: 48/697 0.0100s 0.0085s
+detection: 49/697 0.0096s 0.0115s
+detection: 50/697 0.0095s 0.0095s
+detection: 51/697 0.0090s 0.0071s
+detection: 52/697 0.0091s 0.0106s
+detection: 53/697 0.0100s 0.0070s
+detection: 54/697 0.0096s 0.0080s
+detection: 55/697 0.0101s 0.0121s
+detection: 56/697 0.0186s 0.0106s
+detection: 57/697 0.0111s 0.0195s
+detection: 58/697 0.0115s 0.0242s
+detection: 59/697 0.0100s 0.0120s
+detection: 60/697 0.0095s 0.0081s
+detection: 61/697 0.0091s 0.0061s
+detection: 62/697 0.0097s 0.0133s
+detection: 63/697 0.0095s 0.0136s
+detection: 64/697 0.0100s 0.0080s
+detection: 65/697 0.0105s 0.0106s
+detection: 66/697 0.0105s 0.0105s
+detection: 67/697 0.0096s 0.0090s
+detection: 68/697 0.0095s 0.0080s
+detection: 69/697 0.0100s 0.0055s
+detection: 70/697 0.0100s 0.0367s
+detection: 71/697 0.0096s 0.0171s
+detection: 72/697 0.0095s 0.0161s
+detection: 73/697 0.0100s 0.0130s
+detection: 74/697 0.0090s 0.0151s
+detection: 75/697 0.0090s 0.0090s
+detection: 76/697 0.0090s 0.0106s
+detection: 77/697 0.0090s 0.0176s
+detection: 78/697 0.0096s 0.0130s
+detection: 79/697 0.0095s 0.0151s
+detection: 80/697 0.0080s 0.0080s
+detection: 81/697 0.0095s 0.0055s
+detection: 82/697 0.0080s 0.0060s
+detection: 83/697 0.0100s 0.0080s
+detection: 84/697 0.0091s 0.0060s
+detection: 85/697 0.0096s 0.0091s
+detection: 86/697 0.0090s 0.0176s
+detection: 87/697 0.0090s 0.0150s
+detection: 88/697 0.0090s 0.0080s
+detection: 89/697 0.0100s 0.0176s
+detection: 90/697 0.0090s 0.0074s
+detection: 91/697 0.0090s 0.0091s
+detection: 92/697 0.0085s 0.0070s
+detection: 93/697 0.0096s 0.0065s
+detection: 94/697 0.0085s 0.0070s
+detection: 95/697 0.0090s 0.0146s
+detection: 96/697 0.0096s 0.0090s
+detection: 97/697 0.0091s 0.0186s
+detection: 98/697 0.0090s 0.0412s
+detection: 99/697 0.0090s 0.0070s
+detection: 100/697 0.0096s 0.0070s
+detection: 101/697 0.0105s 0.0145s
+detection: 102/697 0.0095s 0.0080s
+detection: 103/697 0.0095s 0.0075s
+detection: 104/697 0.0100s 0.0090s
+detection: 105/697 0.0090s 0.0085s
+detection: 106/697 0.0090s 0.0050s
+detection: 107/697 0.0090s 0.0090s
+detection: 108/697 0.0095s 0.0091s
+detection: 109/697 0.0095s 0.0276s
+detection: 110/697 0.0095s 0.0090s
+detection: 111/697 0.0101s 0.0061s
+detection: 112/697 0.0095s 0.0246s
+detection: 113/697 0.0091s 0.0231s
+detection: 114/697 0.0090s 0.0085s
+detection: 115/697 0.0090s 0.0132s
+detection: 116/697 0.0100s 0.0126s
+detection: 117/697 0.0095s 0.0075s
+detection: 118/697 0.0100s 0.0080s
+detection: 119/697 0.0090s 0.0075s
+detection: 120/697 0.0100s 0.0100s
+detection: 121/697 0.0091s 0.0101s
+detection: 122/697 0.0095s 0.0070s
+detection: 123/697 0.0080s 0.0035s
+detection: 124/697 0.0090s 0.0055s
+detection: 125/697 0.0095s 0.0201s
+detection: 126/697 0.0085s 0.0186s
+detection: 127/697 0.0095s 0.0111s
+detection: 128/697 0.0095s 0.0086s
+detection: 129/697 0.0100s 0.0116s
+detection: 130/697 0.0085s 0.0096s
+detection: 131/697 0.0090s 0.0070s
+detection: 132/697 0.0086s 0.0120s
+detection: 133/697 0.0095s 0.0085s
+detection: 134/697 0.0085s 0.0080s
+detection: 135/697 0.0100s 0.0175s
+detection: 136/697 0.0100s 0.0100s
+detection: 137/697 0.0090s 0.0035s
+detection: 138/697 0.0080s 0.0130s
+detection: 139/697 0.0091s 0.0181s
+detection: 140/697 0.0100s 0.0090s
+detection: 141/697 0.0090s 0.0110s
+detection: 142/697 0.0101s 0.0085s
+detection: 143/697 0.0081s 0.0065s
+detection: 144/697 0.0090s 0.0061s
+detection: 145/697 0.0093s 0.0050s
+detection: 146/697 0.0090s 0.0070s
+detection: 147/697 0.0090s 0.0076s
+detection: 148/697 0.0086s 0.0116s
+detection: 149/697 0.0090s 0.0106s
+detection: 150/697 0.0095s 0.0061s
+detection: 151/697 0.0090s 0.0105s
+detection: 152/697 0.0090s 0.0080s
+detection: 153/697 0.0086s 0.0070s
+detection: 154/697 0.0090s 0.0050s
+detection: 155/697 0.0096s 0.0050s
+detection: 156/697 0.0090s 0.0055s
+detection: 157/697 0.0096s 0.0055s
+detection: 158/697 0.0086s 0.0055s
+detection: 159/697 0.0080s 0.0080s
+detection: 160/697 0.0090s 0.0215s
+detection: 161/697 0.0105s 0.0085s
+detection: 162/697 0.0110s 0.0100s
+detection: 163/697 0.0105s 0.0075s
+detection: 164/697 0.0105s 0.0131s
+detection: 165/697 0.0096s 0.0085s
+detection: 166/697 0.0105s 0.0040s
+detection: 167/697 0.0106s 0.0121s
+detection: 168/697 0.0105s 0.0035s
+detection: 169/697 0.0106s 0.0060s
+detection: 170/697 0.0105s 0.0065s
+detection: 171/697 0.0106s 0.0060s
+detection: 172/697 0.0105s 0.0095s
+detection: 173/697 0.0100s 0.0156s
+detection: 174/697 0.0106s 0.0161s
+detection: 175/697 0.0106s 0.0256s
+detection: 176/697 0.0111s 0.0110s
+detection: 177/697 0.0106s 0.0125s
+detection: 178/697 0.0106s 0.0030s
+detection: 179/697 0.0105s 0.0055s
+detection: 180/697 0.0106s 0.0065s
+detection: 181/697 0.0115s 0.0055s
+detection: 182/697 0.0111s 0.0035s
+detection: 183/697 0.0111s 0.0055s
+detection: 184/697 0.0106s 0.0056s
+detection: 185/697 0.0110s 0.0055s
+detection: 186/697 0.0115s 0.0322s
+detection: 187/697 0.0116s 0.0176s
+detection: 188/697 0.0111s 0.0116s
+detection: 189/697 0.0109s 0.0401s
+detection: 190/697 0.0128s 0.0188s
+detection: 191/697 0.0121s 0.0090s
+detection: 192/697 0.0120s 0.0160s
+detection: 193/697 0.0115s 0.0276s
+detection: 194/697 0.0125s 0.0081s
+detection: 195/697 0.0121s 0.0160s
+detection: 196/697 0.0121s 0.0156s
+detection: 197/697 0.0131s 0.0191s
+detection: 198/697 0.0125s 0.0056s
+detection: 199/697 0.0125s 0.0085s
+detection: 200/697 0.0125s 0.0135s
+detection: 201/697 0.0135s 0.0145s
+detection: 202/697 0.0126s 0.0111s
+detection: 203/697 0.0123s 0.0109s
+detection: 204/697 0.0116s 0.0055s
+detection: 205/697 0.0115s 0.0085s
+detection: 206/697 0.0111s 0.0060s
+detection: 207/697 0.0115s 0.0105s
+detection: 208/697 0.0120s 0.0085s
+detection: 209/697 0.0116s 0.0080s
+detection: 210/697 0.0135s 0.0151s
+detection: 211/697 0.0125s 0.0140s
+detection: 212/697 0.0120s 0.0070s
+detection: 213/697 0.0126s 0.0100s
+detection: 214/697 0.0116s 0.0086s
+detection: 215/697 0.0121s 0.0211s
+detection: 216/697 0.0121s 0.0081s
+detection: 217/697 0.0116s 0.0075s
+detection: 218/697 0.0121s 0.0422s
+detection: 219/697 0.0126s 0.0412s
+detection: 220/697 0.0135s 0.0360s
+detection: 221/697 0.0130s 0.0202s
+detection: 222/697 0.0131s 0.0131s
+detection: 223/697 0.0126s 0.0221s
+detection: 224/697 0.0131s 0.0080s
+detection: 225/697 0.0136s 0.0081s
+detection: 226/697 0.0126s 0.0065s
+detection: 227/697 0.0125s 0.0091s
+detection: 228/697 0.0135s 0.0095s
+detection: 229/697 0.0135s 0.0075s
+detection: 230/697 0.0131s 0.0085s
+detection: 231/697 0.0126s 0.0131s
+detection: 232/697 0.0129s 0.0068s
+detection: 233/697 0.0130s 0.0050s
+detection: 234/697 0.0130s 0.0071s
+detection: 235/697 0.0125s 0.0095s
+detection: 236/697 0.0125s 0.0070s
+detection: 237/697 0.0145s 0.0080s
+detection: 238/697 0.0140s 0.0120s
+detection: 239/697 0.0125s 0.0050s
+detection: 240/697 0.0135s 0.0145s
+detection: 241/697 0.0135s 0.0331s
+detection: 242/697 0.0130s 0.0161s
+detection: 243/697 0.0120s 0.0070s
+detection: 244/697 0.0126s 0.0125s
+detection: 245/697 0.0130s 0.0080s
+detection: 246/697 0.0136s 0.0136s
+detection: 247/697 0.0131s 0.0110s
+detection: 248/697 0.0131s 0.0121s
+detection: 249/697 0.0131s 0.0156s
+detection: 250/697 0.0125s 0.0181s
+detection: 251/697 0.0125s 0.0106s
+detection: 252/697 0.0125s 0.0090s
+detection: 253/697 0.0130s 0.0106s
+detection: 254/697 0.0120s 0.0080s
+detection: 255/697 0.0130s 0.0045s
+detection: 256/697 0.0125s 0.0060s
+detection: 257/697 0.0131s 0.0065s
+detection: 258/697 0.0120s 0.0080s
+detection: 259/697 0.0126s 0.0055s
+detection: 260/697 0.0126s 0.0055s
+detection: 261/697 0.0130s 0.0070s
+detection: 262/697 0.0121s 0.0080s
+detection: 263/697 0.0110s 0.0086s
+detection: 264/697 0.0121s 0.0050s
+detection: 265/697 0.0105s 0.0061s
+detection: 266/697 0.0110s 0.0080s
+detection: 267/697 0.0115s 0.0045s
+detection: 268/697 0.0115s 0.0035s
+detection: 269/697 0.0105s 0.0061s
+detection: 270/697 0.0110s 0.0061s
+detection: 271/697 0.0116s 0.0055s
+detection: 272/697 0.0116s 0.0050s
+detection: 273/697 0.0110s 0.0060s
+detection: 274/697 0.0115s 0.0045s
+detection: 275/697 0.0105s 0.0045s
+detection: 276/697 0.0116s 0.0055s
+detection: 277/697 0.0110s 0.0055s
+detection: 278/697 0.0096s 0.0050s
+detection: 279/697 0.0096s 0.0085s
+detection: 280/697 0.0096s 0.0070s
+detection: 281/697 0.0100s 0.0135s
+detection: 282/697 0.0110s 0.0090s
+detection: 283/697 0.0105s 0.0150s
+detection: 284/697 0.0096s 0.0070s
+detection: 285/697 0.0100s 0.0060s
+detection: 286/697 0.0106s 0.0086s
+detection: 287/697 0.0115s 0.0090s
+detection: 288/697 0.0100s 0.0085s
+detection: 289/697 0.0100s 0.0145s
+detection: 290/697 0.0100s 0.0070s
+detection: 291/697 0.0110s 0.0070s
+detection: 292/697 0.0100s 0.0181s
+detection: 293/697 0.0115s 0.0140s
+detection: 294/697 0.0095s 0.0155s
+detection: 295/697 0.0091s 0.0111s
+detection: 296/697 0.0372s 0.0231s
+detection: 297/697 0.0095s 0.0125s
+detection: 298/697 0.0105s 0.0321s
+detection: 299/697 0.0100s 0.0261s
+detection: 300/697 0.0100s 0.0161s
+detection: 301/697 0.0100s 0.0089s
+detection: 302/697 0.0096s 0.0236s
+detection: 303/697 0.0096s 0.0100s
+detection: 304/697 0.0090s 0.0100s
+detection: 305/697 0.0095s 0.0150s
+detection: 306/697 0.0100s 0.0095s
+detection: 307/697 0.0100s 0.0231s
+detection: 308/697 0.0100s 0.0101s
+detection: 309/697 0.0116s 0.0346s
+detection: 310/697 0.0100s 0.0507s
+detection: 311/697 0.0100s 0.0176s
+detection: 312/697 0.0099s 0.0329s
+detection: 313/697 0.0095s 0.0367s
+detection: 314/697 0.0100s 0.0351s
+detection: 315/697 0.0105s 0.0191s
+detection: 316/697 0.0095s 0.0100s
+detection: 317/697 0.0095s 0.0116s
+detection: 318/697 0.0101s 0.0090s
+detection: 319/697 0.0106s 0.0182s
+detection: 320/697 0.0105s 0.0251s
+detection: 321/697 0.0101s 0.0201s
+detection: 322/697 0.0095s 0.0236s
+detection: 323/697 0.0105s 0.0125s
+detection: 324/697 0.0100s 0.0175s
+detection: 325/697 0.0106s 0.0206s
+detection: 326/697 0.0106s 0.0081s
+detection: 327/697 0.0096s 0.0085s
+detection: 328/697 0.0100s 0.0116s
+detection: 329/697 0.0101s 0.0105s
+detection: 330/697 0.0096s 0.0166s
+detection: 331/697 0.0090s 0.0096s
+detection: 332/697 0.0092s 0.0080s
+detection: 333/697 0.0095s 0.0180s
+detection: 334/697 0.0101s 0.0180s
+detection: 335/697 0.0096s 0.0411s
+detection: 336/697 0.0100s 0.0337s
+detection: 337/697 0.0131s 0.0147s
+detection: 338/697 0.0126s 0.0251s
+detection: 339/697 0.0135s 0.0170s
+detection: 340/697 0.0130s 0.0277s
+detection: 341/697 0.0125s 0.0100s
+detection: 342/697 0.0121s 0.0246s
+detection: 343/697 0.0126s 0.0156s
+detection: 344/697 0.0120s 0.0246s
+detection: 345/697 0.0125s 0.0105s
+detection: 346/697 0.0125s 0.0266s
+detection: 347/697 0.0126s 0.0251s
+detection: 348/697 0.0125s 0.0110s
+detection: 349/697 0.0120s 0.0091s
+detection: 350/697 0.0125s 0.0090s
+detection: 351/697 0.0140s 0.0201s
+detection: 352/697 0.0135s 0.0140s
+detection: 353/697 0.0131s 0.0090s
+detection: 354/697 0.0126s 0.0105s
+detection: 355/697 0.0131s 0.0060s
+detection: 356/697 0.0130s 0.0100s
+detection: 357/697 0.0140s 0.0161s
+detection: 358/697 0.0130s 0.0161s
+detection: 359/697 0.0146s 0.0120s
+detection: 360/697 0.0126s 0.0145s
+detection: 361/697 0.0135s 0.0282s
+detection: 362/697 0.0135s 0.0080s
+detection: 363/697 0.0130s 0.0076s
+detection: 364/697 0.0130s 0.0060s
+detection: 365/697 0.0130s 0.0065s
+detection: 366/697 0.0130s 0.0055s
+detection: 367/697 0.0141s 0.0105s
+detection: 368/697 0.0130s 0.0110s
+detection: 369/697 0.0130s 0.0090s
+detection: 370/697 0.0136s 0.0105s
+detection: 371/697 0.0126s 0.0075s
+detection: 372/697 0.0125s 0.0241s
+detection: 373/697 0.0125s 0.0063s
+detection: 374/697 0.0126s 0.0206s
+detection: 375/697 0.0125s 0.0131s
+detection: 376/697 0.0131s 0.0160s
+detection: 377/697 0.0130s 0.0201s
+detection: 378/697 0.0130s 0.0210s
+detection: 379/697 0.0131s 0.0175s
+detection: 380/697 0.0141s 0.0226s
+detection: 381/697 0.0131s 0.0055s
+detection: 382/697 0.0130s 0.0171s
+detection: 383/697 0.0135s 0.0236s
+detection: 384/697 0.0126s 0.0191s
+detection: 385/697 0.0125s 0.0116s
+detection: 386/697 0.0136s 0.0190s
+detection: 387/697 0.0126s 0.0266s
+detection: 388/697 0.0121s 0.0191s
+detection: 389/697 0.0135s 0.0171s
+detection: 390/697 0.0131s 0.0151s
+detection: 391/697 0.0125s 0.0075s
+detection: 392/697 0.0140s 0.0231s
+detection: 393/697 0.0135s 0.0256s
+detection: 394/697 0.0128s 0.0208s
+detection: 395/697 0.0125s 0.0130s
+detection: 396/697 0.0135s 0.0121s
+detection: 397/697 0.0136s 0.0241s
+detection: 398/697 0.0125s 0.0319s
+detection: 399/697 0.0125s 0.0181s
+detection: 400/697 0.0131s 0.0116s
+detection: 401/697 0.0120s 0.0221s
+detection: 402/697 0.0135s 0.0276s
+detection: 403/697 0.0126s 0.0100s
+detection: 404/697 0.0131s 0.0065s
+detection: 405/697 0.0130s 0.0126s
+detection: 406/697 0.0125s 0.0171s
+detection: 407/697 0.0130s 0.0176s
+detection: 408/697 0.0120s 0.0086s
+detection: 409/697 0.0136s 0.0090s
+detection: 410/697 0.0130s 0.0085s
+detection: 411/697 0.0125s 0.0101s
+detection: 412/697 0.0134s 0.0205s
+detection: 413/697 0.0135s 0.0126s
+detection: 414/697 0.0131s 0.0191s
+detection: 415/697 0.0120s 0.0311s
+detection: 416/697 0.0121s 0.0329s
+detection: 417/697 0.0128s 0.0306s
+detection: 418/697 0.0141s 0.0090s
+detection: 419/697 0.0136s 0.0131s
+detection: 420/697 0.0126s 0.0145s
+detection: 421/697 0.0136s 0.0076s
+detection: 422/697 0.0141s 0.0216s
+detection: 423/697 0.0145s 0.0060s
+detection: 424/697 0.0130s 0.0060s
+detection: 425/697 0.0136s 0.0241s
+detection: 426/697 0.0131s 0.0311s
+detection: 427/697 0.0131s 0.0125s
+detection: 428/697 0.0135s 0.0045s
+detection: 429/697 0.0120s 0.0136s
+detection: 430/697 0.0125s 0.0296s
+detection: 431/697 0.0126s 0.0171s
+detection: 432/697 0.0135s 0.0156s
+detection: 433/697 0.0125s 0.0070s
+detection: 434/697 0.0121s 0.0387s
+detection: 435/697 0.0130s 0.0281s
+detection: 436/697 0.0135s 0.0120s
+detection: 437/697 0.0121s 0.0145s
+detection: 438/697 0.0121s 0.0050s
+detection: 439/697 0.0125s 0.0120s
+detection: 440/697 0.0126s 0.0191s
+detection: 441/697 0.0131s 0.0312s
+detection: 442/697 0.0136s 0.0126s
+detection: 443/697 0.0131s 0.0125s
+detection: 444/697 0.0130s 0.0116s
+detection: 445/697 0.0120s 0.0100s
+detection: 446/697 0.0125s 0.0065s
+detection: 447/697 0.0136s 0.0060s
+detection: 448/697 0.0130s 0.0120s
+detection: 449/697 0.0120s 0.0055s
+detection: 450/697 0.0131s 0.0271s
+detection: 451/697 0.0120s 0.0191s
+detection: 452/697 0.0120s 0.0105s
+detection: 453/697 0.0126s 0.0100s
+detection: 454/697 0.0116s 0.0090s
+detection: 455/697 0.0125s 0.0075s
+detection: 456/697 0.0126s 0.0085s
+detection: 457/697 0.0126s 0.0060s
+detection: 458/697 0.0120s 0.0100s
+detection: 459/697 0.0135s 0.0461s
+detection: 460/697 0.0134s 0.0512s
+detection: 461/697 0.0120s 0.0100s
+detection: 462/697 0.0126s 0.0142s
+detection: 463/697 0.0125s 0.0156s
+detection: 464/697 0.0126s 0.0116s
+detection: 465/697 0.0130s 0.0070s
+detection: 466/697 0.0125s 0.0065s
+detection: 467/697 0.0140s 0.0070s
+detection: 468/697 0.0125s 0.0070s
+detection: 469/697 0.0126s 0.0045s
+detection: 470/697 0.0136s 0.0060s
+detection: 471/697 0.0120s 0.0080s
+detection: 472/697 0.0126s 0.0096s
+detection: 473/697 0.0120s 0.0065s
+detection: 474/697 0.0116s 0.0070s
+detection: 475/697 0.0125s 0.0070s
+detection: 476/697 0.0125s 0.0060s
+detection: 477/697 0.0120s 0.0055s
+detection: 478/697 0.0125s 0.0045s
+detection: 479/697 0.0120s 0.0055s
+detection: 480/697 0.0131s 0.0060s
+detection: 481/697 0.0126s 0.0055s
+detection: 482/697 0.0131s 0.0060s
+detection: 483/697 0.0135s 0.0060s
+detection: 484/697 0.0120s 0.0081s
+detection: 485/697 0.0131s 0.0060s
+detection: 486/697 0.0121s 0.0076s
+detection: 487/697 0.0136s 0.0060s
+detection: 488/697 0.0121s 0.0090s
+detection: 489/697 0.0126s 0.0086s
+detection: 490/697 0.0135s 0.0100s
+detection: 491/697 0.0145s 0.0046s
+detection: 492/697 0.0130s 0.0105s
+detection: 493/697 0.0131s 0.0086s
+detection: 494/697 0.0131s 0.0063s
+detection: 495/697 0.0130s 0.0120s
+detection: 496/697 0.0120s 0.0060s
+detection: 497/697 0.0115s 0.0075s
+detection: 498/697 0.0125s 0.0070s
+detection: 499/697 0.0135s 0.0070s
+detection: 500/697 0.0125s 0.0050s
+detection: 501/697 0.0130s 0.0060s
+detection: 502/697 0.0125s 0.0070s
+detection: 503/697 0.0136s 0.0055s
+detection: 504/697 0.0136s 0.0065s
+detection: 505/697 0.0126s 0.0091s
+detection: 506/697 0.0135s 0.0106s
+detection: 507/697 0.0120s 0.0221s
+detection: 508/697 0.0126s 0.0100s
+detection: 509/697 0.0116s 0.0121s
+detection: 510/697 0.0105s 0.0301s
+detection: 511/697 0.0110s 0.0085s
+detection: 512/697 0.0101s 0.0216s
+detection: 513/697 0.0095s 0.0130s
+detection: 514/697 0.0116s 0.0200s
+detection: 515/697 0.0110s 0.0256s
+detection: 516/697 0.0111s 0.0080s
+detection: 517/697 0.0101s 0.0130s
+detection: 518/697 0.0097s 0.0151s
+detection: 519/697 0.0105s 0.0071s
+detection: 520/697 0.0110s 0.0141s
+detection: 521/697 0.0105s 0.0105s
+detection: 522/697 0.0110s 0.0141s
+detection: 523/697 0.0106s 0.0096s
+detection: 524/697 0.0110s 0.0216s
+detection: 525/697 0.0105s 0.0135s
+detection: 526/697 0.0107s 0.0115s
+detection: 527/697 0.0105s 0.0060s
+detection: 528/697 0.0104s 0.0258s
+detection: 529/697 0.0100s 0.0196s
+detection: 530/697 0.0110s 0.0161s
+detection: 531/697 0.0110s 0.0166s
+detection: 532/697 0.0110s 0.0166s
+detection: 533/697 0.0105s 0.0311s
+detection: 534/697 0.0111s 0.0104s
+detection: 535/697 0.0105s 0.0165s
+detection: 536/697 0.0095s 0.0331s
+detection: 537/697 0.0105s 0.0100s
+detection: 538/697 0.0110s 0.0226s
+detection: 539/697 0.0110s 0.0075s
+detection: 540/697 0.0101s 0.0216s
+detection: 541/697 0.0100s 0.0226s
+detection: 542/697 0.0107s 0.0196s
+detection: 543/697 0.0106s 0.0121s
+detection: 544/697 0.0105s 0.0160s
+detection: 545/697 0.0105s 0.0141s
+detection: 546/697 0.0101s 0.0070s
+detection: 547/697 0.0105s 0.0115s
+detection: 548/697 0.0105s 0.0135s
+detection: 549/697 0.0105s 0.0382s
+detection: 550/697 0.0111s 0.0206s
+detection: 551/697 0.0116s 0.0307s
+detection: 552/697 0.0126s 0.0291s
+detection: 553/697 0.0141s 0.0398s
+detection: 554/697 0.0131s 0.0140s
+detection: 555/697 0.0130s 0.0100s
+detection: 556/697 0.0135s 0.0221s
+detection: 557/697 0.0140s 0.0321s
+detection: 558/697 0.0135s 0.0282s
+detection: 559/697 0.0123s 0.0111s
+detection: 560/697 0.0146s 0.0197s
+detection: 561/697 0.0146s 0.0095s
+detection: 562/697 0.0146s 0.0352s
+detection: 563/697 0.0145s 0.0220s
+detection: 564/697 0.0130s 0.0231s
+detection: 565/697 0.0141s 0.0071s
+detection: 566/697 0.0145s 0.0281s
+detection: 567/697 0.0135s 0.0091s
+detection: 568/697 0.0138s 0.0100s
+detection: 569/697 0.0130s 0.0432s
+detection: 570/697 0.0145s 0.0191s
+detection: 571/697 0.0139s 0.0182s
+detection: 572/697 0.0141s 0.0269s
+detection: 573/697 0.0136s 0.0271s
+detection: 574/697 0.0140s 0.0341s
+detection: 575/697 0.0140s 0.0186s
+detection: 576/697 0.0136s 0.0165s
+detection: 577/697 0.0150s 0.0160s
+detection: 578/697 0.0140s 0.0311s
+detection: 579/697 0.0146s 0.0141s
+detection: 580/697 0.0156s 0.0241s
+detection: 581/697 0.0141s 0.0306s
+detection: 582/697 0.0140s 0.0276s
+detection: 583/697 0.0141s 0.0125s
+detection: 584/697 0.0156s 0.0197s
+detection: 585/697 0.0145s 0.0225s
+detection: 586/697 0.0151s 0.0226s
+detection: 587/697 0.0150s 0.0241s
+detection: 588/697 0.0150s 0.0390s
+detection: 589/697 0.0140s 0.0130s
+detection: 590/697 0.0141s 0.0120s
+detection: 591/697 0.0155s 0.0231s
+detection: 592/697 0.0141s 0.0090s
+detection: 593/697 0.0145s 0.0442s
+detection: 594/697 0.0150s 0.0121s
+detection: 595/697 0.0151s 0.0186s
+detection: 596/697 0.0146s 0.0141s
+detection: 597/697 0.0155s 0.0150s
+detection: 598/697 0.0146s 0.0221s
+detection: 599/697 0.0146s 0.0391s
+detection: 600/697 0.0140s 0.0381s
+detection: 601/697 0.0150s 0.0366s
+detection: 602/697 0.0156s 0.0201s
+detection: 603/697 0.0145s 0.0201s
+detection: 604/697 0.0146s 0.0231s
+detection: 605/697 0.0146s 0.0145s
+detection: 606/697 0.0161s 0.0261s
+detection: 607/697 0.0161s 0.0156s
+detection: 608/697 0.0156s 0.0080s
+detection: 609/697 0.0151s 0.0115s
+detection: 610/697 0.0155s 0.0237s
+detection: 611/697 0.0146s 0.0110s
+detection: 612/697 0.0145s 0.0212s
+detection: 613/697 0.0151s 0.0131s
+detection: 614/697 0.0156s 0.0151s
+detection: 615/697 0.0140s 0.0150s
+detection: 616/697 0.0155s 0.0160s
+detection: 617/697 0.0146s 0.0225s
+detection: 618/697 0.0151s 0.0282s
+detection: 619/697 0.0151s 0.0246s
+detection: 620/697 0.0146s 0.0145s
+detection: 621/697 0.0151s 0.0487s
+detection: 622/697 0.0161s 0.0783s
+detection: 623/697 0.0140s 0.0235s
+detection: 624/697 0.0146s 0.0160s
+detection: 625/697 0.0161s 0.0276s
+detection: 626/697 0.0146s 0.0508s
+detection: 627/697 0.0145s 0.0115s
+detection: 628/697 0.0152s 0.0231s
+detection: 629/697 0.0156s 0.0216s
+detection: 630/697 0.0156s 0.0261s
+detection: 631/697 0.0149s 0.0275s
+detection: 632/697 0.0145s 0.0302s
+detection: 633/697 0.0155s 0.0176s
+detection: 634/697 0.0160s 0.0221s
+detection: 635/697 0.0151s 0.0110s
+detection: 636/697 0.0150s 0.0256s
+detection: 637/697 0.0140s 0.0151s
+detection: 638/697 0.0146s 0.0171s
+detection: 639/697 0.0141s 0.0120s
+detection: 640/697 0.0151s 0.0146s
+detection: 641/697 0.0145s 0.0095s
+detection: 642/697 0.0146s 0.0070s
+detection: 643/697 0.0146s 0.0061s
+detection: 644/697 0.0140s 0.0146s
+detection: 645/697 0.0146s 0.0141s
+detection: 646/697 0.0146s 0.0171s
+detection: 647/697 0.0147s 0.0116s
+detection: 648/697 0.0146s 0.0176s
+detection: 649/697 0.0161s 0.0106s
+detection: 650/697 0.0152s 0.0120s
+detection: 651/697 0.0150s 0.0100s
+detection: 652/697 0.0156s 0.0182s
+detection: 653/697 0.0161s 0.0321s
+detection: 654/697 0.0151s 0.0131s
+detection: 655/697 0.0151s 0.0090s
+detection: 656/697 0.0151s 0.0136s
+detection: 657/697 0.0150s 0.0161s
+detection: 658/697 0.0146s 0.0200s
+detection: 659/697 0.0160s 0.0095s
+detection: 660/697 0.0151s 0.0317s
+detection: 661/697 0.0160s 0.0161s
+detection: 662/697 0.0151s 0.0111s
+detection: 663/697 0.0160s 0.0196s
+detection: 664/697 0.0160s 0.0186s
+detection: 665/697 0.0156s 0.0567s
+detection: 666/697 0.0146s 0.0156s
+detection: 667/697 0.0151s 0.0115s
+detection: 668/697 0.0160s 0.0125s
+detection: 669/697 0.0150s 0.0267s
+detection: 670/697 0.0150s 0.0151s
+detection: 671/697 0.0145s 0.0116s
+detection: 672/697 0.0155s 0.0437s
+detection: 673/697 0.0161s 0.0206s
+detection: 674/697 0.0150s 0.0488s
+detection: 675/697 0.0156s 0.0397s
+detection: 676/697 0.0151s 0.0341s
+detection: 677/697 0.0155s 0.0256s
+detection: 678/697 0.0146s 0.0176s
+detection: 679/697 0.0151s 0.0155s
+detection: 680/697 0.0147s 0.0151s
+detection: 681/697 0.0171s 0.0236s
+detection: 682/697 0.0155s 0.0216s
+detection: 683/697 0.0156s 0.0110s
+detection: 684/697 0.0156s 0.0230s
+detection: 685/697 0.0155s 0.0090s
+detection: 686/697 0.0150s 0.0120s
+detection: 687/697 0.0146s 0.0201s
+detection: 688/697 0.0155s 0.0200s
+detection: 689/697 0.0145s 0.0170s
+detection: 690/697 0.0155s 0.0245s
+detection: 691/697 0.0161s 0.0101s
+detection: 692/697 0.0155s 0.0136s
+detection: 693/697 0.0161s 0.0120s
+detection: 694/697 0.0155s 0.0141s
+detection: 695/697 0.0166s 0.0145s
+detection: 696/697 0.0151s 0.0296s
+detection: 697/697 0.0156s 0.0226s
+
+Evaluating detections
+Writing ampalaya CAMOCROPS results file
+Writing atis CAMOCROPS results file
+Writing avocado CAMOCROPS results file
+Writing bell_pepper CAMOCROPS results file
+Writing calamansi CAMOCROPS results file
+Writing cucumber CAMOCROPS results file
+Writing dalandan CAMOCROPS results file
+Writing french_bean CAMOCROPS results file
+Writing green_chili CAMOCROPS results file
+Writing green_mango CAMOCROPS results file
+Writing guava CAMOCROPS results file
+Writing guyabano CAMOCROPS results file
+Writing okra CAMOCROPS results file
+Writing pea CAMOCROPS results file
+Writing sayote CAMOCROPS results file
+
+VOC07 metric? Yes
+
+Reading annotations
+------------ Options -------------
+input_channels: 3
+class_count: 16
+dataset: camocrops
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./5camocrops
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ../../Datasets/Tomatod/
+ccrop_data_path: ../../Datasets/CCROP/
+camocrops_data_path: ./data/Datasets/CamoCrops/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 25617176
+loaded trained model ./5camocrops
+detection: 1/697 0.5167s 0.0200s
+detection: 2/697 0.0106s 0.0261s
+detection: 3/697 0.0090s 0.0261s
+detection: 4/697 0.0090s 0.0165s
+detection: 5/697 0.0090s 0.0594s
+detection: 6/697 0.0095s 0.0131s
+detection: 7/697 0.0090s 0.0090s
+detection: 8/697 0.0085s 0.0105s
+detection: 9/697 0.0095s 0.0423s
+detection: 10/697 0.0085s 0.0177s
+detection: 11/697 0.0091s 0.0231s
+detection: 12/697 0.0090s 0.0276s
+detection: 13/697 0.0086s 0.0322s
+detection: 14/697 0.0090s 0.0350s
+detection: 15/697 0.0091s 0.0255s
+detection: 16/697 0.0091s 0.0126s
+detection: 17/697 0.0086s 0.0125s
+detection: 18/697 0.0090s 0.0241s
+detection: 19/697 0.0085s 0.0222s
+detection: 20/697 0.0080s 0.0075s
+detection: 21/697 0.0085s 0.0120s
+detection: 22/697 0.0085s 0.0421s
+detection: 23/697 0.0080s 0.0116s
+detection: 24/697 0.0090s 0.0121s
+detection: 25/697 0.0100s 0.0165s
+detection: 26/697 0.0095s 0.0136s
+detection: 27/697 0.0096s 0.0086s
+detection: 28/697 0.0080s 0.0101s
+detection: 29/697 0.0100s 0.0307s
+detection: 30/697 0.0090s 0.0156s
+detection: 31/697 0.0080s 0.0221s
+detection: 32/697 0.0090s 0.0106s
+detection: 33/697 0.0080s 0.0396s
+detection: 34/697 0.0090s 0.0346s
+detection: 35/697 0.0085s 0.0431s
+detection: 36/697 0.0091s 0.0160s
+detection: 37/697 0.0090s 0.0201s
+detection: 38/697 0.0080s 0.0200s
+detection: 39/697 0.0100s 0.0060s
+detection: 40/697 0.0090s 0.0100s
+detection: 41/697 0.0095s 0.0106s
+detection: 42/697 0.0094s 0.0196s
+detection: 43/697 0.0115s 0.0236s
+detection: 44/697 0.0126s 0.0472s
+detection: 45/697 0.0095s 0.0115s
+detection: 46/697 0.0090s 0.0120s
+detection: 47/697 0.0100s 0.0100s
+detection: 48/697 0.0095s 0.0085s
+detection: 49/697 0.0081s 0.0105s
+detection: 50/697 0.0090s 0.0080s
+detection: 51/697 0.0091s 0.0101s
+detection: 52/697 0.0086s 0.0121s
+detection: 53/697 0.0090s 0.0081s
+detection: 54/697 0.0085s 0.0081s
+detection: 55/697 0.0096s 0.0100s
+detection: 56/697 0.0443s 0.0080s
+detection: 57/697 0.0080s 0.0146s
+detection: 58/697 0.0086s 0.0201s
+detection: 59/697 0.0090s 0.0095s
+detection: 60/697 0.0095s 0.0085s
+detection: 61/697 0.0085s 0.0075s
+detection: 62/697 0.0086s 0.0085s
+detection: 63/697 0.0091s 0.0160s
+detection: 64/697 0.0100s 0.0086s
+detection: 65/697 0.0090s 0.0120s
+detection: 66/697 0.0080s 0.0090s
+detection: 67/697 0.0086s 0.0116s
+detection: 68/697 0.0080s 0.0090s
+detection: 69/697 0.0095s 0.0090s
+detection: 70/697 0.0091s 0.0387s
+detection: 71/697 0.0090s 0.0171s
+detection: 72/697 0.0100s 0.0186s
+detection: 73/697 0.0095s 0.0146s
+detection: 74/697 0.0086s 0.0176s
+detection: 75/697 0.0091s 0.0090s
+detection: 76/697 0.0095s 0.0096s
+detection: 77/697 0.0086s 0.0171s
+detection: 78/697 0.0080s 0.0146s
+detection: 79/697 0.0080s 0.0176s
+detection: 80/697 0.0090s 0.0116s
+detection: 81/697 0.0095s 0.0065s
+detection: 82/697 0.0090s 0.0075s
+detection: 83/697 0.0086s 0.0080s
+detection: 84/697 0.0091s 0.0080s
+detection: 85/697 0.0085s 0.0095s
+detection: 86/697 0.0090s 0.0191s
+detection: 87/697 0.0080s 0.0155s
+detection: 88/697 0.0091s 0.0080s
+detection: 89/697 0.0085s 0.0181s
+detection: 90/697 0.0096s 0.0095s
+detection: 91/697 0.0107s 0.0121s
+detection: 92/697 0.0090s 0.0135s
+detection: 93/697 0.0091s 0.0106s
+detection: 94/697 0.0090s 0.0090s
+detection: 95/697 0.0090s 0.0170s
+detection: 96/697 0.0090s 0.0100s
+detection: 97/697 0.0090s 0.0200s
+detection: 98/697 0.0090s 0.0371s
+detection: 99/697 0.0090s 0.0055s
+detection: 100/697 0.0106s 0.0085s
+detection: 101/697 0.0090s 0.0135s
+detection: 102/697 0.0081s 0.0095s
+detection: 103/697 0.0090s 0.0065s
+detection: 104/697 0.0091s 0.0085s
+detection: 105/697 0.0091s 0.0096s
+detection: 106/697 0.0090s 0.0060s
+detection: 107/697 0.0090s 0.0080s
+detection: 108/697 0.0096s 0.0092s
+detection: 109/697 0.0084s 0.0302s
+detection: 110/697 0.0090s 0.0080s
+detection: 111/697 0.0096s 0.0065s
+detection: 112/697 0.0090s 0.0262s
+detection: 113/697 0.0091s 0.0236s
+detection: 114/697 0.0090s 0.0090s
+detection: 115/697 0.0095s 0.0121s
+detection: 116/697 0.0100s 0.0126s
+detection: 117/697 0.0105s 0.0055s
+detection: 118/697 0.0090s 0.0080s
+detection: 119/697 0.0090s 0.0080s
+detection: 120/697 0.0095s 0.0095s
+detection: 121/697 0.0095s 0.0090s
+detection: 122/697 0.0086s 0.0070s
+detection: 123/697 0.0090s 0.0045s
+detection: 124/697 0.0090s 0.0055s
+detection: 125/697 0.0095s 0.0211s
+detection: 126/697 0.0090s 0.0176s
+detection: 127/697 0.0090s 0.0110s
+detection: 128/697 0.0091s 0.0070s
+detection: 129/697 0.0091s 0.0111s
+detection: 130/697 0.0085s 0.0100s
+detection: 131/697 0.0090s 0.0090s
+detection: 132/697 0.0096s 0.0131s
+detection: 133/697 0.0090s 0.0111s
+detection: 134/697 0.0090s 0.0085s
+detection: 135/697 0.0098s 0.0163s
+detection: 136/697 0.0090s 0.0116s
+detection: 137/697 0.0085s 0.0040s
+detection: 138/697 0.0099s 0.0077s
+detection: 139/697 0.0090s 0.0105s
+detection: 140/697 0.0090s 0.0085s
+detection: 141/697 0.0090s 0.0131s
+detection: 142/697 0.0091s 0.0106s
+detection: 143/697 0.0090s 0.0100s
+detection: 144/697 0.0095s 0.0085s
+detection: 145/697 0.0085s 0.0065s
+detection: 146/697 0.0085s 0.0081s
+detection: 147/697 0.0085s 0.0085s
+detection: 148/697 0.0090s 0.0101s
+detection: 149/697 0.0086s 0.0126s
+detection: 150/697 0.0085s 0.0080s
+detection: 151/697 0.0085s 0.0105s
+detection: 152/697 0.0101s 0.0101s
+detection: 153/697 0.0086s 0.0080s
+detection: 154/697 0.0081s 0.0045s
+detection: 155/697 0.0100s 0.0046s
+detection: 156/697 0.0085s 0.0065s
+detection: 157/697 0.0085s 0.0065s
+detection: 158/697 0.0085s 0.0056s
+detection: 159/697 0.0095s 0.0086s
+detection: 160/697 0.0090s 0.0211s
+detection: 161/697 0.0095s 0.0090s
+detection: 162/697 0.0100s 0.0095s
+detection: 163/697 0.0100s 0.0080s
+detection: 164/697 0.0097s 0.0125s
+detection: 165/697 0.0106s 0.0086s
+detection: 166/697 0.0095s 0.0065s
+detection: 167/697 0.0105s 0.0125s
+detection: 168/697 0.0100s 0.0060s
+detection: 169/697 0.0106s 0.0065s
+detection: 170/697 0.0111s 0.0090s
+detection: 171/697 0.0120s 0.0076s
+detection: 172/697 0.0100s 0.0130s
+detection: 173/697 0.0101s 0.0176s
+detection: 174/697 0.0106s 0.0146s
+detection: 175/697 0.0126s 0.0262s
+detection: 176/697 0.0121s 0.0111s
+detection: 177/697 0.0115s 0.0135s
+detection: 178/697 0.0110s 0.0046s
+detection: 179/697 0.0105s 0.0050s
+detection: 180/697 0.0115s 0.0090s
+detection: 181/697 0.0121s 0.0055s
+detection: 182/697 0.0120s 0.0065s
+detection: 183/697 0.0130s 0.0090s
+detection: 184/697 0.0110s 0.0061s
+detection: 185/697 0.0116s 0.0070s
+detection: 186/697 0.0120s 0.0346s
+detection: 187/697 0.0116s 0.0166s
+detection: 188/697 0.0126s 0.0095s
+detection: 189/697 0.0125s 0.0402s
+detection: 190/697 0.0120s 0.0191s
+detection: 191/697 0.0120s 0.0070s
+detection: 192/697 0.0125s 0.0191s
+detection: 193/697 0.0115s 0.0276s
+detection: 194/697 0.0130s 0.0090s
+detection: 195/697 0.0126s 0.0176s
+detection: 196/697 0.0115s 0.0155s
+detection: 197/697 0.0120s 0.0185s
+detection: 198/697 0.0115s 0.0060s
+detection: 199/697 0.0126s 0.0100s
+detection: 200/697 0.0120s 0.0161s
+detection: 201/697 0.0116s 0.0141s
+detection: 202/697 0.0116s 0.0110s
+detection: 203/697 0.0140s 0.0130s
+detection: 204/697 0.0110s 0.0055s
+detection: 205/697 0.0121s 0.0085s
+detection: 206/697 0.0121s 0.0052s
+detection: 207/697 0.0117s 0.0116s
+detection: 208/697 0.0125s 0.0125s
+detection: 209/697 0.0116s 0.0085s
+detection: 210/697 0.0115s 0.0135s
+detection: 211/697 0.0120s 0.0131s
+detection: 212/697 0.0125s 0.0070s
+detection: 213/697 0.0130s 0.0110s
+detection: 214/697 0.0115s 0.0075s
+detection: 215/697 0.0125s 0.0191s
+detection: 216/697 0.0121s 0.0065s
+detection: 217/697 0.0116s 0.0080s
+detection: 218/697 0.0125s 0.0441s
+detection: 219/697 0.0135s 0.0412s
+detection: 220/697 0.0130s 0.0382s
+detection: 221/697 0.0125s 0.0196s
+detection: 222/697 0.0130s 0.0110s
+detection: 223/697 0.0145s 0.0200s
+detection: 224/697 0.0130s 0.0060s
+detection: 225/697 0.0130s 0.0050s
+detection: 226/697 0.0125s 0.0075s
+detection: 227/697 0.0135s 0.0100s
+detection: 228/697 0.0125s 0.0116s
+detection: 229/697 0.0140s 0.0106s
+detection: 230/697 0.0131s 0.0140s
+detection: 231/697 0.0127s 0.0167s
+detection: 232/697 0.0120s 0.0070s
+detection: 233/697 0.0130s 0.0056s
+detection: 234/697 0.0130s 0.0095s
+detection: 235/697 0.0126s 0.0075s
+detection: 236/697 0.0120s 0.0050s
+detection: 237/697 0.0131s 0.0065s
+detection: 238/697 0.0135s 0.0090s
+detection: 239/697 0.0131s 0.0050s
+detection: 240/697 0.0145s 0.0145s
+detection: 241/697 0.0131s 0.0377s
+detection: 242/697 0.0131s 0.0150s
+detection: 243/697 0.0146s 0.0085s
+detection: 244/697 0.0136s 0.0145s
+detection: 245/697 0.0130s 0.0090s
+detection: 246/697 0.0135s 0.0125s
+detection: 247/697 0.0135s 0.0120s
+detection: 248/697 0.0145s 0.0151s
+detection: 249/697 0.0131s 0.0160s
+detection: 250/697 0.0126s 0.0156s
+detection: 251/697 0.0121s 0.0085s
+detection: 252/697 0.0120s 0.0100s
+detection: 253/697 0.0130s 0.0115s
+detection: 254/697 0.0121s 0.0070s
+detection: 255/697 0.0115s 0.0061s
+detection: 256/697 0.0130s 0.0070s
+detection: 257/697 0.0130s 0.0056s
+detection: 258/697 0.0116s 0.0090s
+detection: 259/697 0.0130s 0.0040s
+detection: 260/697 0.0111s 0.0045s
+detection: 261/697 0.0131s 0.0045s
+detection: 262/697 0.0121s 0.0080s
+detection: 263/697 0.0115s 0.0045s
+detection: 264/697 0.0125s 0.0055s
+detection: 265/697 0.0116s 0.0065s
+detection: 266/697 0.0110s 0.0080s
+detection: 267/697 0.0121s 0.0060s
+detection: 268/697 0.0126s 0.0070s
+detection: 269/697 0.0126s 0.0055s
+detection: 270/697 0.0116s 0.0070s
+detection: 271/697 0.0106s 0.0060s
+detection: 272/697 0.0109s 0.0062s
+detection: 273/697 0.0095s 0.0075s
+detection: 274/697 0.0115s 0.0065s
+detection: 275/697 0.0126s 0.0055s
+detection: 276/697 0.0110s 0.0060s
+detection: 277/697 0.0110s 0.0045s
+detection: 278/697 0.0100s 0.0070s
+detection: 279/697 0.0100s 0.0090s
+detection: 280/697 0.0110s 0.0091s
+detection: 281/697 0.0110s 0.0115s
+detection: 282/697 0.0105s 0.0100s
+detection: 283/697 0.0125s 0.0196s
+detection: 284/697 0.0096s 0.0070s
+detection: 285/697 0.0106s 0.0065s
+detection: 286/697 0.0105s 0.0090s
+detection: 287/697 0.0100s 0.0080s
+detection: 288/697 0.0110s 0.0070s
+detection: 289/697 0.0106s 0.0170s
+detection: 290/697 0.0106s 0.0071s
+detection: 291/697 0.0106s 0.0100s
+detection: 292/697 0.0111s 0.0205s
+detection: 293/697 0.0111s 0.0135s
+detection: 294/697 0.0100s 0.0146s
+detection: 295/697 0.0100s 0.0085s
+detection: 296/697 0.0091s 0.0135s
+detection: 297/697 0.0106s 0.0141s
+detection: 298/697 0.0105s 0.0336s
+detection: 299/697 0.0105s 0.0246s
+detection: 300/697 0.0103s 0.0152s
+detection: 301/697 0.0105s 0.0101s
+detection: 302/697 0.0095s 0.0217s
+detection: 303/697 0.0093s 0.0091s
+detection: 304/697 0.0100s 0.0090s
+detection: 305/697 0.0110s 0.0156s
+detection: 306/697 0.0105s 0.0100s
+detection: 307/697 0.0105s 0.0226s
+detection: 308/697 0.0101s 0.0100s
+detection: 309/697 0.0105s 0.0292s
+detection: 310/697 0.0109s 0.0420s
+detection: 311/697 0.0095s 0.0170s
+detection: 312/697 0.0106s 0.0361s
+detection: 313/697 0.0100s 0.0382s
+detection: 314/697 0.0105s 0.0371s
+detection: 315/697 0.0105s 0.0216s
+detection: 316/697 0.0096s 0.0100s
+detection: 317/697 0.0100s 0.0125s
+detection: 318/697 0.0100s 0.0085s
+detection: 319/697 0.0105s 0.0177s
+detection: 320/697 0.0111s 0.0267s
+detection: 321/697 0.0105s 0.0201s
+detection: 322/697 0.0105s 0.0242s
+detection: 323/697 0.0116s 0.0171s
+detection: 324/697 0.0100s 0.0246s
+detection: 325/697 0.0115s 0.0211s
+detection: 326/697 0.0131s 0.0071s
+detection: 327/697 0.0131s 0.0100s
+detection: 328/697 0.0125s 0.0126s
+detection: 329/697 0.0131s 0.0131s
+detection: 330/697 0.0135s 0.0171s
+detection: 331/697 0.0131s 0.0090s
+detection: 332/697 0.0146s 0.0105s
+detection: 333/697 0.0135s 0.0180s
+detection: 334/697 0.0145s 0.0135s
+detection: 335/697 0.0136s 0.0376s
+detection: 336/697 0.0135s 0.0314s
+detection: 337/697 0.0145s 0.0165s
+detection: 338/697 0.0135s 0.0222s
+detection: 339/697 0.0141s 0.0165s
+detection: 340/697 0.0130s 0.0281s
+detection: 341/697 0.0145s 0.0120s
+detection: 342/697 0.0135s 0.0181s
+detection: 343/697 0.0135s 0.0136s
+detection: 344/697 0.0135s 0.0210s
+detection: 345/697 0.0135s 0.0110s
+detection: 346/697 0.0151s 0.0276s
+detection: 347/697 0.0130s 0.0256s
+detection: 348/697 0.0141s 0.0116s
+detection: 349/697 0.0140s 0.0085s
+detection: 350/697 0.0136s 0.0080s
+detection: 351/697 0.0131s 0.0186s
+detection: 352/697 0.0140s 0.0136s
+detection: 353/697 0.0131s 0.0100s
+detection: 354/697 0.0130s 0.0090s
+detection: 355/697 0.0140s 0.0070s
+detection: 356/697 0.0146s 0.0081s
+detection: 357/697 0.0151s 0.0150s
+detection: 358/697 0.0135s 0.0156s
+detection: 359/697 0.0151s 0.0126s
+detection: 360/697 0.0146s 0.0155s
+detection: 361/697 0.0146s 0.0271s
+detection: 362/697 0.0140s 0.0075s
+detection: 363/697 0.0130s 0.0090s
+detection: 364/697 0.0130s 0.0071s
+detection: 365/697 0.0126s 0.0065s
+detection: 366/697 0.0136s 0.0065s
+detection: 367/697 0.0140s 0.0145s
+detection: 368/697 0.0141s 0.0392s
+detection: 369/697 0.0151s 0.0106s
+detection: 370/697 0.0136s 0.0105s
+detection: 371/697 0.0136s 0.0097s
+detection: 372/697 0.0135s 0.0216s
+detection: 373/697 0.0131s 0.0054s
+detection: 374/697 0.0141s 0.0211s
+detection: 375/697 0.0140s 0.0146s
+detection: 376/697 0.0130s 0.0161s
+detection: 377/697 0.0126s 0.0227s
+detection: 378/697 0.0141s 0.0201s
+detection: 379/697 0.0136s 0.0151s
+detection: 380/697 0.0130s 0.0171s
+detection: 381/697 0.0136s 0.0055s
+detection: 382/697 0.0141s 0.0136s
+detection: 383/697 0.0140s 0.0210s
+detection: 384/697 0.0136s 0.0191s
+detection: 385/697 0.0136s 0.0125s
+detection: 386/697 0.0150s 0.0176s
+detection: 387/697 0.0126s 0.0266s
+detection: 388/697 0.0135s 0.0206s
+detection: 389/697 0.0141s 0.0165s
+detection: 390/697 0.0141s 0.0191s
+detection: 391/697 0.0141s 0.0060s
+detection: 392/697 0.0130s 0.0247s
+detection: 393/697 0.0135s 0.0266s
+detection: 394/697 0.0141s 0.0217s
+detection: 395/697 0.0135s 0.0135s
+detection: 396/697 0.0141s 0.0115s
+detection: 397/697 0.0135s 0.0231s
+detection: 398/697 0.0140s 0.0291s
+detection: 399/697 0.0140s 0.0155s
+detection: 400/697 0.0136s 0.0110s
+detection: 401/697 0.0141s 0.0206s
+detection: 402/697 0.0130s 0.0301s
+detection: 403/697 0.0135s 0.0085s
+detection: 404/697 0.0150s 0.0065s
+detection: 405/697 0.0136s 0.0181s
+detection: 406/697 0.0146s 0.0286s
+detection: 407/697 0.0141s 0.0287s
+detection: 408/697 0.0140s 0.0091s
+detection: 409/697 0.0145s 0.0091s
+detection: 410/697 0.0140s 0.0060s
+detection: 411/697 0.0140s 0.0136s
+detection: 412/697 0.0137s 0.0196s
+detection: 413/697 0.0151s 0.0131s
+detection: 414/697 0.0154s 0.0198s
+detection: 415/697 0.0145s 0.0296s
+detection: 416/697 0.0140s 0.0240s
+detection: 417/697 0.0151s 0.0276s
+detection: 418/697 0.0161s 0.0110s
+detection: 419/697 0.0135s 0.0121s
+detection: 420/697 0.0145s 0.0176s
+detection: 421/697 0.0146s 0.0096s
+detection: 422/697 0.0146s 0.0246s
+detection: 423/697 0.0140s 0.0055s
+detection: 424/697 0.0146s 0.0065s
+detection: 425/697 0.0154s 0.0237s
+detection: 426/697 0.0141s 0.0331s
+detection: 427/697 0.0141s 0.0120s
+detection: 428/697 0.0146s 0.0076s
+detection: 429/697 0.0146s 0.0136s
+detection: 430/697 0.0145s 0.0312s
+detection: 431/697 0.0151s 0.0161s
+detection: 432/697 0.0146s 0.0125s
+detection: 433/697 0.0145s 0.0060s
+detection: 434/697 0.0136s 0.0211s
+detection: 435/697 0.0150s 0.0246s
+detection: 436/697 0.0150s 0.0136s
+detection: 437/697 0.0141s 0.0151s
+detection: 438/697 0.0151s 0.0060s
+detection: 439/697 0.0146s 0.0150s
+detection: 440/697 0.0145s 0.0211s
+detection: 441/697 0.0155s 0.0275s
+detection: 442/697 0.0151s 0.0126s
+detection: 443/697 0.0146s 0.0156s
+detection: 444/697 0.0151s 0.0131s
+detection: 445/697 0.0150s 0.0136s
+detection: 446/697 0.0146s 0.0110s
+detection: 447/697 0.0160s 0.0070s
+detection: 448/697 0.0135s 0.0126s
+detection: 449/697 0.0146s 0.0055s
+detection: 450/697 0.0145s 0.0240s
+detection: 451/697 0.0150s 0.0210s
+detection: 452/697 0.0145s 0.0120s
+detection: 453/697 0.0146s 0.0090s
+detection: 454/697 0.0145s 0.0065s
+detection: 455/697 0.0150s 0.0075s
+detection: 456/697 0.0145s 0.0091s
+detection: 457/697 0.0141s 0.0060s
+detection: 458/697 0.0161s 0.0100s
+detection: 459/697 0.0150s 0.0396s
+detection: 460/697 0.0150s 0.0492s
+detection: 461/697 0.0155s 0.0100s
+detection: 462/697 0.0151s 0.0146s
+detection: 463/697 0.0140s 0.0171s
+detection: 464/697 0.0146s 0.0141s
+detection: 465/697 0.0145s 0.0080s
+detection: 466/697 0.0156s 0.0065s
+detection: 467/697 0.0145s 0.0091s
+detection: 468/697 0.0151s 0.0065s
+detection: 469/697 0.0150s 0.0060s
+detection: 470/697 0.0150s 0.0060s
+detection: 471/697 0.0136s 0.0090s
+detection: 472/697 0.0136s 0.0091s
+detection: 473/697 0.0140s 0.0060s
+detection: 474/697 0.0145s 0.0065s
+detection: 475/697 0.0136s 0.0075s
+detection: 476/697 0.0145s 0.0065s
+detection: 477/697 0.0130s 0.0080s
+detection: 478/697 0.0125s 0.0070s
+detection: 479/697 0.0135s 0.0045s
+detection: 480/697 0.0141s 0.0060s
+detection: 481/697 0.0130s 0.0065s
+detection: 482/697 0.0140s 0.0060s
+detection: 483/697 0.0131s 0.0065s
+detection: 484/697 0.0130s 0.0090s
+detection: 485/697 0.0130s 0.0071s
+detection: 486/697 0.0131s 0.0086s
+detection: 487/697 0.0141s 0.0065s
+detection: 488/697 0.0141s 0.0111s
+detection: 489/697 0.0135s 0.0100s
+detection: 490/697 0.0146s 0.0100s
+detection: 491/697 0.0136s 0.0074s
+detection: 492/697 0.0131s 0.0095s
+detection: 493/697 0.0132s 0.0096s
+detection: 494/697 0.0145s 0.0060s
+detection: 495/697 0.0145s 0.0116s
+detection: 496/697 0.0141s 0.0070s
+detection: 497/697 0.0135s 0.0090s
+detection: 498/697 0.0141s 0.0085s
+detection: 499/697 0.0130s 0.0085s
+detection: 500/697 0.0137s 0.0065s
+detection: 501/697 0.0131s 0.0055s
+detection: 502/697 0.0136s 0.0070s
+detection: 503/697 0.0141s 0.0055s
+detection: 504/697 0.0150s 0.0080s
+detection: 505/697 0.0135s 0.0100s
+detection: 506/697 0.0135s 0.0100s
+detection: 507/697 0.0130s 0.0220s
+detection: 508/697 0.0146s 0.0110s
+detection: 509/697 0.0145s 0.0120s
+detection: 510/697 0.0131s 0.0311s
+detection: 511/697 0.0135s 0.0125s
+detection: 512/697 0.0125s 0.0170s
+detection: 513/697 0.0120s 0.0136s
+detection: 514/697 0.0121s 0.0221s
+detection: 515/697 0.0130s 0.0256s
+detection: 516/697 0.0131s 0.0075s
+detection: 517/697 0.0135s 0.0100s
+detection: 518/697 0.0130s 0.0150s
+detection: 519/697 0.0125s 0.0101s
+detection: 520/697 0.0121s 0.0135s
+detection: 521/697 0.0125s 0.0111s
+detection: 522/697 0.0115s 0.0147s
+detection: 523/697 0.0130s 0.0080s
+detection: 524/697 0.0131s 0.0211s
+detection: 525/697 0.0126s 0.0216s
+detection: 526/697 0.0126s 0.0105s
+detection: 527/697 0.0120s 0.0060s
+detection: 528/697 0.0120s 0.0215s
+detection: 529/697 0.0131s 0.0151s
+detection: 530/697 0.0125s 0.0191s
+detection: 531/697 0.0125s 0.0135s
+detection: 532/697 0.0125s 0.0150s
+detection: 533/697 0.0135s 0.0271s
+detection: 534/697 0.0131s 0.0100s
+detection: 535/697 0.0136s 0.0176s
+detection: 536/697 0.0120s 0.0357s
+detection: 537/697 0.0125s 0.0095s
+detection: 538/697 0.0125s 0.0211s
+detection: 539/697 0.0130s 0.0085s
+detection: 540/697 0.0125s 0.0236s
+detection: 541/697 0.0130s 0.0221s
+detection: 542/697 0.0130s 0.0186s
+detection: 543/697 0.0130s 0.0126s
+detection: 544/697 0.0130s 0.0160s
+detection: 545/697 0.0130s 0.0130s
+detection: 546/697 0.0125s 0.0055s
+detection: 547/697 0.0131s 0.0120s
+detection: 548/697 0.0140s 0.0166s
+detection: 549/697 0.0125s 0.0456s
+detection: 550/697 0.0136s 0.0180s
+detection: 551/697 0.0156s 0.0282s
+detection: 552/697 0.0143s 0.0266s
+detection: 553/697 0.0150s 0.0387s
+detection: 554/697 0.0150s 0.0161s
+detection: 555/697 0.0141s 0.0091s
+detection: 556/697 0.0135s 0.0221s
+detection: 557/697 0.0150s 0.0321s
+detection: 558/697 0.0145s 0.0387s
+detection: 559/697 0.0147s 0.0151s
+detection: 560/697 0.0151s 0.0241s
+detection: 561/697 0.0145s 0.0101s
+detection: 562/697 0.0146s 0.0246s
+detection: 563/697 0.0140s 0.0210s
+detection: 564/697 0.0140s 0.0261s
+detection: 565/697 0.0151s 0.0075s
+detection: 566/697 0.0156s 0.0296s
+detection: 567/697 0.0151s 0.0105s
+detection: 568/697 0.0150s 0.0080s
+detection: 569/697 0.0161s 0.0397s
+detection: 570/697 0.0155s 0.0206s
+detection: 571/697 0.0150s 0.0170s
+detection: 572/697 0.0150s 0.0256s
+detection: 573/697 0.0151s 0.0296s
+detection: 574/697 0.0151s 0.0301s
+detection: 575/697 0.0146s 0.0163s
+detection: 576/697 0.0150s 0.0200s
+detection: 577/697 0.0150s 0.0180s
+detection: 578/697 0.0155s 0.0331s
+detection: 579/697 0.0155s 0.0156s
+detection: 580/697 0.0151s 0.0255s
+detection: 581/697 0.0160s 0.0295s
+detection: 582/697 0.0150s 0.0316s
+detection: 583/697 0.0155s 0.0095s
+detection: 584/697 0.0156s 0.0186s
+detection: 585/697 0.0145s 0.0177s
+detection: 586/697 0.0145s 0.0201s
+detection: 587/697 0.0155s 0.0276s
+detection: 588/697 0.0150s 0.0346s
+detection: 589/697 0.0155s 0.0165s
+detection: 590/697 0.0146s 0.0120s
+detection: 591/697 0.0155s 0.0240s
+detection: 592/697 0.0150s 0.0076s
+detection: 593/697 0.0151s 0.0433s
+detection: 594/697 0.0156s 0.0116s
+detection: 595/697 0.0166s 0.0195s
+detection: 596/697 0.0156s 0.0130s
+detection: 597/697 0.0160s 0.0136s
+detection: 598/697 0.0155s 0.0215s
+detection: 599/697 0.0155s 0.0431s
+detection: 600/697 0.0156s 0.0386s
+detection: 601/697 0.0161s 0.0391s
+detection: 602/697 0.0150s 0.0216s
+detection: 603/697 0.0151s 0.0236s
+detection: 604/697 0.0161s 0.0261s
+detection: 605/697 0.0171s 0.0166s
+detection: 606/697 0.0161s 0.0255s
+detection: 607/697 0.0166s 0.0145s
+detection: 608/697 0.0155s 0.0090s
+detection: 609/697 0.0156s 0.0146s
+detection: 610/697 0.0161s 0.0283s
+detection: 611/697 0.0166s 0.0126s
+detection: 612/697 0.0155s 0.0221s
+detection: 613/697 0.0161s 0.0136s
+detection: 614/697 0.0166s 0.0181s
+detection: 615/697 0.0155s 0.0146s
+detection: 616/697 0.0156s 0.0176s
+detection: 617/697 0.0166s 0.0185s
+detection: 618/697 0.0150s 0.0311s
+detection: 619/697 0.0151s 0.0276s
+detection: 620/697 0.0155s 0.0140s
+detection: 621/697 0.0156s 0.0577s
+detection: 622/697 0.0166s 0.0632s
+detection: 623/697 0.0155s 0.0181s
+detection: 624/697 0.0156s 0.0140s
+detection: 625/697 0.0161s 0.0291s
+detection: 626/697 0.0166s 0.0564s
+detection: 627/697 0.0150s 0.0124s
+detection: 628/697 0.0161s 0.0205s
+detection: 629/697 0.0161s 0.0216s
+detection: 630/697 0.0161s 0.0277s
+detection: 631/697 0.0151s 0.0261s
+detection: 632/697 0.0171s 0.0332s
+detection: 633/697 0.0157s 0.0170s
+detection: 634/697 0.0156s 0.0231s
+detection: 635/697 0.0145s 0.0116s
+detection: 636/697 0.0155s 0.0256s
+detection: 637/697 0.0151s 0.0171s
+detection: 638/697 0.0156s 0.0167s
+detection: 639/697 0.0151s 0.0110s
+detection: 640/697 0.0155s 0.0165s
+detection: 641/697 0.0156s 0.0085s
+detection: 642/697 0.0156s 0.0070s
+detection: 643/697 0.0156s 0.0055s
+detection: 644/697 0.0151s 0.0120s
+detection: 645/697 0.0156s 0.0135s
+detection: 646/697 0.0151s 0.0145s
+detection: 647/697 0.0153s 0.0130s
+detection: 648/697 0.0156s 0.0186s
+detection: 649/697 0.0151s 0.0136s
+detection: 650/697 0.0150s 0.0121s
+detection: 651/697 0.0151s 0.0115s
+detection: 652/697 0.0151s 0.0140s
+detection: 653/697 0.0155s 0.0220s
+detection: 654/697 0.0161s 0.0091s
+detection: 655/697 0.0150s 0.0105s
+detection: 656/697 0.0161s 0.0150s
+detection: 657/697 0.0163s 0.0135s
+detection: 658/697 0.0162s 0.0196s
+detection: 659/697 0.0151s 0.0090s
+detection: 660/697 0.0146s 0.0346s
+detection: 661/697 0.0156s 0.0231s
+detection: 662/697 0.0156s 0.0161s
+detection: 663/697 0.0180s 0.0231s
+detection: 664/697 0.0171s 0.0175s
+detection: 665/697 0.0160s 0.0560s
+detection: 666/697 0.0160s 0.0151s
+detection: 667/697 0.0156s 0.0136s
+detection: 668/697 0.0162s 0.0141s
+detection: 669/697 0.0160s 0.0251s
+detection: 670/697 0.0150s 0.0146s
+detection: 671/697 0.0151s 0.0110s
+detection: 672/697 0.0158s 0.0385s
+detection: 673/697 0.0155s 0.0176s
+detection: 674/697 0.0160s 0.0477s
+detection: 675/697 0.0165s 0.0422s
+detection: 676/697 0.0150s 0.0357s
+detection: 677/697 0.0150s 0.0266s
+detection: 678/697 0.0166s 0.0191s
+detection: 679/697 0.0150s 0.0176s
+detection: 680/697 0.0156s 0.0120s
+detection: 681/697 0.0166s 0.0110s
+detection: 682/697 0.0154s 0.0178s
+detection: 683/697 0.0161s 0.0105s
+detection: 684/697 0.0155s 0.0226s
+detection: 685/697 0.0160s 0.0116s
+detection: 686/697 0.0151s 0.0115s
+detection: 687/697 0.0161s 0.0211s
+detection: 688/697 0.0171s 0.0180s
+detection: 689/697 0.0155s 0.0181s
+detection: 690/697 0.0156s 0.0271s
+detection: 691/697 0.0160s 0.0120s
+detection: 692/697 0.0155s 0.0140s
+detection: 693/697 0.0162s 0.0090s
+detection: 694/697 0.0151s 0.0175s
+detection: 695/697 0.0156s 0.0130s
+detection: 696/697 0.0151s 0.0331s
+detection: 697/697 0.0171s 0.0281s
+
+Evaluating detections
+Writing ampalaya CAMOCROPS results file
+Writing atis CAMOCROPS results file
+Writing avocado CAMOCROPS results file
+Writing bell_pepper CAMOCROPS results file
+Writing calamansi CAMOCROPS results file
+Writing cucumber CAMOCROPS results file
+Writing dalandan CAMOCROPS results file
+Writing french_bean CAMOCROPS results file
+Writing green_chili CAMOCROPS results file
+Writing green_mango CAMOCROPS results file
+Writing guava CAMOCROPS results file
+Writing guyabano CAMOCROPS results file
+Writing okra CAMOCROPS results file
+Writing pea CAMOCROPS results file
+Writing sayote CAMOCROPS results file
+
+VOC07 metric? Yes
+
+Reading annotations
+Saving cached annotations to ./tests\./5camocrops\annotations_cache\annotations.pkl
+
+AP for ampalaya = 0.1250
+AP for atis = 0.4990
+AP for avocado = 0.3807
+AP for bell_pepper = 0.4070
+AP for calamansi = 0.3668
+AP for cucumber = 0.2793
+AP for dalandan = 0.2310
+AP for french_bean = 0.0135
+AP for green_chili = 0.0497
+AP for green_mango = 0.4755
+AP for guava = 0.4355
+AP for guyabano = 0.2493
+AP for okra = 0.1113
+AP for pea = 0.0833
+AP for sayote = 0.3001
+Mean AP = 0.2671
+
+Results:
+0.1250
+0.4990
+0.3807
+0.4070
+0.3668
+0.2793
+0.2310
+0.0135
+0.0497
+0.4755
+0.4355
+0.2493
+0.1113
+0.0833
+0.3001
+0.2671
+79.20958480731362
+64.2683011234377
+35.4804882664349
