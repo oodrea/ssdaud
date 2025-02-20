@@ -1,0 +1,26 @@
+<annotation>
+	<folder>resized</folder>
+	<filename>DSC_0604.jpg</filename>
+	<path>E:\Bellpepper\resized\DSC_0604.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>752</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>BellPepper</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>132</xmin>
+			<ymin>217</ymin>
+			<xmax>273</xmax>
+			<ymax>383</ymax>
+		</bndbox>
+	</object>
+</annotation>

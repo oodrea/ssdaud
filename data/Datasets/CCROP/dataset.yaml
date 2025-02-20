@@ -1,0 +1,7 @@
+path: C:/Users/Charles/Desktop/COLLEGE/THS2/CCROP_Dataset
+train: CCROP_train.txt
+val: CCROP_val.txt
+test: CCROP_test.txt
+
+nc: 2
+names: ['BellPepper','ChiliPepper']

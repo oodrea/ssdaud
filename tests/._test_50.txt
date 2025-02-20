@@ -612,3 +612,531 @@ SSD(
   (softmax): Softmax(dim=-1)
 )
 The number of parameters: 24013232
+------------ Options -------------
+input_channels: 3
+class_count: 21
+dataset: tomatod
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./50
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ./data/Datasets/Tomatod/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 84, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 126, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 126, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 126, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 84, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 26285486
+------------ Options -------------
+input_channels: 3
+class_count: 4
+dataset: tomatod
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./50
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ./data/Datasets/Tomatod/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 24013232
+loaded trained model ./50
+detection: 1/55 0.4464s 0.0992s
+detection: 2/55 0.0101s 0.0858s
+detection: 3/55 0.0070s 0.1012s
+detection: 4/55 0.0073s 0.1027s
+detection: 5/55 0.0080s 0.1041s
+detection: 6/55 0.0070s 0.0990s
+detection: 7/55 0.0072s 0.0977s
+detection: 8/55 0.0071s 0.0882s
+detection: 9/55 0.0076s 0.1081s
+detection: 10/55 0.0075s 0.1060s
+detection: 11/55 0.0080s 0.0924s
+detection: 12/55 0.0075s 0.0911s
+detection: 13/55 0.0070s 0.1044s
+detection: 14/55 0.0090s 0.1017s
+detection: 15/55 0.0095s 0.1009s
+detection: 16/55 0.0100s 0.0941s
+detection: 17/55 0.0086s 0.0950s
+detection: 18/55 0.0081s 0.1003s
+detection: 19/55 0.0083s 0.1013s
+detection: 20/55 0.0075s 0.0876s
+detection: 21/55 0.0080s 0.0912s
+detection: 22/55 0.0096s 0.0782s
+detection: 23/55 0.0085s 0.1035s
+detection: 24/55 0.0080s 0.1044s
+detection: 25/55 0.0080s 0.0968s
+detection: 26/55 0.0080s 0.1073s
+detection: 27/55 0.0085s 0.0997s
+detection: 28/55 0.0084s 0.0825s
+detection: 29/55 0.0080s 0.0692s
+detection: 30/55 0.0087s 0.0840s
+detection: 31/55 0.0085s 0.1055s
+detection: 32/55 0.0080s 0.1014s
+detection: 33/55 0.0096s 0.0865s
+detection: 34/55 0.0075s 0.0995s
+detection: 35/55 0.0075s 0.0904s
+detection: 36/55 0.0090s 0.0844s
+detection: 37/55 0.0096s 0.0980s
+detection: 38/55 0.0091s 0.1145s
+detection: 39/55 0.0083s 0.1144s
+detection: 40/55 0.0080s 0.0994s
+detection: 41/55 0.0087s 0.0900s
+detection: 42/55 0.0080s 0.0801s
+detection: 43/55 0.0087s 0.0777s
+detection: 44/55 0.0085s 0.1011s
+detection: 45/55 0.0074s 0.0875s
+detection: 46/55 0.0098s 0.0913s
+detection: 47/55 0.0100s 0.0898s
+detection: 48/55 0.0080s 0.1039s
+detection: 49/55 0.0085s 0.0592s
+detection: 50/55 0.0080s 0.0783s
+detection: 51/55 0.0196s 0.0817s
+detection: 52/55 0.0188s 0.0946s
+detection: 53/55 0.0203s 0.0931s
+detection: 54/55 0.0200s 0.0973s
+detection: 55/55 0.0176s 0.0929s
+
+Evaluating detections
+Writing results for ripe (Class 1)
+Writing results for unripe (Class 2)
+Writing results for semi-ripe (Class 3)
+Detection results saved in ./tests\./50\detections.json
+AP--IoU=0.50:0.95--all--100: 0.081
+AP--IoU=0.50--all--100: 0.202
+AP--IoU=0.75--all-100: 0.049
+AP--IoU=0.50:0.95--small--100: 0.000
+AP--IoU=0.50:0.95--medium--100: 0.023
+AP--IoU=0.50:0.95--large--100: 0.133
+AR--IoU=0.50:0.95--all--1: 0.077
+AR--IoU=0.50:0.95--all--10: 0.160
+AR--IoU=0.50:0.95--all--100: 0.176
+AR--IoU=0.50:0.95--small--100: 0.000
+AR--IoU=0.50:0.95--medium--100: 0.054
+AR--IoU=0.50:0.95--large--100: 0.283
+
+Results:
+0.081
+0.202
+0.049
+0.000
+0.023
+0.133
+0.077
+0.160
+0.176
+0.000
+0.054
+0.283
+
+--- Per-Class Evaluation Metrics ---
+unripe: AP=0.097, AR=0.212
+semi-ripe: AP=0.077, AR=0.153
+fully-ripe: AP=0.068, AR=0.164
+107.21676595003389
+10.606787372358376
+9.651936366850297
+------------ Options -------------
+input_channels: 3
+class_count: 4
+dataset: tomatod
+new_size: 300
+means: (104, 117, 123)
+anchor_config: SSD-300
+scale_initial: 0.1
+scale_min: 0.2
+scale_max: 1.05
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+num_epochs: 220
+learning_sched: [160, 190]
+warmup_epoch: 0
+sched_gamma: 0.1
+batch_size: 32
+batch_multiplier: 1
+model: SSD
+basenet: vgg16_reducedfc.pth
+resnet_model: 18
+densenet_model: 121
+resnext_model: 50_32x4d
+pretrained_model: ./50
+coco_weights: None
+loss_config: multibox
+pos_neg_ratio: 3
+mode: test
+use_gpu: True
+max_per_image: 50
+score_threshold: 0.01
+nms_threshold: 0.5
+iou_threshold: 0.5
+voc_config: 0712
+voc_data_path: ../../Datasets/PascalVOC/
+use_07_metric: True
+coco_year: 2017
+coco_data_path: ../../Datasets/Coco/
+tomatod_data_path: ./data/Datasets/Tomatod/
+model_save_path: ./weights
+model_test_path: ./tests
+model_eval_path: ./eval
+loss_log_step: 1
+model_save_step: 5
+-------------- End ----------------
+SSD(
+  (base): ModuleList(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+    (31): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+    (32): ReLU(inplace=True)
+    (33): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (34): ReLU(inplace=True)
+  )
+  (L2Norm): L2Norm()
+  (extras): ModuleList(
+    (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (2): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+    (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (4): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (5): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+    (6): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (7): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+  )
+  (class_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (loc_head): ModuleList(
+    (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (softmax): Softmax(dim=-1)
+)
+The number of parameters: 24013232
+loaded trained model ./50
+detection: 1/55 0.4514s 0.1235s
+detection: 2/55 0.0106s 0.0938s
+detection: 3/55 0.0075s 0.0795s
+detection: 4/55 0.0075s 0.1032s
+detection: 5/55 0.0080s 0.0942s
+detection: 6/55 0.0080s 0.0917s
+detection: 7/55 0.0080s 0.0963s
+detection: 8/55 0.0071s 0.0981s
+detection: 9/55 0.0085s 0.0972s
+detection: 10/55 0.0075s 0.1043s
+detection: 11/55 0.0080s 0.0881s
+detection: 12/55 0.0075s 0.1000s
+detection: 13/55 0.0085s 0.0972s
+detection: 14/55 0.0083s 0.0908s
+detection: 15/55 0.0080s 0.0933s
+detection: 16/55 0.0075s 0.1078s
+detection: 17/55 0.0080s 0.1141s
+detection: 18/55 0.0082s 0.0938s
+detection: 19/55 0.0080s 0.1038s
+detection: 20/55 0.0080s 0.0893s
+detection: 21/55 0.0075s 0.0912s
+detection: 22/55 0.0085s 0.0806s
+detection: 23/55 0.0075s 0.0913s
+detection: 24/55 0.0080s 0.1083s
+detection: 25/55 0.0085s 0.0755s
+detection: 26/55 0.0095s 0.0896s
+detection: 27/55 0.0100s 0.1028s
+detection: 28/55 0.0090s 0.0919s
+detection: 29/55 0.0075s 0.0691s
+detection: 30/55 0.0085s 0.0798s
+detection: 31/55 0.0075s 0.1041s
+detection: 32/55 0.0078s 0.1032s
+detection: 33/55 0.0086s 0.0984s
+detection: 34/55 0.0085s 0.1034s
+detection: 35/55 0.0087s 0.0903s
+detection: 36/55 0.0080s 0.0949s
+detection: 37/55 0.0091s 0.0970s
+detection: 38/55 0.0103s 0.1111s
+detection: 39/55 0.0087s 0.0925s
+detection: 40/55 0.0085s 0.1034s
+detection: 41/55 0.0085s 0.0890s
+detection: 42/55 0.0080s 0.0817s
+detection: 43/55 0.0084s 0.0782s
+detection: 44/55 0.0090s 0.1032s
+detection: 45/55 0.0093s 0.0928s
+detection: 46/55 0.0151s 0.0952s
+detection: 47/55 0.0156s 0.0904s
+detection: 48/55 0.0180s 0.0978s
+detection: 49/55 0.0189s 0.0573s
+detection: 50/55 0.0202s 0.0858s
+detection: 51/55 0.0191s 0.0751s
+detection: 52/55 0.0175s 0.0990s
+detection: 53/55 0.0230s 0.1006s
+detection: 54/55 0.0236s 0.0983s
+detection: 55/55 0.0191s 0.0891s
+
+Evaluating detections
+Writing results for ripe (Class 1)
+Writing results for unripe (Class 2)
+Writing results for semi-ripe (Class 3)
+Detection results saved in ./tests\./50\detections.json
+AP--IoU=0.50:0.95--all--100: 0.081
+AP--IoU=0.50--all--100: 0.202
+AP--IoU=0.75--all-100: 0.049
+AP--IoU=0.50:0.95--small--100: 0.000
+AP--IoU=0.50:0.95--medium--100: 0.023
+AP--IoU=0.50:0.95--large--100: 0.133
+AR--IoU=0.50:0.95--all--1: 0.077
+AR--IoU=0.50:0.95--all--10: 0.160
+AR--IoU=0.50:0.95--all--100: 0.176
+AR--IoU=0.50:0.95--small--100: 0.000
+AR--IoU=0.50:0.95--medium--100: 0.054
+AR--IoU=0.50:0.95--large--100: 0.283
+
+Results:
+0.081
+0.202
+0.049
+0.000
+0.023
+0.133
+0.077
+0.160
+0.176
+0.000
+0.054
+0.283
+
+--- Per-Class Evaluation Metrics ---
+unripe: AP=0.097, AR=0.212
+semi-ripe: AP=0.077, AR=0.153
+fully-ripe: AP=0.068, AR=0.164
+96.9724803008688
+10.69653977312092
+9.633876037170397
