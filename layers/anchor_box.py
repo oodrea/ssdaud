@@ -24,7 +24,19 @@ anchors_config = {
                   [[2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]],
     'SFDet-512': [[8, 16, 32, 64, 128, 256, 512],
                   [64, 32, 16, 8, 4, 2, 1],
-                  [[2, 3], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]]
+                  [[2, 3], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]],
+    'SSD-EfficientNet': [[8, 16, 16, 16, 30, 30],          # Steps (effective strides)
+                        [38, 19, 19, 19, 10, 10],               # Feature map sizes (as derived from your sources)
+                        [[2,3], [2, 3], [2, 3], [2, 3], [2], [2]]  # Aspect ratios per source: changed smallest aspect ratio to [2, 3]
+                        ],
+    'SSD-MobileNet': [[8, 16, 16, 30, 30, 30],              # Steps: effective strides for each feature map
+                     [38, 19, 19, 10, 10, 10],                # Feature map sizes
+                     [[2,3], [2, 3], [2, 3], [2, 3], [2], [2]]  # Aspect ratios for each source
+                     ],
+    'SSD-ShuffleNet': [[8, 8, 16, 16, 30, 30],    # Steps for each feature map
+                        [38, 38, 19, 19, 10, 10],          # Spatial dimensions of the feature maps
+                        [[2, 3], [2, 3], [2, 3], [2, 3], [2], [2]]  # Aspect ratios per feature map
+                    ]
 }
 
 
