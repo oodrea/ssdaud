@@ -10,6 +10,13 @@ from torch.backends import cudnn
 from data.data_loader import get_loader
 from utils.genutils import write_print, mkdir
 
+# Precomputed means for different datasets
+DATASET_MEANS = {
+    "tomatod": (55.28887, 60.94265, 46.82734),  # Your computed means
+    "ccrop": (85.319626, 99.83833,  62.829884),
+    "camocrops": (87.05553, 129.16446,  46.85868)
+}
+
 
 def zip_directory(path, zip_file):
     """Stores all py and cfg project files inside a zip file
@@ -112,7 +119,7 @@ if __name__ == '__main__':
                         help='Mean values of the dataset')
     parser.add_argument('--anchor_config', type=str, default='SSD-300',
                         choices=['SSD-300', 'SSD-512',
-                                 'SFDet-300', 'SFDet-512'],
+                                 'SFDet-300', 'SFDet-512', 'SSD-EfficientNet', 'SSD-MobileNet', 'SSD-ShuffleNet'],
                         help='Anchor box configuration to use')
     parser.add_argument('--scale_initial', type=float, default=0.1,  # .07 COCO
                         help='Initial scale of anchor boxes')
@@ -131,8 +138,8 @@ if __name__ == '__main__':
     parser.add_argument('--num_epochs', type=int, default=220,
                         help='Number of epochs')
     # 145, 182, 218 -> 160, 190, 220
-    parser.add_argument('--learning_sched', type=list, default=[160, 190],
-                        help='List of epochs to reduce the learning rate')
+    parser.add_argument('--learning_sched', nargs='+', type=int, default=[160, 190],
+                    help='List of epochs to reduce the learning rate')
     parser.add_argument('--warmup_epoch', type=int, default=0,
                         help='Number of epochs for warmup')
     parser.add_argument('--sched_gamma', type=float, default=0.1,
@@ -146,10 +153,11 @@ if __name__ == '__main__':
     parser.add_argument('--model', type=str, default='SSD',
                         choices=['SFDet-VGG', 'SFDet-ResNet',
                                  'SFDet-DenseNet', 'SFDet-ResNeXt',
-                                 'SSD'],
+                                 'SSD', 'SSD-EfficientNet', 'SSD-MobileNet', 'SSD-ShuffleNet'],
                         help='Model to use')
-    parser.add_argument('--basenet', type=str, default='vgg16_reducedfc.pth',
-                        help='Base network for VGG')
+    parser.add_argument('--basenet', type=str, default=None,
+                        help='Base network for VGG (vgg16_reducedfc.pth)')
+    # parser.add_argument('--basenet', type=str, default='vgg16_reducedfc.pth', help='Base network for VGG')
     parser.add_argument('--resnet_model', type=str, default='18',
                         choices=['18', '34', '50', '101', '152'],
                         help='ResNet base network configuration')
@@ -242,6 +250,15 @@ if __name__ == '__main__':
 
     args = vars(config)
     output_txt = ''
+
+    # if args['dataset'] == 'tomatod':
+    #     args['means'] = DATASET_MEANS.get('tomatod')
+
+    # elif args['dataset'] == 'ccrop':
+    #     args['means'] = DATASET_MEANS.get('ccrop')
+
+    # elif args['dataset'] == 'camocrops':
+    #     args['means'] = DATASET_MEANS.get('camocrops')
 
     if args['mode'] == 'train':
         version = str(datetime.now()).replace(':', '_')

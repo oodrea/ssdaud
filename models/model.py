@@ -3,6 +3,9 @@ from models.sfdet_vgg import build_SFDetVGG
 from models.sfdet_resnet import build_SFDetResNet
 from models.sfdet_resnext import build_SFDetResNeXt
 from models.sfdet_densenet import build_SFDetDenseNet
+from models.ssd_efficientnet2 import build_SSDEfficientNet as build_SSDEfficientNet
+from models.ssd_mobilenet2 import build_SSDMobileNet as build_SSDMobileNet
+from models.ssd_shufflenet import build_SSDShuffleNet as build_SSDShuffleNet
 
 
 def get_model(config,
@@ -49,6 +52,24 @@ def get_model(config,
 
     elif config['model'] == 'SSD':
         model = build_SSD(mode=config['mode'],
+                          new_size=config['new_size'],
+                          anchors=anchors,
+                          class_count=config['class_count'])
+    
+    elif config['model'] == 'SSD-EfficientNet':
+        model = build_SSDEfficientNet(mode=config['mode'],
+                          new_size=config['new_size'],
+                          anchors=anchors,
+                          class_count=config['class_count'])
+    
+    elif config['model'] == 'SSD-MobileNet':
+        model = build_SSDMobileNet(mode=config['mode'],
+                          new_size=config['new_size'],
+                          anchors=anchors,
+                          class_count=config['class_count'])
+    
+    elif config['model'] == 'SSD-ShuffleNet':
+        model = build_SSDShuffleNet(mode=config['mode'],
                           new_size=config['new_size'],
                           anchors=anchors,
                           class_count=config['class_count'])

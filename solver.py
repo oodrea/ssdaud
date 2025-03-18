@@ -29,6 +29,12 @@ from data.ccrop import save_results as ccrop_save
 from data.camocrops import do_python_eval as do_camocrops_eval
 from data.camocrops import save_results as camocrops_save
 
+from torchinfo import summary
+
+import io
+import contextlib
+
+
 class Solver(object):
 
     DEFAULTS = {}
@@ -57,9 +63,27 @@ class Solver(object):
                                   model_save_path=self.model_save_path,
                                   pretrained_model=self.pretrained_model,
                                   output_txt=self.output_txt)
+
+        # changes made to fix device mismatches (10/03/2025)
         elif self.coco_weights is None:
-            self.model.init_weights(self.model_save_path,
+            use_gpu = torch.cuda.is_available() and self.use_gpu  # Check if GPU should be used
+            if config['model'] == 'SSD':
+                # print("Using VGG weights. (vgg16_reducedfc.pth)")  
+                self.model.init_weights(self.model_save_path, self.basenet)
+            elif config['model'] == 'SSD-EfficientNet':
+                # print("Using EfficientNet weights. (efficientnet_b0.pth)")  
+                self.model.init_weights(self.model_save_path, self.basenet)
+            elif config['model'] == 'SSD-MobileNet':
+                # print("Using MobileNet weights. (mobilenet_v2.pth)")  
+                self.model.init_weights(self.model_save_path, self.basenet)
+            elif config['model'] == 'SSD-ShuffleNet':
+                # print("Using ShuffleNet weights. (shufflenet_v2_x1_0.pth)")  
+                self.model.init_weights(self.model_save_path, self.basenet)
+            else:
+                print("Skipping VGG weights. Using Custom backbone with ImageNet-1K pretrained weights.")
+                self.model.init_weights(self.model_save_path,
                                     self.basenet)
+
 
     def build_model(self):
         """
@@ -102,17 +126,30 @@ class Solver(object):
         if torch.cuda.is_available() and self.use_gpu:
             self.model.cuda()
             self.criterion.cuda()
+        
+        # debugging (backbone replacement 10/03/2025)
+        print(f"Generated number of anchors: {self.anchor_boxes.shape[0]}")
+        print(f"Model device: {next(self.model.parameters()).device}")
 
     def print_network(self, model):
         """
-        Prints the structure of the network and the total number of parameters
+        Prints the structure of the network and the total number of parameters + GFLOPs
         """
         num_params = 0
+
+        # Compute FLOPs with PyTorch profiler (batch_size=1) 12/03/2025 (5:44am)
+        # changed back to torchinfo 12/03/2025 (6:47am)
+        model_summary = summary(model, input_size=(1, self.input_channels, self.new_size, self.new_size), verbose=0)
+
+        total_flops = (model_summary.total_mult_adds * 2) / 1e9 
+
         for p in model.parameters():
             num_params += p.numel()
         write_print(self.output_txt, str(model))
         write_print(self.output_txt,
                     'The number of parameters: {}'.format(num_params))
+        write_print(self.output_txt,
+                    'The number of FLOPs: {:.3f} GFLOPs'.format(total_flops))
 
     # def load_pretrained_model(self,
     #                           model,
@@ -272,6 +309,7 @@ class Solver(object):
         # self.scaler.scale(loss).backward()
 
         # update parameters
+        # torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=2.0)
         self.optimizer.step()
         # self.scaler.step(self.optimizer)
 
@@ -575,27 +613,35 @@ class Solver(object):
             
             write_print(self.output_txt, '\n--- Per-Class Evaluation Metrics ---')
             
-            print("Category IDs:", dataset.pycoco.getCatIds())
+            category_ids_str = f"Category IDs: {dataset.pycoco.getCatIds()}"
+            write_print(self.output_txt, category_ids_str)
 
             # Retrieve all category IDs
             cat_ids = dataset.pycoco.getCatIds()
             class_names = ["unripe", "semi-ripe", "fully-ripe"]  # Adjust based on your dataset
 
             for catId, class_name in zip(cat_ids, class_names):
-                # Filter for a specific category
                 per_class_eval = do_coco_eval(dataset.pycoco, detection_list, 'bbox')
                 per_class_eval.params.catIds = [catId]  # Set category to evaluate
-                per_class_eval.evaluate()
-                per_class_eval.accumulate()
-                per_class_eval.summarize()
+                
+                # Capture printed output
+                with io.StringIO() as buf, contextlib.redirect_stdout(buf):
+                    per_class_eval.evaluate()
+                    per_class_eval.accumulate()
+                    per_class_eval.summarize()
+                    per_class_output = buf.getvalue()  # Store output
 
-                # Extract AP and AR from evaluation results
+                # print(per_class_output)  # Print to console
+                write_print(self.output_txt, per_class_output)  # Save to output file
+
+                # Write specific AP and AR for each class
                 ap = per_class_eval.stats[0]  # AP at IoU=0.50:0.95
                 ar = per_class_eval.stats[8]  # AR at IoU=0.50:0.95 for maxDets=100
-
                 per_class_str = f"{class_name}: AP={ap:.3f}, AR={ar:.3f}"
+                
                 write_print(self.output_txt, per_class_str)
-                print(per_class_str)  # Print to console
+                write_print(self.output_txt, '\n')
+
 
 
         if self.dataset == 'coco':
